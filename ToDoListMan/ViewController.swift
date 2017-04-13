@@ -10,9 +10,15 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    @IBOutlet weak var uiTxtId: UITextField!
+    @IBOutlet weak var uiTxtPwd: UITextField!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        uiTxtId.placeholder = "ID"
+        uiTxtPwd.placeholder = "비밀번호"
     }
 
     override func didReceiveMemoryWarning() {
@@ -21,5 +27,7 @@ class ViewController: UIViewController {
     }
 
 
+    @IBAction func btSignInClick(_ sender: Any) {
+    }
 }
 
