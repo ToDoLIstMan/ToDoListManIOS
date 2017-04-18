@@ -16,6 +16,10 @@
 		A9335A721E9F6E9A00C9DE97 /* GroupTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9335A711E9F6E9A00C9DE97 /* GroupTableViewController.swift */; };
 		A9335A741E9F7EE500C9DE97 /* GrorupAddViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9335A731E9F7EE500C9DE97 /* GrorupAddViewController.swift */; };
 		A9335A761E9F93F700C9DE97 /* TimeTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9335A751E9F93F700C9DE97 /* TimeTableViewController.swift */; };
+		A97BB7E51EA6001000B47BF0 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A97BB7E11EA6001000B47BF0 /* Bolts.framework */; };
+		A97BB7E61EA6001000B47BF0 /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A97BB7E21EA6001000B47BF0 /* FBSDKCoreKit.framework */; };
+		A97BB7E71EA6001000B47BF0 /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A97BB7E31EA6001000B47BF0 /* FBSDKLoginKit.framework */; };
+		A97BB7E81EA6001000B47BF0 /* FBSDKMessengerShareKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A97BB7E41EA6001000B47BF0 /* FBSDKMessengerShareKit.framework */; };
 		DFA0D31FA769A8007F8B68D6 /* Pods_ToDoListMan.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE4D960D54D8441F5BED41F4 /* Pods_ToDoListMan.framework */; };
 /* End PBXBuildFile section */
 
@@ -32,6 +36,10 @@
 		A9335A711E9F6E9A00C9DE97 /* GroupTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GroupTableViewController.swift; sourceTree = "<group>"; };
 		A9335A731E9F7EE500C9DE97 /* GrorupAddViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GrorupAddViewController.swift; sourceTree = "<group>"; };
 		A9335A751E9F93F700C9DE97 /* TimeTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimeTableViewController.swift; sourceTree = "<group>"; };
+		A97BB7E11EA6001000B47BF0 /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Bolts.framework; path = ../../../Documents/FacebookSDK/Bolts.framework; sourceTree = "<group>"; };
+		A97BB7E21EA6001000B47BF0 /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKCoreKit.framework; path = ../../../Documents/FacebookSDK/FBSDKCoreKit.framework; sourceTree = "<group>"; };
+		A97BB7E31EA6001000B47BF0 /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKLoginKit.framework; path = ../../../Documents/FacebookSDK/FBSDKLoginKit.framework; sourceTree = "<group>"; };
+		A97BB7E41EA6001000B47BF0 /* FBSDKMessengerShareKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKMessengerShareKit.framework; path = ../../../Documents/FacebookSDK/FBSDKMessengerShareKit.framework; sourceTree = "<group>"; };
 		CA915B75771AD4CC5A093E5A /* Pods-ToDoListMan.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ToDoListMan.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ToDoListMan/Pods-ToDoListMan.debug.xcconfig"; sourceTree = "<group>"; };
 		CE4D960D54D8441F5BED41F4 /* Pods_ToDoListMan.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ToDoListMan.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -42,6 +50,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				DFA0D31FA769A8007F8B68D6 /* Pods_ToDoListMan.framework in Frameworks */,
+				A97BB7E61EA6001000B47BF0 /* FBSDKCoreKit.framework in Frameworks */,
+				A97BB7E81EA6001000B47BF0 /* FBSDKMessengerShareKit.framework in Frameworks */,
+				A97BB7E71EA6001000B47BF0 /* FBSDKLoginKit.framework in Frameworks */,
+				A97BB7E51EA6001000B47BF0 /* Bolts.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -60,6 +72,10 @@
 		5B2F031902182985A7ED5660 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				A97BB7E11EA6001000B47BF0 /* Bolts.framework */,
+				A97BB7E21EA6001000B47BF0 /* FBSDKCoreKit.framework */,
+				A97BB7E31EA6001000B47BF0 /* FBSDKLoginKit.framework */,
+				A97BB7E41EA6001000B47BF0 /* FBSDKMessengerShareKit.framework */,
 				CE4D960D54D8441F5BED41F4 /* Pods_ToDoListMan.framework */,
 			);
 			name = Frameworks;
@@ -357,6 +373,15 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = 3ZZ83P4C7L;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$PODS_CONFIGURATION_BUILD_DIR/GoogleToolboxForMac\"",
+					"\"${PODS_ROOT}/FirebaseAnalytics/Frameworks\"",
+					"\"${PODS_ROOT}/FirebaseCore/Frameworks\"",
+					"\"${PODS_ROOT}/FirebaseDatabase/Frameworks\"",
+					"\"${PODS_ROOT}/FirebaseInstanceID/Frameworks\"",
+					"~/Documents/FacebookSDK",
+				);
 				INFOPLIST_FILE = ToDoListMan/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -374,6 +399,15 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = 3ZZ83P4C7L;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$PODS_CONFIGURATION_BUILD_DIR/GoogleToolboxForMac\"",
+					"\"${PODS_ROOT}/FirebaseAnalytics/Frameworks\"",
+					"\"${PODS_ROOT}/FirebaseCore/Frameworks\"",
+					"\"${PODS_ROOT}/FirebaseDatabase/Frameworks\"",
+					"\"${PODS_ROOT}/FirebaseInstanceID/Frameworks\"",
+					"~/Documents/FacebookSDK",
+				);
 				INFOPLIST_FILE = ToDoListMan/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
