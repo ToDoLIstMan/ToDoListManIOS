@@ -18,19 +18,21 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
     
-        let loginButton = LoginButton(readPermissions: [ .publicProfile, .email ])
-        loginButton.center = view.center
+   //     let loginButton = LoginButton(readPermissions: [ .publicProfile, .email ])
+   //     loginButton.center = view.center
         
         
-        view.addSubview(loginButton)
+    //    view.addSubview(loginButton)
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
     @IBAction func btnFBLoginPressed(_ sender: Any) {
+        self.performSegue(withIdentifier: "segNext", sender: self)
+        /*
+        
         let fbLoginManager : FBSDKLoginManager = FBSDKLoginManager()
         fbLoginManager.logIn(withReadPermissions: ["email"], from: self) {(result, error) in
             if(error==nil){
@@ -61,10 +63,9 @@ class ViewController: UIViewController {
             else{
             print(error)
             }
-            
-        }
+         }
+         */
     }
-    
 
 }
 

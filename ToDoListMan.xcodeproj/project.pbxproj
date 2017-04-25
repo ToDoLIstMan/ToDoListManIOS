@@ -13,9 +13,9 @@
 		A908E9D51E9DF8230059FA10 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A908E9D41E9DF8230059FA10 /* Assets.xcassets */; };
 		A908E9D81E9DF8230059FA10 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A908E9D61E9DF8230059FA10 /* LaunchScreen.storyboard */; };
 		A908EA251E9F1F690059FA10 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A908EA241E9F1F690059FA10 /* GoogleService-Info.plist */; };
-		A9335A721E9F6E9A00C9DE97 /* GroupTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9335A711E9F6E9A00C9DE97 /* GroupTableViewController.swift */; };
-		A9335A741E9F7EE500C9DE97 /* GrorupAddViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9335A731E9F7EE500C9DE97 /* GrorupAddViewController.swift */; };
-		A9335A761E9F93F700C9DE97 /* TimeTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9335A751E9F93F700C9DE97 /* TimeTableViewController.swift */; };
+		A9424F1D1EAF600A007722A9 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9424F1C1EAF600A007722A9 /* MainViewController.swift */; };
+		A9424F1F1EAF6031007722A9 /* GroupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9424F1E1EAF6031007722A9 /* GroupViewController.swift */; };
+		A9424F211EAF605C007722A9 /* PlanViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9424F201EAF605C007722A9 /* PlanViewController.swift */; };
 		A97BB7E51EA6001000B47BF0 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A97BB7E11EA6001000B47BF0 /* Bolts.framework */; };
 		A97BB7E61EA6001000B47BF0 /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A97BB7E21EA6001000B47BF0 /* FBSDKCoreKit.framework */; };
 		A97BB7E71EA6001000B47BF0 /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A97BB7E31EA6001000B47BF0 /* FBSDKLoginKit.framework */; };
@@ -33,9 +33,9 @@
 		A908E9D71E9DF8230059FA10 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A908E9D91E9DF8230059FA10 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A908EA241E9F1F690059FA10 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
-		A9335A711E9F6E9A00C9DE97 /* GroupTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GroupTableViewController.swift; sourceTree = "<group>"; };
-		A9335A731E9F7EE500C9DE97 /* GrorupAddViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GrorupAddViewController.swift; sourceTree = "<group>"; };
-		A9335A751E9F93F700C9DE97 /* TimeTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimeTableViewController.swift; sourceTree = "<group>"; };
+		A9424F1C1EAF600A007722A9 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MainViewController.swift; path = ../MainViewController.swift; sourceTree = "<group>"; };
+		A9424F1E1EAF6031007722A9 /* GroupViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GroupViewController.swift; sourceTree = "<group>"; };
+		A9424F201EAF605C007722A9 /* PlanViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlanViewController.swift; sourceTree = "<group>"; };
 		A97BB7E11EA6001000B47BF0 /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Bolts.framework; path = ../../../Documents/FacebookSDK/Bolts.framework; sourceTree = "<group>"; };
 		A97BB7E21EA6001000B47BF0 /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKCoreKit.framework; path = ../../../Documents/FacebookSDK/FBSDKCoreKit.framework; sourceTree = "<group>"; };
 		A97BB7E31EA6001000B47BF0 /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKLoginKit.framework; path = ../../../Documents/FacebookSDK/FBSDKLoginKit.framework; sourceTree = "<group>"; };
@@ -102,7 +102,9 @@
 		A908E9CC1E9DF8230059FA10 /* ToDoListMan */ = {
 			isa = PBXGroup;
 			children = (
-				A9335A711E9F6E9A00C9DE97 /* GroupTableViewController.swift */,
+				A9424F201EAF605C007722A9 /* PlanViewController.swift */,
+				A9424F1E1EAF6031007722A9 /* GroupViewController.swift */,
+				A9424F1C1EAF600A007722A9 /* MainViewController.swift */,
 				A908EA241E9F1F690059FA10 /* GoogleService-Info.plist */,
 				A908E9CD1E9DF8230059FA10 /* AppDelegate.swift */,
 				A908E9CF1E9DF8230059FA10 /* ViewController.swift */,
@@ -110,8 +112,6 @@
 				A908E9D41E9DF8230059FA10 /* Assets.xcassets */,
 				A908E9D61E9DF8230059FA10 /* LaunchScreen.storyboard */,
 				A908E9D91E9DF8230059FA10 /* Info.plist */,
-				A9335A731E9F7EE500C9DE97 /* GrorupAddViewController.swift */,
-				A9335A751E9F93F700C9DE97 /* TimeTableViewController.swift */,
 			);
 			path = ToDoListMan;
 			sourceTree = "<group>";
@@ -241,11 +241,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A9424F1F1EAF6031007722A9 /* GroupViewController.swift in Sources */,
+				A9424F211EAF605C007722A9 /* PlanViewController.swift in Sources */,
+				A9424F1D1EAF600A007722A9 /* MainViewController.swift in Sources */,
 				A908E9D01E9DF8230059FA10 /* ViewController.swift in Sources */,
 				A908E9CE1E9DF8230059FA10 /* AppDelegate.swift in Sources */,
-				A9335A721E9F6E9A00C9DE97 /* GroupTableViewController.swift in Sources */,
-				A9335A741E9F7EE500C9DE97 /* GrorupAddViewController.swift in Sources */,
-				A9335A761E9F93F700C9DE97 /* TimeTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
