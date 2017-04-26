@@ -18,6 +18,9 @@
 		A9330B601EAFCB800072E326 /* GroupTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9330B5F1EAFCB800072E326 /* GroupTableViewCell.swift */; };
 		A9330B621EAFD8020072E326 /* WorkTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9330B611EAFD8020072E326 /* WorkTableViewCell.swift */; };
 		A9424F1D1EAF600A007722A9 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9424F1C1EAF600A007722A9 /* MainViewController.swift */; };
+		A95D1A8A1EB04B8500DA38B1 /* PlanTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A95D1A891EB04B8500DA38B1 /* PlanTableViewCell.swift */; };
+		A95D1A8C1EB09E9F00DA38B1 /* TimePickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A95D1A8B1EB09E9F00DA38B1 /* TimePickerViewController.swift */; };
+		A95D1A8E1EB0B8F100DA38B1 /* WorkDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A95D1A8D1EB0B8F100DA38B1 /* WorkDetailViewController.swift */; };
 		A97BB7E51EA6001000B47BF0 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A97BB7E11EA6001000B47BF0 /* Bolts.framework */; };
 		A97BB7E61EA6001000B47BF0 /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A97BB7E21EA6001000B47BF0 /* FBSDKCoreKit.framework */; };
 		A97BB7E71EA6001000B47BF0 /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A97BB7E31EA6001000B47BF0 /* FBSDKLoginKit.framework */; };
@@ -40,6 +43,9 @@
 		A9330B5F1EAFCB800072E326 /* GroupTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GroupTableViewCell.swift; sourceTree = "<group>"; };
 		A9330B611EAFD8020072E326 /* WorkTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WorkTableViewCell.swift; sourceTree = "<group>"; };
 		A9424F1C1EAF600A007722A9 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MainViewController.swift; path = ../MainViewController.swift; sourceTree = "<group>"; };
+		A95D1A891EB04B8500DA38B1 /* PlanTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlanTableViewCell.swift; sourceTree = "<group>"; };
+		A95D1A8B1EB09E9F00DA38B1 /* TimePickerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimePickerViewController.swift; sourceTree = "<group>"; };
+		A95D1A8D1EB0B8F100DA38B1 /* WorkDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WorkDetailViewController.swift; sourceTree = "<group>"; };
 		A97BB7E11EA6001000B47BF0 /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Bolts.framework; path = ../../../Documents/FacebookSDK/Bolts.framework; sourceTree = "<group>"; };
 		A97BB7E21EA6001000B47BF0 /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKCoreKit.framework; path = ../../../Documents/FacebookSDK/FBSDKCoreKit.framework; sourceTree = "<group>"; };
 		A97BB7E31EA6001000B47BF0 /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKLoginKit.framework; path = ../../../Documents/FacebookSDK/FBSDKLoginKit.framework; sourceTree = "<group>"; };
@@ -111,6 +117,7 @@
 				A908E9CD1E9DF8230059FA10 /* AppDelegate.swift */,
 				A908E9CF1E9DF8230059FA10 /* ViewController.swift */,
 				A908E9D11E9DF8230059FA10 /* Main.storyboard */,
+				A95D1A891EB04B8500DA38B1 /* PlanTableViewCell.swift */,
 				A9330B5F1EAFCB800072E326 /* GroupTableViewCell.swift */,
 				A9330B5D1EAFC8270072E326 /* PlanViewController.swift */,
 				A908E9D41E9DF8230059FA10 /* Assets.xcassets */,
@@ -118,6 +125,8 @@
 				A908E9D91E9DF8230059FA10 /* Info.plist */,
 				A9330B5B1EAFC8010072E326 /* GroupViewController.swift */,
 				A9330B611EAFD8020072E326 /* WorkTableViewCell.swift */,
+				A95D1A8B1EB09E9F00DA38B1 /* TimePickerViewController.swift */,
+				A95D1A8D1EB0B8F100DA38B1 /* WorkDetailViewController.swift */,
 			);
 			path = ToDoListMan;
 			sourceTree = "<group>";
@@ -247,9 +256,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A95D1A8A1EB04B8500DA38B1 /* PlanTableViewCell.swift in Sources */,
 				A9330B5C1EAFC8010072E326 /* GroupViewController.swift in Sources */,
+				A95D1A8E1EB0B8F100DA38B1 /* WorkDetailViewController.swift in Sources */,
 				A9330B621EAFD8020072E326 /* WorkTableViewCell.swift in Sources */,
 				A9330B5E1EAFC8270072E326 /* PlanViewController.swift in Sources */,
+				A95D1A8C1EB09E9F00DA38B1 /* TimePickerViewController.swift in Sources */,
 				A9424F1D1EAF600A007722A9 /* MainViewController.swift in Sources */,
 				A9330B601EAFCB800072E326 /* GroupTableViewCell.swift in Sources */,
 				A908E9D01E9DF8230059FA10 /* ViewController.swift in Sources */,
