@@ -1,15 +1,17 @@
 //
 //  PlanViewController.swift
-//  
+//  ToDoListMan
 //
-//  Created by songmho on 2017. 4. 25..
-//
+//  Created by songmho on 2017. 4. 26..
+//  Copyright © 2017년 tdl. All rights reserved.
 //
 
 import UIKit
 
 class PlanViewController: UIViewController {
 
+    @IBOutlet weak var btnModi: UIBarButtonItem!
+    @IBOutlet weak var btnSend: UIBarButtonItem!
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -32,4 +34,11 @@ class PlanViewController: UIViewController {
     }
     */
 
+
+    @IBAction func modiClicked(_ sender: Any) {
+    }
+    
+    @IBAction func sendClicked(_ sender: Any) {
+    }
+    
 }
