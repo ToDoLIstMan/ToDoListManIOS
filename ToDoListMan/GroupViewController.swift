@@ -11,15 +11,13 @@ import UIKit
 class GroupViewController: UIViewController {
     
     var names = ["group #1","group #2","group #3"]
-    var isModi = false
     @IBOutlet weak var btnAddGroup: UIBarButtonItem!
-    @IBOutlet weak var btnMotiGroup: UIBarButtonItem!
     @IBOutlet weak var tableView: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.dataSource = self
-     //   tableView.delegate = self as! UITableViewDelegate
+        tableView.delegate = self as! UITableViewDelegate
         // Do any additional setup after loading the view.
     }
 
@@ -28,10 +26,13 @@ class GroupViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+      /*
         if editingStyle == .delete && isModi {
             names.remove(at: indexPath.row)
             tableView.deleteRows(at: [indexPath], with: .fade)
         }
+ 
+ */
     }
 
     /*
@@ -44,18 +45,7 @@ class GroupViewController: UIViewController {
     }
     */
 
-    @IBAction func MotiGroupClicked(_ sender: Any) {
-        if(!isModi){        //수정할 때
-            isModi=true
-            btnMotiGroup.title = "완료"
-        }else{              //수정취소할 때
-            isModi=false
-            btnMotiGroup.title = "수정"
-        }
-        
-    }
-    
-    
+   
     @IBAction func AddGroupClicked(_ sender: Any) {
         
         let alertController = UIAlertController(title: "그룹 만들기", message: "그룹명을 입력하세요.", preferredStyle: .alert)
@@ -98,11 +88,35 @@ extension GroupViewController:UITableViewDataSource{
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell { // 첫 번째 인자로 등록한 identifier, cell은 as 키워드로 앞서 만든 custom cell class화 해준다.
         let cell = tableView.dequeueReusableCell(withIdentifier: "GroupTableViewCell", for: indexPath) as! GroupTableViewCell
         cell.txtGroupName.text = names[indexPath.row]
+        
         return cell }
     
-}
+    }
 
-extension GroupTableViewCell:UITableViewDelegate{
+extension GroupViewController:UITableViewDelegate{
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        //CODE TO BE RUN ON CELL TOUCH
+        print(indexPath.row)
+        let alertController = UIAlertController(title: names[indexPath.row], message: "참여하시겠습니까?", preferredStyle: .alert)
+        
+        
+        let cancelAction = UIAlertAction(title: "취소", style: .default, handler: {
+            (action : UIAlertAction!) -> Void in
+            
+        })
+        
+        let saveAction = UIAlertAction(title: "확인", style: .default, handler: {
+            alert -> Void in
+            
+            
+            
+        })
+        
+        alertController.addAction(cancelAction)
+        alertController.addAction(saveAction)
+        
+        self.present(alertController, animated: true, completion: nil)
+    }
 
 }
 

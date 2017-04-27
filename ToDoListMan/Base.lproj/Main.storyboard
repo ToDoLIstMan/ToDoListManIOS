@@ -89,7 +89,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1UL-me-fWG">
-                                                    <rect key="frame" x="20" y="0.0" width="293" height="28"/>
+                                                    <rect key="frame" x="19" y="-2" width="292" height="29"/>
                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                                     <nil key="textColor"/>
@@ -110,7 +110,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yI2-oB-LEh">
-                                                    <rect key="frame" x="311" y="38" width="46" height="29"/>
+                                                    <rect key="frame" x="309" y="38" width="47" height="29"/>
                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                                     <state key="normal" title="Button"/>
                                                 </button>
@@ -132,8 +132,14 @@
                     </view>
                     <navigationItem key="navigationItem" id="ss7-cU-due">
                         <nil key="title"/>
+                        <barButtonItem key="leftBarButtonItem" style="plain" systemItem="search" id="99w-6F-FMy">
+                            <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <connections>
+                                <segue destination="xzV-EX-Dt9" kind="presentation" id="pWy-Uy-zzY"/>
+                            </connections>
+                        </barButtonItem>
                         <segmentedControl key="titleView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" segmentControlStyle="plain" selectedSegmentIndex="0" id="gu1-kU-sd3">
-                            <rect key="frame" x="89" y="7" width="198" height="30"/>
+                            <rect key="frame" x="88" y="7" width="198" height="30"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                             <segments>
                                 <segment title="전체"/>
@@ -180,6 +186,65 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="772-gg-hKz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3295" y="-404"/>
+        </scene>
+        <!--Group Picker View Controller-->
+        <scene sceneID="Ka6-jN-Lf2">
+            <objects>
+                <viewController modalTransitionStyle="crossDissolve" modalPresentationStyle="overCurrentContext" id="xzV-EX-Dt9" customClass="GroupPickerViewController" customModule="ToDoListMan" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Px1-dE-FeV"/>
+                        <viewControllerLayoutGuide type="bottom" id="b7q-l7-jjD"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="51r-s4-rX9">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Nm6-f5-gXB">
+                                <rect key="frame" x="12" y="210" width="350" height="246"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tXF-0a-qIu">
+                                        <rect key="frame" x="264" y="206" width="70" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" title="확인"/>
+                                        <connections>
+                                            <action selector="btnAccClicked:" destination="xzV-EX-Dt9" eventType="touchUpInside" id="6jG-Y6-oPz"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bA2-56-V3n">
+                                        <rect key="frame" x="181" y="206" width="70" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" title="취소"/>
+                                        <connections>
+                                            <action selector="btnCancelClicked:" destination="xzV-EX-Dt9" eventType="touchUpInside" id="3vw-Qs-yEw"/>
+                                        </connections>
+                                    </button>
+                                    <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="uBr-Yn-LqC">
+                                        <rect key="frame" x="18" y="40" width="315" height="158"/>
+                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                    </pickerView>
+                                </subviews>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="246" id="65Q-Tb-k5J"/>
+                                    <constraint firstAttribute="width" constant="350" id="Fep-Ky-4fu"/>
+                                    <constraint firstAttribute="height" constant="246" id="J3K-sJ-RBJ"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="350" id="KF0-12-MwO"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.40000000000000002" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="Nm6-f5-gXB" firstAttribute="centerY" secondItem="51r-s4-rX9" secondAttribute="centerY" id="ZJ4-ar-3gg"/>
+                            <constraint firstItem="Nm6-f5-gXB" firstAttribute="centerX" secondItem="51r-s4-rX9" secondAttribute="centerX" id="ZS0-JQ-kcY"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="groupPicker" destination="uBr-Yn-LqC" id="SUS-6n-hNi"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Jiu-3L-8I8" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2508" y="-1060.1199400299852"/>
         </scene>
         <!--Time Picker View Controller-->
         <scene sceneID="F4x-7r-6WU">
@@ -288,7 +353,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CS6-XD-Oon">
-                                                    <rect key="frame" x="35" y="12" width="42" height="19"/>
+                                                    <rect key="frame" x="34" y="11" width="42" height="19"/>
                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
@@ -312,22 +377,140 @@
                                 <action selector="AddGroupClicked:" destination="ARz-aw-WRa" id="Ipc-eZ-Kfn"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" title="수정" style="plain" id="27h-XI-sOM">
-                            <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                            <connections>
-                                <action selector="MotiGroupClicked:" destination="ARz-aw-WRa" id="ze8-Ks-3Gd"/>
-                            </connections>
-                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="btnAddGroup" destination="5Sh-if-EIF" id="KJs-5P-AMF"/>
-                        <outlet property="btnMotiGroup" destination="27h-XI-sOM" id="fYD-gw-RDs"/>
                         <outlet property="tableView" destination="5Tx-uF-Kvh" id="CtR-cG-R8K"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BxN-FV-5gt" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2509.5999999999999" y="267.61619190404798"/>
+        </scene>
+        <!--포맷 관리-->
+        <scene sceneID="eCz-2q-Nxs">
+            <objects>
+                <viewController id="w1a-7h-zd7" customClass="FormatViewController" customModule="ToDoListMan" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="wks-Aw-XtM"/>
+                        <viewControllerLayoutGuide type="bottom" id="xhu-kS-ON8"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Ccb-Ok-Jda">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="7zh-ph-4Rd">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="618"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="r7D-UX-s76">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="r7D-UX-s76" id="Bpn-cw-a7Y">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="jA8-EJ-Fgn" kind="show" id="G3e-X4-ciw"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="포맷 관리" id="3e7-KS-k06">
+                        <barButtonItem key="rightBarButtonItem" style="plain" systemItem="add" id="gRP-dr-oxc">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <connections>
+                                <segue destination="8Sg-YE-lcx" kind="show" id="TCN-RE-cVH"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="JJV-BL-A91" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2509.5999999999999" y="2354.5727136431788"/>
+        </scene>
+        <!--포맷 추가-->
+        <scene sceneID="si2-tE-2zH">
+            <objects>
+                <viewController id="8Sg-YE-lcx" customClass="FormatAddViewController" customModule="ToDoListMan" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="pRd-u8-o5h"/>
+                        <viewControllerLayoutGuide type="bottom" id="QnG-zY-Tfh"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="3GT-zM-Kb8">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" sectionIndexMinimumDisplayRowCount="1" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="BjJ-sj-Wht">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="618"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="p1s-Zh-Kf1">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="p1s-Zh-Kf1" id="F6t-bc-C39">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="포맷 추가" id="6vT-GV-W8n">
+                        <barButtonItem key="rightBarButtonItem" style="plain" systemItem="save" id="Wtw-sO-0yN">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <connections>
+                                <action selector="btnSaveClicked:" destination="8Sg-YE-lcx" id="Q3L-e3-4mf"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="yor-QF-iqn" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2508" y="3043.6281859070468"/>
+        </scene>
+        <!--포맷 상세-->
+        <scene sceneID="JZD-BH-Sim">
+            <objects>
+                <viewController id="jA8-EJ-Fgn" customClass="FormatDetailViewController" customModule="ToDoListMan" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="sPg-ss-SYl"/>
+                        <viewControllerLayoutGuide type="bottom" id="KOv-L7-7bB"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="d6G-7R-AU2">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="ry8-Kg-wIn">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="618"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="zVI-MV-zSa">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="zVI-MV-zSa" id="3gj-Lh-YL4">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="포맷 상세" id="eno-Uq-Ne5"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="NF0-Au-WmH" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3240.8000000000002" y="2354.5727136431788"/>
         </scene>
         <!--일정목록-->
         <scene sceneID="TzE-w3-1If">
@@ -396,12 +579,6 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" title="일정목록" id="5B4-GT-a9g">
-                        <barButtonItem key="leftBarButtonItem" title="편집" style="plain" id="iwZ-5X-Qxf">
-                            <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                            <connections>
-                                <action selector="modiClicked:" destination="nfY-lr-nNA" id="zm7-wu-fRk"/>
-                            </connections>
-                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="보내기" style="plain" id="qHJ-ja-Hgd">
                             <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <connections>
@@ -410,7 +587,6 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="btnModi" destination="iwZ-5X-Qxf" id="JlZ-8N-QOG"/>
                         <outlet property="btnSend" destination="qHJ-ja-Hgd" id="ihk-Tm-Idd"/>
                     </connections>
                 </viewController>
@@ -486,12 +662,33 @@
                         <segue destination="RpC-Ly-TN3" kind="relationship" relationship="viewControllers" id="z5f-e8-uLA"/>
                         <segue destination="LjX-2D-pOW" kind="relationship" relationship="viewControllers" id="cuO-aN-BVQ"/>
                         <segue destination="OP9-tc-w4t" kind="relationship" relationship="viewControllers" id="eGd-Fi-Z8C"/>
+                        <segue destination="qDz-GB-qwf" kind="relationship" relationship="viewControllers" id="Oms-rM-j6S"/>
                         <segue destination="4rW-cs-THh" kind="relationship" relationship="viewControllers" id="eqA-pZ-0kF"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1UK-gs-MfT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="972" y="131.78410794602701"/>
+        </scene>
+        <!--포맷관리-->
+        <scene sceneID="5YM-Cy-bXv">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="qDz-GB-qwf" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="포맷관리" id="KcH-Sz-L4Z"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" barStyle="black" id="bxX-Fz-nbm">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" red="1" green="0.62745098040000002" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="w1a-7h-zd7" kind="relationship" relationship="rootViewController" id="39p-0e-F93"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Uvn-Mc-CgG" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1773.5999999999999" y="2354.5727136431788"/>
         </scene>
     </scenes>
     <resources>

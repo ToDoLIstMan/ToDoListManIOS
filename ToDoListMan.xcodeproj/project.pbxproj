@@ -17,6 +17,10 @@
 		A9330B5E1EAFC8270072E326 /* PlanViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9330B5D1EAFC8270072E326 /* PlanViewController.swift */; };
 		A9330B601EAFCB800072E326 /* GroupTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9330B5F1EAFCB800072E326 /* GroupTableViewCell.swift */; };
 		A9330B621EAFD8020072E326 /* WorkTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9330B611EAFD8020072E326 /* WorkTableViewCell.swift */; };
+		A93638731EB195360008A713 /* GroupPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A93638721EB195360008A713 /* GroupPickerViewController.swift */; };
+		A93638751EB1A9960008A713 /* FormatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A93638741EB1A9960008A713 /* FormatViewController.swift */; };
+		A93638771EB1A9C20008A713 /* FormatAddViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A93638761EB1A9C20008A713 /* FormatAddViewController.swift */; };
+		A93638791EB1A9EA0008A713 /* FormatDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A93638781EB1A9EA0008A713 /* FormatDetailViewController.swift */; };
 		A9424F1D1EAF600A007722A9 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9424F1C1EAF600A007722A9 /* MainViewController.swift */; };
 		A95D1A8A1EB04B8500DA38B1 /* PlanTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A95D1A891EB04B8500DA38B1 /* PlanTableViewCell.swift */; };
 		A95D1A8C1EB09E9F00DA38B1 /* TimePickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A95D1A8B1EB09E9F00DA38B1 /* TimePickerViewController.swift */; };
@@ -42,6 +46,10 @@
 		A9330B5D1EAFC8270072E326 /* PlanViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlanViewController.swift; sourceTree = "<group>"; };
 		A9330B5F1EAFCB800072E326 /* GroupTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GroupTableViewCell.swift; sourceTree = "<group>"; };
 		A9330B611EAFD8020072E326 /* WorkTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WorkTableViewCell.swift; sourceTree = "<group>"; };
+		A93638721EB195360008A713 /* GroupPickerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GroupPickerViewController.swift; sourceTree = "<group>"; };
+		A93638741EB1A9960008A713 /* FormatViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FormatViewController.swift; sourceTree = "<group>"; };
+		A93638761EB1A9C20008A713 /* FormatAddViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FormatAddViewController.swift; sourceTree = "<group>"; };
+		A93638781EB1A9EA0008A713 /* FormatDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FormatDetailViewController.swift; sourceTree = "<group>"; };
 		A9424F1C1EAF600A007722A9 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MainViewController.swift; path = ../MainViewController.swift; sourceTree = "<group>"; };
 		A95D1A891EB04B8500DA38B1 /* PlanTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlanTableViewCell.swift; sourceTree = "<group>"; };
 		A95D1A8B1EB09E9F00DA38B1 /* TimePickerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimePickerViewController.swift; sourceTree = "<group>"; };
@@ -127,6 +135,10 @@
 				A9330B611EAFD8020072E326 /* WorkTableViewCell.swift */,
 				A95D1A8B1EB09E9F00DA38B1 /* TimePickerViewController.swift */,
 				A95D1A8D1EB0B8F100DA38B1 /* WorkDetailViewController.swift */,
+				A93638721EB195360008A713 /* GroupPickerViewController.swift */,
+				A93638741EB1A9960008A713 /* FormatViewController.swift */,
+				A93638761EB1A9C20008A713 /* FormatAddViewController.swift */,
+				A93638781EB1A9EA0008A713 /* FormatDetailViewController.swift */,
 			);
 			path = ToDoListMan;
 			sourceTree = "<group>";
@@ -256,10 +268,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A93638731EB195360008A713 /* GroupPickerViewController.swift in Sources */,
 				A95D1A8A1EB04B8500DA38B1 /* PlanTableViewCell.swift in Sources */,
 				A9330B5C1EAFC8010072E326 /* GroupViewController.swift in Sources */,
+				A93638771EB1A9C20008A713 /* FormatAddViewController.swift in Sources */,
+				A93638791EB1A9EA0008A713 /* FormatDetailViewController.swift in Sources */,
 				A95D1A8E1EB0B8F100DA38B1 /* WorkDetailViewController.swift in Sources */,
 				A9330B621EAFD8020072E326 /* WorkTableViewCell.swift in Sources */,
+				A93638751EB1A9960008A713 /* FormatViewController.swift in Sources */,
 				A9330B5E1EAFC8270072E326 /* PlanViewController.swift in Sources */,
 				A95D1A8C1EB09E9F00DA38B1 /* TimePickerViewController.swift in Sources */,
 				A9424F1D1EAF600A007722A9 /* MainViewController.swift in Sources */,
