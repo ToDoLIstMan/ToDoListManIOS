@@ -7,17 +7,37 @@
 //
 
 import UIKit
+import Firebase
 
 class GroupViewController: UIViewController {
     
-    var names = ["group #1","group #2","group #3"]
     @IBOutlet weak var btnAddGroup: UIBarButtonItem!
     @IBOutlet weak var tableView: UITableView!
+    var names: [group] = []
+    var ref: FIRDatabaseReference!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
+     //   FIRApp.configure()
+        
         tableView.dataSource = self
         tableView.delegate = self as! UITableViewDelegate
+        
+        self.ref = FIRDatabase.database().reference()
+      
+        self.ref.child("group").observe(.value, with: { (snapshot) -> Void in
+            for itemSnapShot in snapshot.children {
+                    let item = group(snapshot: itemSnapShot as! FIRDataSnapshot)
+                    print(item.groupName)
+                self.names.append(item)
+                self.tableView.insertRows(at: [IndexPath(row: self.names.count-1,section: 0)], with: UITableViewRowAnimation.automatic)
+                
+            }
+           
+        })
+        
+        
         // Do any additional setup after loading the view.
     }
 
@@ -60,7 +80,7 @@ class GroupViewController: UIViewController {
             alert -> Void in
             
             let firstTextField = alertController.textFields![0] as UITextField
-            self.names.append(firstTextField.text!)
+        //    self.names.append(newGroup)
             self.tableView.beginUpdates()
             self.tableView.insertRows(at: [IndexPath(row: (self.names.count-1), section: 0)], with: .automatic)
             self.tableView.endUpdates()
@@ -83,11 +103,15 @@ class GroupViewController: UIViewController {
 }
 
 extension GroupViewController:UITableViewDataSource{
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int { return names.count }
-    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        if names==nil{
+            return 0
+        }else{
+            return names.count }
+    }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell { // 첫 번째 인자로 등록한 identifier, cell은 as 키워드로 앞서 만든 custom cell class화 해준다.
         let cell = tableView.dequeueReusableCell(withIdentifier: "GroupTableViewCell", for: indexPath) as! GroupTableViewCell
-        cell.txtGroupName.text = names[indexPath.row]
+        cell.txtGroupName.text = names[indexPath.row].groupName
         
         return cell }
     
@@ -97,7 +121,7 @@ extension GroupViewController:UITableViewDelegate{
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         //CODE TO BE RUN ON CELL TOUCH
         print(indexPath.row)
-        let alertController = UIAlertController(title: names[indexPath.row], message: "참여하시겠습니까?", preferredStyle: .alert)
+        let alertController = UIAlertController(title: names[indexPath.row].groupName, message: "참여하시겠습니까?", preferredStyle: .alert)
         
         
         let cancelAction = UIAlertAction(title: "취소", style: .default, handler: {

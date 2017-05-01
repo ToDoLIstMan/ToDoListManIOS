@@ -21,14 +21,16 @@
 		A93638751EB1A9960008A713 /* FormatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A93638741EB1A9960008A713 /* FormatViewController.swift */; };
 		A93638771EB1A9C20008A713 /* FormatAddViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A93638761EB1A9C20008A713 /* FormatAddViewController.swift */; };
 		A93638791EB1A9EA0008A713 /* FormatDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A93638781EB1A9EA0008A713 /* FormatDetailViewController.swift */; };
+		A936387B1EB1B00D0008A713 /* PlanTableAddViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A936387A1EB1B00D0008A713 /* PlanTableAddViewCell.swift */; };
 		A9424F1D1EAF600A007722A9 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9424F1C1EAF600A007722A9 /* MainViewController.swift */; };
-		A95D1A8A1EB04B8500DA38B1 /* PlanTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A95D1A891EB04B8500DA38B1 /* PlanTableViewCell.swift */; };
+		A95D1A8A1EB04B8500DA38B1 /* PlanTableFormatViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A95D1A891EB04B8500DA38B1 /* PlanTableFormatViewCell.swift */; };
 		A95D1A8C1EB09E9F00DA38B1 /* TimePickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A95D1A8B1EB09E9F00DA38B1 /* TimePickerViewController.swift */; };
 		A95D1A8E1EB0B8F100DA38B1 /* WorkDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A95D1A8D1EB0B8F100DA38B1 /* WorkDetailViewController.swift */; };
 		A97BB7E51EA6001000B47BF0 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A97BB7E11EA6001000B47BF0 /* Bolts.framework */; };
 		A97BB7E61EA6001000B47BF0 /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A97BB7E21EA6001000B47BF0 /* FBSDKCoreKit.framework */; };
 		A97BB7E71EA6001000B47BF0 /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A97BB7E31EA6001000B47BF0 /* FBSDKLoginKit.framework */; };
 		A97BB7E81EA6001000B47BF0 /* FBSDKMessengerShareKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A97BB7E41EA6001000B47BF0 /* FBSDKMessengerShareKit.framework */; };
+		A9DCA5B61EB6DC69007DB81C /* group.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9DCA5B51EB6DC69007DB81C /* group.swift */; };
 		DFA0D31FA769A8007F8B68D6 /* Pods_ToDoListMan.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE4D960D54D8441F5BED41F4 /* Pods_ToDoListMan.framework */; };
 /* End PBXBuildFile section */
 
@@ -50,14 +52,16 @@
 		A93638741EB1A9960008A713 /* FormatViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FormatViewController.swift; sourceTree = "<group>"; };
 		A93638761EB1A9C20008A713 /* FormatAddViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FormatAddViewController.swift; sourceTree = "<group>"; };
 		A93638781EB1A9EA0008A713 /* FormatDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FormatDetailViewController.swift; sourceTree = "<group>"; };
+		A936387A1EB1B00D0008A713 /* PlanTableAddViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlanTableAddViewCell.swift; sourceTree = "<group>"; };
 		A9424F1C1EAF600A007722A9 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MainViewController.swift; path = ../MainViewController.swift; sourceTree = "<group>"; };
-		A95D1A891EB04B8500DA38B1 /* PlanTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlanTableViewCell.swift; sourceTree = "<group>"; };
+		A95D1A891EB04B8500DA38B1 /* PlanTableFormatViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlanTableFormatViewCell.swift; sourceTree = "<group>"; };
 		A95D1A8B1EB09E9F00DA38B1 /* TimePickerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimePickerViewController.swift; sourceTree = "<group>"; };
 		A95D1A8D1EB0B8F100DA38B1 /* WorkDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WorkDetailViewController.swift; sourceTree = "<group>"; };
 		A97BB7E11EA6001000B47BF0 /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Bolts.framework; path = ../../../Documents/FacebookSDK/Bolts.framework; sourceTree = "<group>"; };
 		A97BB7E21EA6001000B47BF0 /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKCoreKit.framework; path = ../../../Documents/FacebookSDK/FBSDKCoreKit.framework; sourceTree = "<group>"; };
 		A97BB7E31EA6001000B47BF0 /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKLoginKit.framework; path = ../../../Documents/FacebookSDK/FBSDKLoginKit.framework; sourceTree = "<group>"; };
 		A97BB7E41EA6001000B47BF0 /* FBSDKMessengerShareKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKMessengerShareKit.framework; path = ../../../Documents/FacebookSDK/FBSDKMessengerShareKit.framework; sourceTree = "<group>"; };
+		A9DCA5B51EB6DC69007DB81C /* group.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = group.swift; sourceTree = "<group>"; };
 		CA915B75771AD4CC5A093E5A /* Pods-ToDoListMan.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ToDoListMan.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ToDoListMan/Pods-ToDoListMan.debug.xcconfig"; sourceTree = "<group>"; };
 		CE4D960D54D8441F5BED41F4 /* Pods_ToDoListMan.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ToDoListMan.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -120,12 +124,13 @@
 		A908E9CC1E9DF8230059FA10 /* ToDoListMan */ = {
 			isa = PBXGroup;
 			children = (
+				A9DCA5B41EB6DC56007DB81C /* DataBase */,
 				A9424F1C1EAF600A007722A9 /* MainViewController.swift */,
 				A908EA241E9F1F690059FA10 /* GoogleService-Info.plist */,
 				A908E9CD1E9DF8230059FA10 /* AppDelegate.swift */,
 				A908E9CF1E9DF8230059FA10 /* ViewController.swift */,
 				A908E9D11E9DF8230059FA10 /* Main.storyboard */,
-				A95D1A891EB04B8500DA38B1 /* PlanTableViewCell.swift */,
+				A95D1A891EB04B8500DA38B1 /* PlanTableFormatViewCell.swift */,
 				A9330B5F1EAFCB800072E326 /* GroupTableViewCell.swift */,
 				A9330B5D1EAFC8270072E326 /* PlanViewController.swift */,
 				A908E9D41E9DF8230059FA10 /* Assets.xcassets */,
@@ -139,8 +144,17 @@
 				A93638741EB1A9960008A713 /* FormatViewController.swift */,
 				A93638761EB1A9C20008A713 /* FormatAddViewController.swift */,
 				A93638781EB1A9EA0008A713 /* FormatDetailViewController.swift */,
+				A936387A1EB1B00D0008A713 /* PlanTableAddViewCell.swift */,
 			);
 			path = ToDoListMan;
+			sourceTree = "<group>";
+		};
+		A9DCA5B41EB6DC56007DB81C /* DataBase */ = {
+			isa = PBXGroup;
+			children = (
+				A9DCA5B51EB6DC69007DB81C /* group.swift */,
+			);
+			name = DataBase;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -269,11 +283,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				A93638731EB195360008A713 /* GroupPickerViewController.swift in Sources */,
-				A95D1A8A1EB04B8500DA38B1 /* PlanTableViewCell.swift in Sources */,
+				A95D1A8A1EB04B8500DA38B1 /* PlanTableFormatViewCell.swift in Sources */,
 				A9330B5C1EAFC8010072E326 /* GroupViewController.swift in Sources */,
+				A9DCA5B61EB6DC69007DB81C /* group.swift in Sources */,
 				A93638771EB1A9C20008A713 /* FormatAddViewController.swift in Sources */,
 				A93638791EB1A9EA0008A713 /* FormatDetailViewController.swift in Sources */,
 				A95D1A8E1EB0B8F100DA38B1 /* WorkDetailViewController.swift in Sources */,
+				A936387B1EB1B00D0008A713 /* PlanTableAddViewCell.swift in Sources */,
 				A9330B621EAFD8020072E326 /* WorkTableViewCell.swift in Sources */,
 				A93638751EB1A9960008A713 /* FormatViewController.swift in Sources */,
 				A9330B5E1EAFC8270072E326 /* PlanViewController.swift in Sources */,
