@@ -12,11 +12,13 @@
 		A908E9D31E9DF8230059FA10 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A908E9D11E9DF8230059FA10 /* Main.storyboard */; };
 		A908E9D51E9DF8230059FA10 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A908E9D41E9DF8230059FA10 /* Assets.xcassets */; };
 		A908E9D81E9DF8230059FA10 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A908E9D61E9DF8230059FA10 /* LaunchScreen.storyboard */; };
-		A908EA251E9F1F690059FA10 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A908EA241E9F1F690059FA10 /* GoogleService-Info.plist */; };
 		A9330B5C1EAFC8010072E326 /* GroupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9330B5B1EAFC8010072E326 /* GroupViewController.swift */; };
 		A9330B5E1EAFC8270072E326 /* PlanViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9330B5D1EAFC8270072E326 /* PlanViewController.swift */; };
 		A9330B601EAFCB800072E326 /* GroupTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9330B5F1EAFCB800072E326 /* GroupTableViewCell.swift */; };
 		A9330B621EAFD8020072E326 /* WorkTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9330B611EAFD8020072E326 /* WorkTableViewCell.swift */; };
+		A9346EC81ECE75C900490592 /* format.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9346EC71ECE75C900490592 /* format.swift */; };
+		A9346ECA1ECEB96300490592 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A9346EC91ECEB96300490592 /* GoogleService-Info.plist */; };
+		A9346ECC1ECEFE0000490592 /* FormatTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9346ECB1ECEFE0000490592 /* FormatTableViewCell.swift */; };
 		A93638731EB195360008A713 /* GroupPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A93638721EB195360008A713 /* GroupPickerViewController.swift */; };
 		A93638751EB1A9960008A713 /* FormatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A93638741EB1A9960008A713 /* FormatViewController.swift */; };
 		A93638771EB1A9C20008A713 /* FormatAddViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A93638761EB1A9C20008A713 /* FormatAddViewController.swift */; };
@@ -31,6 +33,8 @@
 		A97BB7E71EA6001000B47BF0 /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A97BB7E31EA6001000B47BF0 /* FBSDKLoginKit.framework */; };
 		A97BB7E81EA6001000B47BF0 /* FBSDKMessengerShareKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A97BB7E41EA6001000B47BF0 /* FBSDKMessengerShareKit.framework */; };
 		A9DCA5B61EB6DC69007DB81C /* group.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9DCA5B51EB6DC69007DB81C /* group.swift */; };
+		A9DCA5B81EB7003A007DB81C /* user.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9DCA5B71EB7003A007DB81C /* user.swift */; };
+		A9DCA5BA1EB70047007DB81C /* work.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9DCA5B91EB70047007DB81C /* work.swift */; };
 		DFA0D31FA769A8007F8B68D6 /* Pods_ToDoListMan.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE4D960D54D8441F5BED41F4 /* Pods_ToDoListMan.framework */; };
 /* End PBXBuildFile section */
 
@@ -43,11 +47,13 @@
 		A908E9D41E9DF8230059FA10 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A908E9D71E9DF8230059FA10 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A908E9D91E9DF8230059FA10 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		A908EA241E9F1F690059FA10 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		A9330B5B1EAFC8010072E326 /* GroupViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GroupViewController.swift; sourceTree = "<group>"; };
 		A9330B5D1EAFC8270072E326 /* PlanViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlanViewController.swift; sourceTree = "<group>"; };
 		A9330B5F1EAFCB800072E326 /* GroupTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GroupTableViewCell.swift; sourceTree = "<group>"; };
 		A9330B611EAFD8020072E326 /* WorkTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WorkTableViewCell.swift; sourceTree = "<group>"; };
+		A9346EC71ECE75C900490592 /* format.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = format.swift; sourceTree = "<group>"; };
+		A9346EC91ECEB96300490592 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		A9346ECB1ECEFE0000490592 /* FormatTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FormatTableViewCell.swift; sourceTree = "<group>"; };
 		A93638721EB195360008A713 /* GroupPickerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GroupPickerViewController.swift; sourceTree = "<group>"; };
 		A93638741EB1A9960008A713 /* FormatViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FormatViewController.swift; sourceTree = "<group>"; };
 		A93638761EB1A9C20008A713 /* FormatAddViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FormatAddViewController.swift; sourceTree = "<group>"; };
@@ -62,6 +68,8 @@
 		A97BB7E31EA6001000B47BF0 /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKLoginKit.framework; path = ../../../Documents/FacebookSDK/FBSDKLoginKit.framework; sourceTree = "<group>"; };
 		A97BB7E41EA6001000B47BF0 /* FBSDKMessengerShareKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKMessengerShareKit.framework; path = ../../../Documents/FacebookSDK/FBSDKMessengerShareKit.framework; sourceTree = "<group>"; };
 		A9DCA5B51EB6DC69007DB81C /* group.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = group.swift; sourceTree = "<group>"; };
+		A9DCA5B71EB7003A007DB81C /* user.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = user.swift; sourceTree = "<group>"; };
+		A9DCA5B91EB70047007DB81C /* work.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = work.swift; sourceTree = "<group>"; };
 		CA915B75771AD4CC5A093E5A /* Pods-ToDoListMan.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ToDoListMan.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ToDoListMan/Pods-ToDoListMan.debug.xcconfig"; sourceTree = "<group>"; };
 		CE4D960D54D8441F5BED41F4 /* Pods_ToDoListMan.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ToDoListMan.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -124,35 +132,55 @@
 		A908E9CC1E9DF8230059FA10 /* ToDoListMan */ = {
 			isa = PBXGroup;
 			children = (
+				A9346EC91ECEB96300490592 /* GoogleService-Info.plist */,
+				A9346EC51ECE743D00490592 /* Cell */,
+				A9346EC41ECE741600490592 /* Controller */,
 				A9DCA5B41EB6DC56007DB81C /* DataBase */,
-				A9424F1C1EAF600A007722A9 /* MainViewController.swift */,
-				A908EA241E9F1F690059FA10 /* GoogleService-Info.plist */,
 				A908E9CD1E9DF8230059FA10 /* AppDelegate.swift */,
-				A908E9CF1E9DF8230059FA10 /* ViewController.swift */,
 				A908E9D11E9DF8230059FA10 /* Main.storyboard */,
-				A95D1A891EB04B8500DA38B1 /* PlanTableFormatViewCell.swift */,
-				A9330B5F1EAFCB800072E326 /* GroupTableViewCell.swift */,
-				A9330B5D1EAFC8270072E326 /* PlanViewController.swift */,
 				A908E9D41E9DF8230059FA10 /* Assets.xcassets */,
 				A908E9D61E9DF8230059FA10 /* LaunchScreen.storyboard */,
 				A908E9D91E9DF8230059FA10 /* Info.plist */,
+			);
+			path = ToDoListMan;
+			sourceTree = "<group>";
+		};
+		A9346EC41ECE741600490592 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				A9424F1C1EAF600A007722A9 /* MainViewController.swift */,
+				A908E9CF1E9DF8230059FA10 /* ViewController.swift */,
+				A9330B5D1EAFC8270072E326 /* PlanViewController.swift */,
 				A9330B5B1EAFC8010072E326 /* GroupViewController.swift */,
-				A9330B611EAFD8020072E326 /* WorkTableViewCell.swift */,
 				A95D1A8B1EB09E9F00DA38B1 /* TimePickerViewController.swift */,
 				A95D1A8D1EB0B8F100DA38B1 /* WorkDetailViewController.swift */,
 				A93638721EB195360008A713 /* GroupPickerViewController.swift */,
 				A93638741EB1A9960008A713 /* FormatViewController.swift */,
 				A93638761EB1A9C20008A713 /* FormatAddViewController.swift */,
 				A93638781EB1A9EA0008A713 /* FormatDetailViewController.swift */,
-				A936387A1EB1B00D0008A713 /* PlanTableAddViewCell.swift */,
 			);
-			path = ToDoListMan;
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		A9346EC51ECE743D00490592 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				A9330B611EAFD8020072E326 /* WorkTableViewCell.swift */,
+				A936387A1EB1B00D0008A713 /* PlanTableAddViewCell.swift */,
+				A95D1A891EB04B8500DA38B1 /* PlanTableFormatViewCell.swift */,
+				A9330B5F1EAFCB800072E326 /* GroupTableViewCell.swift */,
+				A9346ECB1ECEFE0000490592 /* FormatTableViewCell.swift */,
+			);
+			name = Cell;
 			sourceTree = "<group>";
 		};
 		A9DCA5B41EB6DC56007DB81C /* DataBase */ = {
 			isa = PBXGroup;
 			children = (
 				A9DCA5B51EB6DC69007DB81C /* group.swift */,
+				A9DCA5B71EB7003A007DB81C /* user.swift */,
+				A9DCA5B91EB70047007DB81C /* work.swift */,
+				A9346EC71ECE75C900490592 /* format.swift */,
 			);
 			name = DataBase;
 			sourceTree = "<group>";
@@ -192,7 +220,6 @@
 				TargetAttributes = {
 					A908E9C91E9DF8230059FA10 = {
 						CreatedOnToolsVersion = 8.3.1;
-						DevelopmentTeam = 3ZZ83P4C7L;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -221,7 +248,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A908E9D81E9DF8230059FA10 /* LaunchScreen.storyboard in Resources */,
-				A908EA251E9F1F690059FA10 /* GoogleService-Info.plist in Resources */,
+				A9346ECA1ECEB96300490592 /* GoogleService-Info.plist in Resources */,
 				A908E9D51E9DF8230059FA10 /* Assets.xcassets in Resources */,
 				A908E9D31E9DF8230059FA10 /* Main.storyboard in Resources */,
 			);
@@ -284,9 +311,12 @@
 			files = (
 				A93638731EB195360008A713 /* GroupPickerViewController.swift in Sources */,
 				A95D1A8A1EB04B8500DA38B1 /* PlanTableFormatViewCell.swift in Sources */,
+				A9346EC81ECE75C900490592 /* format.swift in Sources */,
+				A9DCA5BA1EB70047007DB81C /* work.swift in Sources */,
 				A9330B5C1EAFC8010072E326 /* GroupViewController.swift in Sources */,
 				A9DCA5B61EB6DC69007DB81C /* group.swift in Sources */,
 				A93638771EB1A9C20008A713 /* FormatAddViewController.swift in Sources */,
+				A9DCA5B81EB7003A007DB81C /* user.swift in Sources */,
 				A93638791EB1A9EA0008A713 /* FormatDetailViewController.swift in Sources */,
 				A95D1A8E1EB0B8F100DA38B1 /* WorkDetailViewController.swift in Sources */,
 				A936387B1EB1B00D0008A713 /* PlanTableAddViewCell.swift in Sources */,
@@ -295,6 +325,7 @@
 				A9330B5E1EAFC8270072E326 /* PlanViewController.swift in Sources */,
 				A95D1A8C1EB09E9F00DA38B1 /* TimePickerViewController.swift in Sources */,
 				A9424F1D1EAF600A007722A9 /* MainViewController.swift in Sources */,
+				A9346ECC1ECEFE0000490592 /* FormatTableViewCell.swift in Sources */,
 				A9330B601EAFCB800072E326 /* GroupTableViewCell.swift in Sources */,
 				A908E9D01E9DF8230059FA10 /* ViewController.swift in Sources */,
 				A908E9CE1E9DF8230059FA10 /* AppDelegate.swift in Sources */,
@@ -424,7 +455,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = 3ZZ83P4C7L;
+				DEVELOPMENT_TEAM = "";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$PODS_CONFIGURATION_BUILD_DIR/GoogleToolboxForMac\"",
@@ -450,7 +481,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = 3ZZ83P4C7L;
+				DEVELOPMENT_TEAM = "";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$PODS_CONFIGURATION_BUILD_DIR/GoogleToolboxForMac\"",

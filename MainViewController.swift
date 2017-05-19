@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Firebase
 
 class MainViewController: UIViewController {
    
@@ -14,13 +15,31 @@ class MainViewController: UIViewController {
     @IBOutlet weak var btnDate: UIBarButtonItem!
     @IBOutlet weak var listView: UITableView!
     
+    var ref: FIRDatabaseReference!
+    var works :[work] = []
+    var myGroups : [Int] = []
+    var curGroup = 0
+    
     var titles1 = ["df1","df1","df1"]
     var titles2 = ["df2","df2","df2"]
     var titles3 = ["df3","df3","df3"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        print(FIRAuth.auth()?.currentUser?.uid)
+        /*
+        ref.child("user").child((FIRAuth.auth()?.currentUser?.uid)!).observe(.value, with: { (snapShot) in
+            if snapShot != nil {
+                print(String(describing: snapShot.value))
+                
+            }else {
+                print("없없")
+            }
+        })
+       */
         listView.dataSource = self
+        listView.delegate = self
+        
         
         // Do any additional setup after loading the view.
     }

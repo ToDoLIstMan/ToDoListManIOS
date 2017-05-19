@@ -13,24 +13,27 @@ class group{
     
     var ref: FIRDatabaseReference?
     
-    let groupName: String
-    let id : Int
-    let masterUid : String
-    let memberName : [String]
-    let memberUid : [String]
+    var groupName: String
+    var id : Int
+    var masterUid : String
+    var memberName = [String?]()
+    var memberUid = [String?]()
     
-    init(snapshot: FIRDataSnapshot) {
-        ref = snapshot.ref
-        
-        print(snapshot.value)
-        let data = snapshot.value as! Dictionary<String, Any>
-        
-        self.groupName = data["groupName"] as! String
-        self.id = data["id"] as! Int
-        self.masterUid = data["masterUid"] as! String
-        self.memberUid = ["ㅁㄴㅇㄹ","ㅁㄴㅇㄹ"]
-        self.memberName = ["ㄴㅇㄹㅎ","ㄴㅇㄹㅎ"]
-        
+    let x: AnyObject = NSNull()
+    
+    init(groupName : String, id: Int, masterUid : String, memberName :[String], memberUid : [String]) {
+        self.groupName = groupName
+        self.id = id;
+        self.masterUid = masterUid
+        self.memberName = memberName
+        self.memberUid = memberUid
+    }
+    
+
+    var _gName : String{
+        get{
+            return self.groupName
+        }
     }
     
 }

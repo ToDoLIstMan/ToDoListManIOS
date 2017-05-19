@@ -15,6 +15,7 @@ class GroupViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     var names: [group] = []
     var ref: FIRDatabaseReference!
+    var count = 0
     
     
     override func viewDidLoad() {
@@ -22,19 +23,46 @@ class GroupViewController: UIViewController {
      //   FIRApp.configure()
         
         tableView.dataSource = self
-        tableView.delegate = self as! UITableViewDelegate
+        tableView.delegate = self as? UITableViewDelegate
         
         self.ref = FIRDatabase.database().reference()
-      
-        self.ref.child("group").observe(.value, with: { (snapshot) -> Void in
-            for itemSnapShot in snapshot.children {
-                    let item = group(snapshot: itemSnapShot as! FIRDataSnapshot)
-                    print(item.groupName)
-                self.names.append(item)
-                self.tableView.insertRows(at: [IndexPath(row: self.names.count-1,section: 0)], with: UITableViewRowAnimation.automatic)
+
+        self.ref.child("group").observe(FIRDataEventType.value, with: { (snapshot) -> Void in
+            self.count = 0
+            
+            for itemSnapshot in snapshot.children {
+                self.count += 1
+                let a = (itemSnapshot as! FIRDataSnapshot).value as! NSDictionary
+                print(self.count)
+                var memberName = [String?]()
+                var memberUid = [String?]()
                 
+                var memberNameRst = [String]()
+                var memberUidRst = [String]()
+
+                if a["memberName"] != nil {
+                    memberName = (a["memberName"] as! [String?]).flatMap { $0 }
+                    for s : String? in memberName {
+                        if s != nil {
+                            memberNameRst.append(s!)
+                        }
+                    }
+                    memberUid = (a["memberUid"] as! [String?]).flatMap { $0 }
+                    for s : String? in memberName {
+                        if s != nil {
+                            memberUidRst.append(s!)
+                        }
+                    }
+                }
+               let item = group(groupName: a["groupName"] as! String,id: a["id"]  as! Int,
+                                 masterUid: a["masterUid"]  as! String,
+                                 memberName: memberNameRst ,
+                                 memberUid: memberUidRst )
+             //   print()
+                self.names.append(item)
+            
+            self.tableView.insertRows(at: [IndexPath(row: self.names.count-1,section: 0)], with: UITableViewRowAnimation.automatic)
             }
-           
         })
         
         
@@ -78,11 +106,18 @@ class GroupViewController: UIViewController {
         
         let saveAction = UIAlertAction(title: "확인", style: .default, handler: {
             alert -> Void in
-            
+            let dummy = [String]()
             let firstTextField = alertController.textFields![0] as UITextField
-        //    self.names.append(newGroup)
+            
+        
+            self.ref.child("group").child(String(self.count)).setValue(["groupName":firstTextField.text,
+                                                                "id":self.count,
+                                                                "masterUid":FIRAuth.auth()?.currentUser?.uid])
+            self.ref.child("group").child(String(self.count)).observe(.value, with: { (snapshot) in
+           //     self.names.append(group(snapshot: snapshot as! FIRDataSnapshot))
+            })
             self.tableView.beginUpdates()
-            self.tableView.insertRows(at: [IndexPath(row: (self.names.count-1), section: 0)], with: .automatic)
+            self.tableView.reloadData()
             self.tableView.endUpdates()
         
         })
@@ -91,7 +126,7 @@ class GroupViewController: UIViewController {
         alertController.addTextField { (textField : UITextField!) -> Void in
             textField.placeholder = "그룹명"
         }
-        
+    
         alertController.addAction(cancelAction)
         alertController.addAction(saveAction)
         

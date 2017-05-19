@@ -8,6 +8,7 @@ target 'ToDoListMan' do
   # Pods for ToDoListMan
   pod 'Firebase/Core'
   pod 'Firebase/Database'
+  pod 'Firebase/Auth'
   
   pod 'FacebookCore'
   pod 'FacebookLogin'

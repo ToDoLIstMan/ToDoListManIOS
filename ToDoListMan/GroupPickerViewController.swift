@@ -11,8 +11,11 @@ import UIKit
 class GroupPickerViewController: UIViewController {
 
     @IBOutlet weak var groupPicker: UIPickerView!
+    
+    var myGroup :[group] = []
     override func viewDidLoad() {
         super.viewDidLoad()
+        
 
         // Do any additional setup after loading the view.
     }
@@ -34,10 +37,25 @@ class GroupPickerViewController: UIViewController {
     */
     
     
+    func numberOfComponentsInPickerView(pickerView: UIPickerView) -> Int {
+        return 1
+    }
+    
+    func pickerView(pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return myGroup.count
+    }
+    
+    func pickerView(pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        return myGroup[row].groupName
+    }
+    
+    
     @IBAction func btnAccClicked(_ sender: Any) {
     }
 
     @IBAction func btnCancelClicked(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)
     }
+    
+    
 }
