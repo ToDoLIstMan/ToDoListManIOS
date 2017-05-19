@@ -17,16 +17,19 @@ class work {
     var startTime : String!
     var title : String!
     var id : Int!
+    var name = [String]()
+    var uId = [String]()
+    var isDone = [Bool] ()
     
-    init(snapshot: FIRDataSnapshot) {
-        ref = snapshot.ref
-        
-        var data = snapshot.value as! Dictionary<String, Any>
-        
-        id = data["id"] as! Int
-        title = data["title"] as! String
-        detail = data["detail"] as! String
-        startTime = data["startTime"] as! String
-        endTime  = data["endTime"] as! String
+    //int id, String title, String detail, String startTime, String endTime,List<String> name,List<String> uId,List<Boolean> isDone
+    init(id :Int, title : String, detail : String, startTime : String, endTime : String, name : [String], uId : [String], isDone : [Bool]) {
+        self.id = id
+        self.title = title
+        self.detail = detail
+        self.startTime = startTime
+        self.endTime = endTime
+        self.name = name
+        self.uId = uId
+        self.isDone = isDone
     }
 }

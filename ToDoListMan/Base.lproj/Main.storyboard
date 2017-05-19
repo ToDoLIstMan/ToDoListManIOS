@@ -103,7 +103,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="adsfadsf" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="n0X-mI-p4f">
-                                                    <rect key="frame" x="8" y="65" width="67" height="21"/>
+                                                    <rect key="frame" x="8" y="65" width="294" height="21"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
@@ -135,10 +135,11 @@
                         <barButtonItem key="leftBarButtonItem" style="plain" systemItem="search" id="99w-6F-FMy">
                             <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <connections>
+                                <action selector="btnChangeGroup:" destination="ZaL-Qe-Lda" id="zlo-Ro-K3d"/>
                                 <segue destination="xzV-EX-Dt9" kind="presentation" identifier="segList" id="pWy-Uy-zzY"/>
                             </connections>
                         </barButtonItem>
-                        <segmentedControl key="titleView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" segmentControlStyle="plain" selectedSegmentIndex="0" id="gu1-kU-sd3">
+                        <segmentedControl key="titleView" opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" segmentControlStyle="plain" selectedSegmentIndex="0" id="gu1-kU-sd3">
                             <rect key="frame" x="89" y="7" width="198" height="30"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                             <segments>
@@ -208,6 +209,7 @@
                                         <state key="normal" title="확인"/>
                                         <connections>
                                             <action selector="btnAccClicked:" destination="xzV-EX-Dt9" eventType="touchUpInside" id="6jG-Y6-oPz"/>
+                                            <segue destination="ZaL-Qe-Lda" kind="show" identifier="segListPre" id="Slh-78-KqD"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bA2-56-V3n">
@@ -759,4 +761,7 @@
     <resources>
         <image name=" " width="16" height="16"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="Slh-78-KqD"/>
+    </inferredMetricsTieBreakers>
 </document>

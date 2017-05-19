@@ -7,10 +7,8 @@
 //
 
 import Foundation
-import FirebaseDatabase
 
 class user{
-    var ref: FIRDatabaseReference?
     
     var rank : String
     var name : String
@@ -19,15 +17,15 @@ class user{
     var masterGroups = [Int]()
     var masterGroupName = [String]()
     
-    init(snapshot: FIRDataSnapshot) {
-        ref = snapshot.ref
+    
+    //String name, String rank, List<Integer> groups, List<String> groupName, List<Integer> masterGroups, List<String> masterGroupName
+    init(name : String, rank : String, groups : [Int], groupName : [String], masterGroups : [Int], masterGroupName : [String]) {
         
-        let data = snapshot.value as! Dictionary<String, Any>
-        self.rank = data["rank"] as! String
-        self.name = data["name"] as! String
-        self.groups.append(contentsOf: (data["groups"] as! [Int]))
-        self.groupName.append(contentsOf: data["groupName"] as! [String])
-        self.masterGroups.append(contentsOf: data["masterGroups"] as! [Int])
-        self.masterGroupName.append(contentsOf: data["masterGroupName"] as! [String])
+        self.rank = rank
+        self.name = name
+        self.groups = groups
+        self.groupName = groupName
+        self.masterGroups = masterGroups
+        self.masterGroupName = masterGroupName
     }
 }

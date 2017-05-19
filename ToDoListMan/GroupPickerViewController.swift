@@ -8,15 +8,19 @@
 
 import UIKit
 
-class GroupPickerViewController: UIViewController {
+class GroupPickerViewController: UIViewController,UIPickerViewDelegate {
 
     @IBOutlet weak var groupPicker: UIPickerView!
     
-    var myGroup :[group] = []
+    var myGroup : [String] = []
+    var myGroupId : [Int] = []
+    var pickGroup = ""
+    var pickGrpId = -1
     override func viewDidLoad() {
         super.viewDidLoad()
+    
+        self.groupPicker.delegate = self;
         
-
         // Do any additional setup after loading the view.
     }
 
@@ -35,22 +39,24 @@ class GroupPickerViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
-    
-    
     func numberOfComponentsInPickerView(pickerView: UIPickerView) -> Int {
         return 1
     }
+ 
     
-    func pickerView(pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
         return myGroup.count
     }
     
-    func pickerView(pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        return myGroup[row].groupName
+    func pickerView(pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String! {
+        self.pickGrpId = self.myGroupId[row]
+        self.pickGroup = self.myGroup[row]
+        return myGroup[row]
     }
     
     
     @IBAction func btnAccClicked(_ sender: Any) {
+        print(self.pickGroup)
     }
 
     @IBAction func btnCancelClicked(_ sender: Any) {

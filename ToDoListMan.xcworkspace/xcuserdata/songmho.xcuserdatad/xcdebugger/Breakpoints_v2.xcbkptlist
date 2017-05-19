@@ -58,11 +58,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MainViewController.swift"
-            timestampString = "515839959.963918"
+            timestampString = "516914134.086781"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "106"
-            endingLineNumber = "106"
+            startingLineNumber = "214"
+            endingLineNumber = "214"
             landmarkName = "tableView(_:cellForRowAt:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -74,11 +74,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MainViewController.swift"
-            timestampString = "515839959.963918"
+            timestampString = "516914134.086781"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "125"
-            endingLineNumber = "125"
+            startingLineNumber = "241"
+            endingLineNumber = "241"
             landmarkName = "MainViewController"
             landmarkType = "4">
          </BreakpointContent>
@@ -90,11 +90,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MainViewController.swift"
-            timestampString = "515839959.963918"
+            timestampString = "516914134.086781"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "89"
-            endingLineNumber = "89"
+            startingLineNumber = "197"
+            endingLineNumber = "197"
             landmarkName = "MainViewController"
             landmarkType = "4">
          </BreakpointContent>
@@ -231,11 +231,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ToDoListMan/user.swift"
-            timestampString = "515310014.143827"
+            timestampString = "516910587.623548"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "33"
-            endingLineNumber = "33"
+            startingLineNumber = "31"
+            endingLineNumber = "31"
             landmarkName = "user"
             landmarkType = "3">
          </BreakpointContent>
@@ -247,28 +247,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ToDoListMan/user.swift"
-            timestampString = "515310078.276264"
+            timestampString = "516910587.623548"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "30"
-            endingLineNumber = "30"
-            landmarkName = "init(snapshot:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "ToDoListMan/user.swift"
-            timestampString = "515310261.178357"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "26"
-            endingLineNumber = "26"
-            landmarkName = "init(snapshot:)"
+            startingLineNumber = "28"
+            endingLineNumber = "28"
+            landmarkName = "init(name:rank:groups:groupName:masterGroups:masterGroupName:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -461,6 +445,134 @@
             startingLineNumber = "12"
             endingLineNumber = "12"
             landmarkName = "FormatViewController"
+            landmarkType = "3">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MainViewController.swift"
+            timestampString = "516911976.58835"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "44"
+            endingLineNumber = "44"
+            landmarkName = "viewDidLoad()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "ToDoListMan.MainViewController.viewDidLoad () -&gt; ()"
+                  moduleName = "ToDoListMan"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/songmho/Projects/IOS/ToDoListManIOS/MainViewController.swift"
+                  timestampString = "516903378.494634"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "33"
+                  endingLineNumber = "33"
+                  offsetFromSymbolStart = "670">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "ToDoListMan.MainViewController.(viewDidLoad () -&gt; ()).(closure #1)"
+                  moduleName = "ToDoListMan"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/songmho/Projects/IOS/ToDoListManIOS/MainViewController.swift"
+                  timestampString = "516903378.503776"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "34"
+                  endingLineNumber = "34"
+                  offsetFromSymbolStart = "28">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MainViewController.swift"
+            timestampString = "516914134.086781"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "150"
+            endingLineNumber = "150"
+            landmarkName = "loadData(index:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ToDoListMan/user.swift"
+            timestampString = "516910587.623548"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "22"
+            endingLineNumber = "22"
+            landmarkName = "init(name:rank:groups:groupName:masterGroups:masterGroupName:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "ToDoListMan.user.init (name : Swift.String, rank : Swift.String, groups : Swift.Array&lt;Swift.Int&gt;, groupName : Swift.Array&lt;Swift.String&gt;, masterGroups : Swift.Array&lt;Swift.Int&gt;, masterGroupName : Swift.Array&lt;Swift.String&gt;) -&gt; ToDoListMan.user"
+                  moduleName = "ToDoListMan"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/songmho/Projects/IOS/ToDoListManIOS/ToDoListMan/user.swift"
+                  timestampString = "516911829.867125"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "15"
+                  endingLineNumber = "15"
+                  offsetFromSymbolStart = "74">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "ToDoListMan.user.__allocating_init (name : Swift.String, rank : Swift.String, groups : Swift.Array&lt;Swift.Int&gt;, groupName : Swift.Array&lt;Swift.String&gt;, masterGroups : Swift.Array&lt;Swift.Int&gt;, masterGroupName : Swift.Array&lt;Swift.String&gt;) -&gt; ToDoListMan.user"
+                  moduleName = "ToDoListMan"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/songmho/Projects/IOS/ToDoListManIOS/ToDoListMan/user.swift"
+                  timestampString = "516911829.872549"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "29">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ToDoListMan/GroupPickerViewController.swift"
+            timestampString = "516911578.39859"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "11"
+            endingLineNumber = "11"
+            landmarkName = "GroupPickerViewController"
             landmarkType = "3">
          </BreakpointContent>
       </BreakpointProxy>
