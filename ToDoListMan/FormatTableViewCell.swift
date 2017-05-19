@@ -10,6 +10,7 @@ import UIKit
 
 class FormatTableViewCell: UITableViewCell {
 
+    @IBOutlet weak var txtFormatName: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

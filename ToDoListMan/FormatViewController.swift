@@ -10,7 +10,7 @@ import UIKit
 import Firebase
 
 class FormatViewController: UIViewController {
-    var names:[format] = []
+    var names:[String] = []
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var btnAddFormat: UIBarButtonItem!
     var ref: FIRDatabaseReference!
@@ -25,24 +25,16 @@ class FormatViewController: UIViewController {
         
         self.ref = FIRDatabase.database().reference()
         
-        self.ref.child("format").observe(FIRDataEventType.value, with: { (snapshot) -> Void in
+        self.ref.child("format").child((FIRAuth.auth()?.currentUser?.uid)!).observe(FIRDataEventType.value, with: { (snapshot) -> Void in
             self.count = 0
-            
             for itemSnapshot in snapshot.children {
                 self.count += 1
-                let a = (itemSnapshot as! FIRDataSnapshot).value as! NSDictionary
-                print(self.count)
-
-                //(planName : String, id: Int, detail : String, startTime : String, endTime : String)
-                let item = format(planName : a["planName"] as! String,id : a["id"]  as! Int,
-                                 detail : a["detail"]  as! String,
-                                 startTime : a["startTime"] as! String ,
-                                 endTime: a["endTime"] as! String )
-                //   print()
-                self.names.append(item)
+                
+                self.names.append((itemSnapshot as! FIRDataSnapshot).key as String!)
                 
                 self.tableView.insertRows(at: [IndexPath(row: self.names.count-1,section: 0)], with: UITableViewRowAnimation.automatic)
             }
+            
         })
 
     }
@@ -74,10 +66,10 @@ extension FormatViewController:UITableViewDataSource{
             return names.count }
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell { // 첫 번째 인자로 등록한 identifier, cell은 as 키워드로 앞서 만든 custom cell class화 해준다.
-        let cell = tableView.dequeueReusableCell(withIdentifier: "GroupTableViewCell", for: indexPath) as! GroupTableViewCell
-        cell.txtGroupName.text = names[indexPath.row].planName
-        
+        let cell = tableView.dequeueReusableCell(withIdentifier: "FormatTableViewCell", for: indexPath) as! FormatTableViewCell
+        cell.txtFormatName.text = names[indexPath.row]
         return cell }
+    
     
 }
 
