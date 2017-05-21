@@ -10,10 +10,18 @@ import UIKit
 
 class WorkDetailViewController: UIViewController {
 
+    @IBOutlet weak var txtTitle: UILabel!
+    @IBOutlet weak var txtTime: UILabel!
+    @IBOutlet weak var txtPeople: UITextView!
+    @IBOutlet weak var txtDetail: UITextView!
+    @IBOutlet weak var btnFinish: UIButton!
+    @IBOutlet weak var btnPostpone: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        self.title = "hello"
     }
 
     override func didReceiveMemoryWarning() {
@@ -21,7 +29,10 @@ class WorkDetailViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    @IBAction func btnFinishclicked(_ sender: Any) {
+    }
 
+    @IBOutlet weak var btnPostponeClicked: UIButton!
     /*
     // MARK: - Navigation
 
