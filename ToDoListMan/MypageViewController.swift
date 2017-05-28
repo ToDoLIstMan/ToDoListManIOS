@@ -1,34 +1,31 @@
 //
-//  WorkDetailViewController.swift
+//  MypageViewController.swift
 //  ToDoListMan
 //
-//  Created by songmho on 2017. 4. 26..
+//  Created by songmho on 2017. 5. 28..
 //  Copyright © 2017년 tdl. All rights reserved.
 //
 
 import UIKit
+import Firebase
 
-class WorkDetailViewController: UIViewController {
+class MypageViewController: UIViewController {
 
-    @IBOutlet weak var txtTitle: UILabel!
-    @IBOutlet weak var txtTime: UILabel!
-    @IBOutlet weak var txtPeople: UITextView!
-    @IBOutlet weak var txtDetail: UITextView!
-    @IBOutlet weak var btnFinish: UIButton!
-    @IBOutlet weak var btnPostpone: UIButton!
-    
-    
-    var w : work!
-    
+    @IBOutlet weak var txtName: UILabel!
+    @IBOutlet weak var txtRank: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        self.title = w.title
-        self.txtTitle.text = w.title
-        self.txtTime.text = w.startTime
-        self.txtPeople.text = String(describing: w.name)
-        self.txtDetail.text = w.detail
+        
+        var ref = FIRDatabase.database().reference()
+        ref.child("user").child((FIRAuth.auth()?.currentUser?.uid)!).observe(.value, with: { (dataSnapshot) in
+            print(dataSnapshot)
+            let a = dataSnapshot.value as! NSDictionary
+            self.txtName.text = a["name"] as! String!
+            self.txtRank.text = a["rank"] as! String!
+        })
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -36,10 +33,7 @@ class WorkDetailViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    @IBAction func btnFinishclicked(_ sender: Any) {
-    }
 
-    @IBOutlet weak var btnPostponeClicked: UIButton!
     /*
     // MARK: - Navigation
 

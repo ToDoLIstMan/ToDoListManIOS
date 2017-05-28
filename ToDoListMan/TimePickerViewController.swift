@@ -12,6 +12,9 @@ class TimePickerViewController: UIViewController {
 
     @IBOutlet weak var datePicker: UIDatePicker!
     @IBOutlet weak var popView: UIView!
+    @IBOutlet weak var btnOk: UIButton!
+    
+    var date : String!
     override func viewDidLoad() {
         super.viewDidLoad()
         popView.layer.cornerRadius = 5
@@ -37,16 +40,27 @@ class TimePickerViewController: UIViewController {
     */
 
     
+
     @IBAction func btnActClicked(_ sender: Any) {
         datePicker.datePickerMode = UIDatePickerMode.date
         var dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "yyyy-M-d"
+        dateFormatter.dateFormat = "yyyy-MM-dd"
         var selectedDate = dateFormatter.string(from: datePicker.date)
+        self.date = selectedDate
         print(selectedDate)
         
-        dismiss(animated: true, completion: nil)
+      //  performSegue(withIdentifier: "unWindDate", sender: self)
+        
     }
     @IBAction func btnCancelClicked(_ sender: Any) {
         dismiss(animated: true, completion: nil)
+    }
+    
+    func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "unwindDate" {
+            let sendtimer=segue.destination as! MainViewController
+            sendtimer.date = self.date
+
+        }
     }
 }

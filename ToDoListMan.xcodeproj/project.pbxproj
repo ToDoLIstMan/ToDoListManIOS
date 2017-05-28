@@ -32,6 +32,9 @@
 		A97BB7E61EA6001000B47BF0 /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A97BB7E21EA6001000B47BF0 /* FBSDKCoreKit.framework */; };
 		A97BB7E71EA6001000B47BF0 /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A97BB7E31EA6001000B47BF0 /* FBSDKLoginKit.framework */; };
 		A97BB7E81EA6001000B47BF0 /* FBSDKMessengerShareKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A97BB7E41EA6001000B47BF0 /* FBSDKMessengerShareKit.framework */; };
+		A9D474CD1EDAD49B0082EA94 /* MoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9D474CC1EDAD49B0082EA94 /* MoreViewController.swift */; };
+		A9D474CF1EDAD4A80082EA94 /* MypageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9D474CE1EDAD4A80082EA94 /* MypageViewController.swift */; };
+		A9D474D21EDB14DE0082EA94 /* SetUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9D474D11EDB14DE0082EA94 /* SetUpViewController.swift */; };
 		A9DCA5B61EB6DC69007DB81C /* group.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9DCA5B51EB6DC69007DB81C /* group.swift */; };
 		A9DCA5B81EB7003A007DB81C /* user.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9DCA5B71EB7003A007DB81C /* user.swift */; };
 		A9DCA5BA1EB70047007DB81C /* work.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9DCA5B91EB70047007DB81C /* work.swift */; };
@@ -67,6 +70,9 @@
 		A97BB7E21EA6001000B47BF0 /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKCoreKit.framework; path = ../../../Documents/FacebookSDK/FBSDKCoreKit.framework; sourceTree = "<group>"; };
 		A97BB7E31EA6001000B47BF0 /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKLoginKit.framework; path = ../../../Documents/FacebookSDK/FBSDKLoginKit.framework; sourceTree = "<group>"; };
 		A97BB7E41EA6001000B47BF0 /* FBSDKMessengerShareKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKMessengerShareKit.framework; path = ../../../Documents/FacebookSDK/FBSDKMessengerShareKit.framework; sourceTree = "<group>"; };
+		A9D474CC1EDAD49B0082EA94 /* MoreViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoreViewController.swift; sourceTree = "<group>"; };
+		A9D474CE1EDAD4A80082EA94 /* MypageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MypageViewController.swift; sourceTree = "<group>"; };
+		A9D474D11EDB14DE0082EA94 /* SetUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SetUpViewController.swift; sourceTree = "<group>"; };
 		A9DCA5B51EB6DC69007DB81C /* group.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = group.swift; sourceTree = "<group>"; };
 		A9DCA5B71EB7003A007DB81C /* user.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = user.swift; sourceTree = "<group>"; };
 		A9DCA5B91EB70047007DB81C /* work.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = work.swift; sourceTree = "<group>"; };
@@ -158,6 +164,9 @@
 				A93638741EB1A9960008A713 /* FormatViewController.swift */,
 				A93638761EB1A9C20008A713 /* FormatAddViewController.swift */,
 				A93638781EB1A9EA0008A713 /* FormatDetailViewController.swift */,
+				A9D474CC1EDAD49B0082EA94 /* MoreViewController.swift */,
+				A9D474CE1EDAD4A80082EA94 /* MypageViewController.swift */,
+				A9D474D11EDB14DE0082EA94 /* SetUpViewController.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -309,6 +318,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A9D474CD1EDAD49B0082EA94 /* MoreViewController.swift in Sources */,
 				A93638731EB195360008A713 /* GroupPickerViewController.swift in Sources */,
 				A95D1A8A1EB04B8500DA38B1 /* PlanTableFormatViewCell.swift in Sources */,
 				A9346EC81ECE75C900490592 /* format.swift in Sources */,
@@ -328,7 +338,9 @@
 				A9346ECC1ECEFE0000490592 /* FormatTableViewCell.swift in Sources */,
 				A9330B601EAFCB800072E326 /* GroupTableViewCell.swift in Sources */,
 				A908E9D01E9DF8230059FA10 /* ViewController.swift in Sources */,
+				A9D474D21EDB14DE0082EA94 /* SetUpViewController.swift in Sources */,
 				A908E9CE1E9DF8230059FA10 /* AppDelegate.swift in Sources */,
+				A9D474CF1EDAD4A80082EA94 /* MypageViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

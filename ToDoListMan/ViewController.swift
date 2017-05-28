@@ -20,13 +20,15 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
 
-        print("aㅁㅁㅁㅁㅁdf")
-        if FIRAuth.auth()?.currentUser != nil {
-            let storyboard: UIStoryboard = UIStoryboard(name: "MainStoryBoard", bundle: nil)
-            let nextView = storyboard.instantiateInitialViewController()
-            self.present(nextView!, animated: true, completion: nil)
- 
         
+        if FIRAuth.auth()?.currentUser != nil {
+            
+            print(FIRAuth.auth()?.currentUser?.uid)
+            self.performSegue(withIdentifier: "segNext", sender: self)
+
+            } else {
+            
+            print("ㅇㄹㅁㅇㄹㄴㄴㅇㄹ")
         }
         
     }
@@ -34,6 +36,21 @@ class ViewController: UIViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    //화면이 뜨고난 직후 돌아가는 코드.
+    override func viewDidAppear(_ animated: Bool) {
+        if FIRAuth.auth()?.currentUser != nil {
+            
+            print(FIRAuth.auth()?.currentUser?.uid)
+            self.performSegue(withIdentifier: "segNext", sender: self)
+            
+        } else {
+            
+            print("ㅇㄹㅁㅇㄹㄴㄴㅇㄹ")
+        }
+        
+        
     }
     
     
@@ -67,10 +84,8 @@ class ViewController: UIViewController {
                                         
                                         let firstTextField = alertController.textFields![0] as UITextField
                                         
-                                        let storyboard: UIStoryboard = UIStoryboard(name: "MainStoryBoard", bundle: nil)
-                                        let nextView = storyboard.instantiateInitialViewController()
-                                        self.present(nextView!, animated: true, completion: nil)
                                         
+                                        self.performSegue(withIdentifier: "segNext", sender: self)
                                         
                                     })
                                     
@@ -90,11 +105,12 @@ class ViewController: UIViewController {
                                     
                                 }else{      //있을 경우
                                     
-                                   // self.performSegue(withIdentifier: "segNext", sender: self)
+                                    print(FIRAuth.auth()?.currentUser?.uid,"hi!")
+                                    self.performSegue(withIdentifier: "segNext", sender: self)
                                
-                                    let storyboard: UIStoryboard = UIStoryboard(name: "MainStoryBoard", bundle: nil)
-                                    let nextView = storyboard.instantiateInitialViewController()
-                                    self.present(nextView!, animated: true, completion: nil)
+                              //      let storyboard: UIStoryboard = UIStoryboard(name: "MainStoryBoard", bundle: nil)
+                              //      let nextView = storyboard.instantiateInitialViewController()
+                               //     self.present(nextView!, animated: true, completion: nil)
 
                                     
                                     

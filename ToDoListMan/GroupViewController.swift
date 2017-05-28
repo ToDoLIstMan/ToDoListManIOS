@@ -113,10 +113,10 @@ class GroupViewController: UIViewController {
             self.ref.child("group").child(String(self.count)).setValue(["groupName":firstTextField.text,
                                                                 "id":self.count,
                                                                 "masterUid":FIRAuth.auth()?.currentUser?.uid])
-            self.ref.child("group").child(String(self.count)).observe(.value, with: { (snapshot) in
-           //     self.names.append(group(snapshot: snapshot as! FIRDataSnapshot))
+           /* self.ref.child("user").child(FIRAuth.auth()?.currentUser?.uid).observe(FIRDataEventType.value, with: { (dataSnapshot) in
+                //var a =
             })
-            self.tableView.beginUpdates()
+            */self.tableView.beginUpdates()
             self.tableView.reloadData()
             self.tableView.endUpdates()
         

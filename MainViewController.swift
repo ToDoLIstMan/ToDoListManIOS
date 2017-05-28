@@ -23,6 +23,8 @@ class MainViewController: UIViewController {
     var curUserUid = ""
     var oldSeg = 0
     
+    var curWork : work!
+    
     var titles1 : [work] = []
     var titles2 : [work] = []
     var titles3 : [work] = []
@@ -41,6 +43,7 @@ class MainViewController: UIViewController {
         
         print(FIRAuth.auth()?.currentUser?.uid)
         
+        print("hi!",self.date)
         self.curUserUid = (FIRAuth.auth()?.currentUser?.uid)!
         
         listView.dataSource = self
@@ -52,11 +55,19 @@ class MainViewController: UIViewController {
         getMygroup()
         // Do any additional setup after loading the view.
     }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        
+        print("hi!",self.date)
+        
+    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    
     
     
 
@@ -69,14 +80,16 @@ class MainViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
+    @IBAction func unwindToVC1(segue:UIStoryboardSegue) {
     
+    }
 
     @IBAction func btnChangeGroup(_ sender: Any) {
         self.performSegue(withIdentifier: "segList", sender: self)
     }
     
     @IBAction func btnDateClicked(_ sender: Any) {
-        self.performSegue(withIdentifier: "segTime", sender: self)
+        self.performSegue(withIdentifier: "segDate", sender: self)
         
     }
     
@@ -111,8 +124,13 @@ class MainViewController: UIViewController {
     func getMygroup(){
         self.ref = FIRDatabase.database().reference()
         self.ref.child("user").child(self.curUserUid).observe(.value, with: { (snapShot) in
-            
-                          
+            let a = snapShot.value as! NSDictionary
+            if a["groupName"] != nil {
+                self.gName = a["groupName"] as! [String]
+                self.gUid = a["groups"] as! [Int]
+            } else {
+                
+            }
         })
     }
     
@@ -183,6 +201,14 @@ class MainViewController: UIViewController {
         })
         
     }
+
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "segDetail" {
+            let sendtimer=segue.destination as! WorkDetailViewController
+            sendtimer.w = work(id: curWork.id,  title: curWork.title, detail: curWork.detail, startTime : curWork.startTime,
+                               endTime : curWork.endTime, name: curWork.name, uId: curWork.uId, isDone: curWork.isDone )
+        }
+    }
 }
 
 
@@ -231,7 +257,17 @@ extension MainViewController:UITableViewDataSource{
 }
 
 extension MainViewController:UITableViewDelegate{
-    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        //CODE TO BE RUN ON CELL TOUCH
+        print("HI!",titles1[indexPath.row].title)
+        curWork = work(id: titles1[indexPath.row].id,  title: titles1[indexPath.row].title, detail: titles1[indexPath.row].detail, startTime:titles1[indexPath.row].startTime, endTime:titles1[indexPath.row].endTime,
+                      name: titles1[indexPath.row].name, uId: titles1[indexPath.row].uId, isDone: titles1[indexPath.row].isDone )
+        
+        
+        self.performSegue(withIdentifier: "segDetail", sender: self)
+        
+        
+    }
 }
 
 
