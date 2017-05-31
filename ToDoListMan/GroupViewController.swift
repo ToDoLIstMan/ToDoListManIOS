@@ -129,6 +129,8 @@ class GroupViewController: UIViewController {
                 self.ref.removeObserver(withHandle: handle)
                 let a = (dataSnapshot as! FIRDataSnapshot).value as! NSDictionary
                 if a["groupName"] != nil {
+                    if !(a["groupName"] as! Array<String>).contains(firstTextField.text!) {
+                        
                     var dicName = a["groupName"] as! Array<String>
                     var dicUid = a["groups"]  as! Array<Int>
                     var dicMasterName : Array<String> = []
@@ -156,10 +158,9 @@ class GroupViewController: UIViewController {
                                                                                                 "masterGroupName" : nsMasterName,
                                                                                                 "masterGroups" : nsMasterUid
                         ])
-                    
+                    }
                     
                 } else {
-                    
                     var dicMasterName : Array<String> = []
                     var dicMasterUid : Array<Int> = []
                     
@@ -168,18 +169,22 @@ class GroupViewController: UIViewController {
                         dicMasterUid = a["masterGroups"]  as! Array<Int>
                     }
                     
-                    var nsMasterName = dicMasterName as! NSArray
-                    var nsMasterUid = dicMasterUid as! NSArray
+                    var nsMasterName1 = dicMasterName as! NSArray
+                    var nsMasterUid1 = dicMasterUid as! NSArray
                     
                     dicMasterName.append(firstTextField.text!)
                     dicMasterUid.append(self.count)
                     self.ref.child("user").child((FIRAuth.auth()?.currentUser?.uid)!).updateChildValues(["groupName" : ["0" : firstTextField.text] as! NSDictionary,
                                                                                                 "groups" : ["0" : self.count ] as! NSDictionary,
-                                                                                                "masterGroupName" : nsMasterName,
-                                                                                                "masterGroups" : nsMatserUid
+                                                                                                "masterGroupName" : nsMasterName1,
+                                                                                                "masterGroups" : nsMasterUid1
                         ])
-                }
+                    }
+                    
+                
             })
+            self.ref.removeObserver(withHandle: handle)
+            
             self.tableView.reloadData()
         
         })
@@ -231,9 +236,10 @@ extension GroupViewController:UITableViewDelegate{
          //내그룹에 추가
             var handle1 : UInt = 0
             handle1 = self.ref.child("user").child((FIRAuth.auth()?.currentUser?.uid)!).observe(FIRDataEventType.value, with: { (dataSnapshot) in
-                self.ref.removeObserver(withHandle: handle1)
-                let a = (dataSnapshot as! FIRDataSnapshot).value as! NSDictionary
+                 let a = (dataSnapshot as! FIRDataSnapshot).value as! NSDictionary
                 if a["groupName"] != nil {
+                    if !(a["groups"] as! Array<Int>).contains(self.names[indexPath.row].id ) {
+                        
                     var dicName = a["groupName"] as! Array<String>
                     var dicUid = a["groups"]  as! Array<Int>
                     dicName.append(self.names[indexPath.row].groupName)
@@ -247,7 +253,7 @@ extension GroupViewController:UITableViewDelegate{
                                                                                                          "groups" : nsUid
                         ])
                     
-                    
+                    }
                 } else {
                     self.ref.child("user").child((FIRAuth.auth()?.currentUser?.uid)!).updateChildValues(["groupName" : ["0" : self.names[indexPath.row].groupName] as! NSDictionary,
                                                                                                          "groups" : ["0" : self.names[indexPath.row].id ] as! NSDictionary
@@ -257,7 +263,26 @@ extension GroupViewController:UITableViewDelegate{
             
             //그룹 찾아서 멤버에 넣기
             
+            var handle2 : UInt = 0
+            handle1 = self.ref.child("group").child(String(self.names[indexPath.row].id)).observe(FIRDataEventType.value, with: { (dataSnapShot) in
+                  let a = (dataSnapShot as! FIRDataSnapshot).value as! NSDictionary
+                if !(a["memberUid"] as! Array<String>).contains((FIRAuth.auth()?.currentUser?.uid)! ) {
+                    var dicName = a["memberName"] as! Array<String>
+                    var dicUid = a["memberUid"]  as! Array<String>
+                    dicName.append(self.curName)
+                    dicUid.append((FIRAuth.auth()?.currentUser?.uid)! )
+                
+                    var nsName = dicName as! NSArray
+                    var nsUid = dicUid as! NSArray
+                    
+                    self.ref.child("group").child(String(self.names[indexPath.row].id)).updateChildValues(["memberName" : nsName,
+                                                                                                         "memberUid" : nsUid])
+                }
+            })
             
+            
+            self.ref.removeObserver(withHandle: handle1)
+            self.ref.removeObserver(withHandle: handle2)
         })
         
         alertController.addAction(cancelAction)
