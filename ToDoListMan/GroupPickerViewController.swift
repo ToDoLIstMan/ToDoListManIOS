@@ -11,16 +11,14 @@ import UIKit
 class GroupPickerViewController: UIViewController,UIPickerViewDelegate {
 
     @IBOutlet weak var groupPicker: UIPickerView!
-    
-    var myGroup : [String] = []
-    var myGroupId : [Int] = []
+    var myGroup : [String] = ["h1","h2","h3"]
+    var myGroupId : [Int] = [1,2,3]
     var pickGroup = ""
-    var pickGrpId = -1
+    var pickGrpId :Int = -1
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-    
-        self.groupPicker.delegate = self;
-        
         // Do any additional setup after loading the view.
     }
 
@@ -48,20 +46,35 @@ class GroupPickerViewController: UIViewController,UIPickerViewDelegate {
         return myGroup.count
     }
     
-    func pickerView(pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String! {
-        self.pickGrpId = self.myGroupId[row]
-        self.pickGroup = self.myGroup[row]
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         return myGroup[row]
     }
     
     
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+       //s self.pickGrpId = self.dump[row]
+        self.pickGroup = myGroup[row]
+        pickGrpId  = myGroupId[row]
+        
+    }
+    
+    
     @IBAction func btnAccClicked(_ sender: Any) {
-        print(self.pickGroup)
+        print(self.pickGrpId)
+        
     }
 
     @IBAction func btnCancelClicked(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)
     }
     
+    func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "unWindList" {
+            let sendtimer=segue.destination as! MainViewController
+            sendtimer.curGroup = self.pickGrpId
+            
+            
+        }
+    }
     
 }

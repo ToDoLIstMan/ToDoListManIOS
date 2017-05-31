@@ -35,6 +35,8 @@
 		A9D474CD1EDAD49B0082EA94 /* MoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9D474CC1EDAD49B0082EA94 /* MoreViewController.swift */; };
 		A9D474CF1EDAD4A80082EA94 /* MypageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9D474CE1EDAD4A80082EA94 /* MypageViewController.swift */; };
 		A9D474D21EDB14DE0082EA94 /* SetUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9D474D11EDB14DE0082EA94 /* SetUpViewController.swift */; };
+		A9D474D51EDC036F0082EA94 /* enabled_checked_ios_512.png in Resources */ = {isa = PBXBuildFile; fileRef = A9D474D31EDC036F0082EA94 /* enabled_checked_ios_512.png */; };
+		A9D474D61EDC036F0082EA94 /* enabled_unchecked_ios_512.png in Resources */ = {isa = PBXBuildFile; fileRef = A9D474D41EDC036F0082EA94 /* enabled_unchecked_ios_512.png */; };
 		A9DCA5B61EB6DC69007DB81C /* group.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9DCA5B51EB6DC69007DB81C /* group.swift */; };
 		A9DCA5B81EB7003A007DB81C /* user.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9DCA5B71EB7003A007DB81C /* user.swift */; };
 		A9DCA5BA1EB70047007DB81C /* work.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9DCA5B91EB70047007DB81C /* work.swift */; };
@@ -73,6 +75,8 @@
 		A9D474CC1EDAD49B0082EA94 /* MoreViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoreViewController.swift; sourceTree = "<group>"; };
 		A9D474CE1EDAD4A80082EA94 /* MypageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MypageViewController.swift; sourceTree = "<group>"; };
 		A9D474D11EDB14DE0082EA94 /* SetUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SetUpViewController.swift; sourceTree = "<group>"; };
+		A9D474D31EDC036F0082EA94 /* enabled_checked_ios_512.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = enabled_checked_ios_512.png; path = Assets.xcassets/enabled_checked_ios_512.png; sourceTree = "<group>"; };
+		A9D474D41EDC036F0082EA94 /* enabled_unchecked_ios_512.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = enabled_unchecked_ios_512.png; path = Assets.xcassets/enabled_unchecked_ios_512.png; sourceTree = "<group>"; };
 		A9DCA5B51EB6DC69007DB81C /* group.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = group.swift; sourceTree = "<group>"; };
 		A9DCA5B71EB7003A007DB81C /* user.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = user.swift; sourceTree = "<group>"; };
 		A9DCA5B91EB70047007DB81C /* work.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = work.swift; sourceTree = "<group>"; };
@@ -145,6 +149,8 @@
 				A908E9CD1E9DF8230059FA10 /* AppDelegate.swift */,
 				A908E9D11E9DF8230059FA10 /* Main.storyboard */,
 				A908E9D41E9DF8230059FA10 /* Assets.xcassets */,
+				A9D474D31EDC036F0082EA94 /* enabled_checked_ios_512.png */,
+				A9D474D41EDC036F0082EA94 /* enabled_unchecked_ios_512.png */,
 				A908E9D61E9DF8230059FA10 /* LaunchScreen.storyboard */,
 				A908E9D91E9DF8230059FA10 /* Info.plist */,
 			);
@@ -256,10 +262,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A9D474D51EDC036F0082EA94 /* enabled_checked_ios_512.png in Resources */,
 				A908E9D81E9DF8230059FA10 /* LaunchScreen.storyboard in Resources */,
 				A9346ECA1ECEB96300490592 /* GoogleService-Info.plist in Resources */,
 				A908E9D51E9DF8230059FA10 /* Assets.xcassets in Resources */,
 				A908E9D31E9DF8230059FA10 /* Main.storyboard in Resources */,
+				A9D474D61EDC036F0082EA94 /* enabled_unchecked_ios_512.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -484,6 +492,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -510,6 +519,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

@@ -60,7 +60,8 @@ class TimePickerViewController: UIViewController {
         if segue.identifier == "unwindDate" {
             let sendtimer=segue.destination as! MainViewController
             sendtimer.date = self.date
-
+            
+            print("hi!",self.date)
         }
     }
 }

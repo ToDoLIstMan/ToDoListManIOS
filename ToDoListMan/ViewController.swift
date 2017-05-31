@@ -20,7 +20,7 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
 
-        
+        /*
         if FIRAuth.auth()?.currentUser != nil {
             
             print(FIRAuth.auth()?.currentUser?.uid)
@@ -30,7 +30,7 @@ class ViewController: UIViewController {
             
             print("ㅇㄹㅁㅇㄹㄴㄴㅇㄹ")
         }
-        
+        */
     }
 
     override func didReceiveMemoryWarning() {
@@ -60,31 +60,35 @@ class ViewController: UIViewController {
         let fbLoginManager : FBSDKLoginManager = FBSDKLoginManager()
         
         fbLoginManager.logIn(withReadPermissions: ["email"], from: self) {(result, error) in
-            if error == nil {
+            if result != nil {
                 
                 
                  let credential = FIRFacebookAuthProvider.credential(withAccessToken: FBSDKAccessToken.current().tokenString)
                 
                 FIRAuth.auth()?.signIn(with: credential) { (user, error) in
                     // ...
-                     if error == nil {
+                     if user != nil {
                         
                         print(FIRAuth.auth()?.currentUser?.uid)
                         
                         self.ref = FIRDatabase.database().reference()
                        
-                        self.ref.child("user").child((FIRAuth.auth()?.currentUser?.uid)!).observe(.value, with: { (snapshot) -> Void in
-                            for itemSnapShot in snapshot.children {
-                                if itemSnapShot == nil {      //유저가 없을 경우
+                        var handle : UInt = 0
+                        handle = self.ref.child("user").child((FIRAuth.auth()?.currentUser?.uid)!).observe(.value, with: { (snapshot) -> Void in
+                                self.ref.removeObserver(withHandle: handle)
+                                if !snapshot.exists() {      //유저가 없을 경우
                                     
-                                    let alertController = UIAlertController(title: "계급을 입력하세요.", message: "", preferredStyle: .alert)
+                                    let alertController = UIAlertController(title: "이름과 계급을 입력하세요.", message: "", preferredStyle: .alert)
                                     
                                     let saveAction = UIAlertAction(title: "Save", style: .default, handler: {
                                         alert -> Void in
                                         
                                         let firstTextField = alertController.textFields![0] as UITextField
                                         
+                                        let secondTextField = alertController.textFields![1] as UITextField
                                         
+                                         self.ref.child("user").child((FIRAuth.auth()?.currentUser?.uid)!).setValue(["name":firstTextField.text,
+                                                                                                                     "rank":secondTextField.text])
                                         self.performSegue(withIdentifier: "segNext", sender: self)
                                         
                                     })
@@ -95,7 +99,10 @@ class ViewController: UIViewController {
                                     })
                                     
                                     alertController.addTextField { (textField : UITextField!) -> Void in
-                                        textField.placeholder = "Enter First Name"
+                                        textField.placeholder = "이름을 입력하세요."
+                                    }
+                                    alertController.addTextField { (textField : UITextField!) -> Void in
+                                        textField.placeholder = "계급을 입력하세요."
                                     }
                                     
                                     alertController.addAction(saveAction)
@@ -115,8 +122,7 @@ class ViewController: UIViewController {
                                     
                                     
                                 }
-                                
-                            }
+                             
                             
                         })
 

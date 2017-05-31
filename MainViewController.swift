@@ -18,7 +18,7 @@ class MainViewController: UIViewController {
     var ref: FIRDatabaseReference!
     var works :[work] = []
     var myGroups : [Int] = []
-    var curGroup = "0"
+    var curGroup = 0
     var date = "2017-05-20"
     var curUserUid = ""
     var oldSeg = 0
@@ -41,9 +41,9 @@ class MainViewController: UIViewController {
         super.viewDidLoad()
         
         
+        print("hi!",self.date)
         print(FIRAuth.auth()?.currentUser?.uid)
         
-        print("hi!",self.date)
         self.curUserUid = (FIRAuth.auth()?.currentUser?.uid)!
         
         listView.dataSource = self
@@ -57,8 +57,7 @@ class MainViewController: UIViewController {
     }
     
     override func viewDidAppear(_ animated: Bool) {
-        
-        print("hi!",self.date)
+
         
     }
 
@@ -81,14 +80,24 @@ class MainViewController: UIViewController {
     }
     */
     @IBAction func unwindToVC1(segue:UIStoryboardSegue) {
-    
+        if let sourceViewController = segue.source as? TimePickerViewController {
+            self.date = sourceViewController.date
+        }
     }
 
-    @IBAction func btnChangeGroup(_ sender: Any) {
+    @IBAction func unwindFromList(segue:UIStoryboardSegue) {
+        
+        if let sourceViewController = segue.source as? GroupPickerViewController {
+            self.curGroup = sourceViewController.pickGrpId
+        }
+    }
+    
+    @IBAction func btnChangeGroup(_ sender: AnyObject) {
         self.performSegue(withIdentifier: "segList", sender: self)
     }
     
-    @IBAction func btnDateClicked(_ sender: Any) {
+    @IBAction func btnDateClicked(_ sender: AnyObject) {
+        
         self.performSegue(withIdentifier: "segDate", sender: self)
         
     }
@@ -97,7 +106,6 @@ class MainViewController: UIViewController {
         if segue.identifier == "segList" {
             let sendtimer=segue.destination as! GroupPickerViewController
             sendtimer.myGroup = self.gName
-            sendtimer.myGroupId = self.gUid
         }
         else {
             
@@ -124,12 +132,15 @@ class MainViewController: UIViewController {
     func getMygroup(){
         self.ref = FIRDatabase.database().reference()
         self.ref.child("user").child(self.curUserUid).observe(.value, with: { (snapShot) in
-            let a = snapShot.value as! NSDictionary
-            if a["groupName"] != nil {
-                self.gName = a["groupName"] as! [String]
-                self.gUid = a["groups"] as! [Int]
-            } else {
-                
+           // 그룹 없는거 체크해야 함.
+            if snapShot.hasChildren() {
+                let a = snapShot.value as! NSDictionary
+                if a["groupName"] != nil {
+                    self.gName = a["groupName"] as! [String]
+                    self.gUid = a["groups"] as! [Int]
+                } else {
+                    
+                }
             }
         })
     }
@@ -151,7 +162,7 @@ class MainViewController: UIViewController {
         }
 
         self.ref = FIRDatabase.database().reference()
-        self.ref.child("work").child(curGroup).child(date).observe(.value, with: { (snapShot) in
+        self.ref.child("work").child(String(curGroup)).child(date).observe(.value, with: { (snapShot) in
             if snapShot.exists() {
                 var i = 0
                 self.listView.reloadData()
@@ -162,7 +173,7 @@ class MainViewController: UIViewController {
                     var isdone = a["isDone"] as! [Bool]
                     
                     //int id, String title, String detail, String startTime, String endTime,List<String> name,List<String> uId,List<Boolean> isDone
-                    let item = work(id: Int(self.curGroup) as! Int,  title: a["title"] as! String, detail: a["detail"] as! String,
+                    let item = work(id: self.curGroup as! Int,  title: a["title"] as! String, detail: a["detail"] as! String,
                                     startTime: a["startTime"] as! String, endTime: a["endTime"] as! String,
                                     name: a["name"] as! [String], uId: a["uId"] as! [String], isDone: isdone )
                     
@@ -207,6 +218,10 @@ class MainViewController: UIViewController {
             let sendtimer=segue.destination as! WorkDetailViewController
             sendtimer.w = work(id: curWork.id,  title: curWork.title, detail: curWork.detail, startTime : curWork.startTime,
                                endTime : curWork.endTime, name: curWork.name, uId: curWork.uId, isDone: curWork.isDone )
+        } else if segue.identifier == "segList" {
+            let sendtimer=segue.destination as! GroupPickerViewController
+       //     sendtimer.myGroup =["dd","dd"]
+
         }
     }
 }
