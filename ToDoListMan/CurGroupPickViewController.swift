@@ -1,22 +1,15 @@
 //
-//  AddPlanViewController.swift
+//  CurGroupPickViewController.swift
 //  ToDoListMan
 //
-//  Created by songmho on 2017. 5. 31..
+//  Created by songmho on 2017. 6. 1..
 //  Copyright © 2017년 tdl. All rights reserved.
 //
 
 import UIKit
 
-class AddPlanViewController: UIViewController {
+class CurGroupPickViewController: UIViewController {
 
-    @IBOutlet weak var editTitle: UITextField!
-    @IBOutlet weak var editDetail: UITextField!
-    @IBOutlet weak var startTime: UIDatePicker!
-    @IBOutlet weak var endTime: UIDatePicker!
-    
-    var curGroup : String = ""
-    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -28,9 +21,6 @@ class AddPlanViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    @IBAction func btnCancelClicked(_ sender: Any) {
-        self.dismiss(animated: true, completion: nil)
-    }
 
     /*
     // MARK: - Navigation
@@ -41,5 +31,9 @@ class AddPlanViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
+    @IBAction func btnCancelClicked(_ sender: Any) {
+        
+        self.dismiss(animated: true, completion: nil)
+    }
 
 }

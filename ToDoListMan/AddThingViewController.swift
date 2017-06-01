@@ -32,4 +32,7 @@ class AddThingViewController: UIViewController {
     }
     */
 
+    @IBAction func btnCancelClicked(_ sender: Any) {
+        self.dismiss(animated: true, completion: nil)
+    }
 }

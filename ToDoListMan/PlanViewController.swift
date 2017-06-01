@@ -12,10 +12,14 @@ class PlanViewController: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
     
-    var sections = ["포맷 설정","일 추가"]
+    var sections = ["일 추가"]
     var aa = ["그룹선택 ","포맷선택","당번선택", "날짜선택"]
     var aaa :[String] = []
     
+    @IBOutlet weak var txtFormat: UILabel!
+    @IBOutlet weak var txtGroup: UILabel!
+    @IBOutlet weak var txtPeople: UILabel!
+    @IBOutlet weak var txtDate: UILabel!
     
     
     override func viewDidLoad() {
@@ -33,6 +37,26 @@ class PlanViewController: UIViewController {
     }
     
 
+    @IBAction func btnFormatClicked(_ sender: Any) {
+        
+        self.performSegue(withIdentifier: "segCurFormatPick", sender: self)
+    }
+    
+    
+    @IBAction func btnGroupClicked(_ sender: Any) {
+        
+        self.performSegue(withIdentifier: "segCurGroupPick", sender: self)
+    }
+    
+    @IBAction func btnPeopleClicked(_ sender: Any) {
+        
+        self.performSegue(withIdentifier: "segThing", sender: self)
+    }
+    
+    @IBAction func btnTimeClicked(_ sender: Any) {
+        self.performSegue(withIdentifier: "segCurDatePick", sender: self)
+        
+    }
     
     /*
     // MARK: - Navigation
@@ -43,57 +67,65 @@ class PlanViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
+    
+    @IBAction func unwindToWorkAdded(segue:UIStoryboardSegue) {
+        if let sourceViewController = segue.source as? AddPlanViewController {
+        }
+    }
 
 
     @IBAction func sendClicked(_ sender: Any) {
+        
+        
     }
     
+    @IBAction func btnWorkAddClicked(_ sender: Any) {
+        
+        self.performSegue(withIdentifier: "segWork", sender: self)
+    }
+    
+    @IBAction func unwindToCurFormatAdd(segue:UIStoryboardSegue) {
+        if let sourceViewController = segue.source as? CurFormatPickViewController {
+        }
+    }
+    @IBAction func unwindToCurGroupAdd(segue:UIStoryboardSegue) {
+        if let sourceViewController = segue.source as? CurGroupPickViewController {
+        }
+    }
+    @IBAction func unwindToCurDateAdd(segue:UIStoryboardSegue) {
+        if let sourceViewController = segue.source as? CurDatePickViewController {
+        }
+    }
+    @IBAction func unwindToCurThingAdd(segue:UIStoryboardSegue) {
+        if let sourceViewController = segue.source as? AddThingViewController {
+        }
+    }
+    @IBAction func unwindToWorkAdd(segue:UIStoryboardSegue) {
+        if let sourceViewController = segue.source as? AddPlanViewController {
+        }
+    }
 }
 
 extension PlanViewController:UITableViewDataSource{
     
     func numberOfSections(in tableView: UITableView) -> Int {
-        return 2
+        return 1
     }
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        if section == 0 {
             return self.sections[section]
-        }
-        else {
-            return self.sections[section]
-        }
-
     }
    
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if section==0 {
-            return aa.count
-        }
-        else {
-            return aaa.count
-        }
+        return aaa.count
     }
 
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
-       
-        
-        if indexPath.section == 0 {
-             let cell = tableView.dequeueReusableCell(withIdentifier: "PlanTableFormatViewCell", for: indexPath) as! PlanTableFormatViewCell
-            //set the data here
-            cell.txtTitle.text = aa[indexPath.row]
-            cell.btnGotoDetail.titleLabel?.text = "추가"
-            return cell
-        }
-        else {
-            let cell = tableView.dequeueReusableCell(withIdentifier: "PlanTableAddViewCell", for: indexPath) as! PlanTableAddViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "PlanTableAddViewCell", for: indexPath) as! PlanTableAddViewCell
             
             cell.txtTest.text = aaa[indexPath.row]
             return cell
-        }
- 
     }
     
 }
