@@ -130,7 +130,7 @@ extension FormatAddViewController:UITableViewDataSource{
         let cell = self.tableView.dequeueReusableCell(withIdentifier: "FormatAddTableViewCell", for: indexPath) as! FormatAddTableViewCell
         cell.txtPlanName.text = plans[indexPath.row].planName
         cell.txtPlanDetail.text = plans[indexPath.row].detail
-        cell.txtPlanTime.text = plans[indexPath.row].startTime
+        cell.txtPlanTime.text = plans[indexPath.row].startTime + " ~ " + plans[indexPath.row].endTime
         return cell
     }
     

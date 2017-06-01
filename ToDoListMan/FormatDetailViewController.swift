@@ -69,7 +69,7 @@ class FormatDetailViewController: UIViewController {
             
             cell.txtPlanName.text = self.plans[indexPath.row].planName
             cell.txtDetail.text = self.plans[indexPath.row].detail
-            cell.txtTime.text = self.plans[indexPath.row].startTime
+            cell.txtTime.text = self.plans[indexPath.row].startTime + " ~ " + self.plans[indexPath.row].endTime
             print("this is", self.plans[indexPath.row].startTime)
             return cell
         }

@@ -13,8 +13,8 @@ class PlanViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     
     var sections = ["포맷 설정","일 추가"]
-    var aa = ["그룹선택 ","포맷선택","당번선택"]
-    var aaa = ["dd","asdf","asdf"]
+    var aa = ["그룹선택 ","포맷선택","당번선택", "날짜선택"]
+    var aaa :[String] = []
     
     
     
