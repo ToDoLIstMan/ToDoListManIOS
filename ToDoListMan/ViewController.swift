@@ -90,6 +90,7 @@ class ViewController: UIViewController {
                                          self.ref.child("user").child((FIRAuth.auth()?.currentUser?.uid)!).setValue(["name":firstTextField.text,
                                                                                                                      "rank":secondTextField.text])
                                         self.performSegue(withIdentifier: "segNext", sender: self)
+                                        self.dismiss(animated: true, completion: nil)
                                         
                                     })
                                     
@@ -114,7 +115,7 @@ class ViewController: UIViewController {
                                     
                                     print(FIRAuth.auth()?.currentUser?.uid,"hi!")
                                     self.performSegue(withIdentifier: "segNext", sender: self)
-                               
+                                    self.dismiss(animated: true, completion: nil)
                               //      let storyboard: UIStoryboard = UIStoryboard(name: "MainStoryBoard", bundle: nil)
                               //      let nextView = storyboard.instantiateInitialViewController()
                                //     self.present(nextView!, animated: true, completion: nil)

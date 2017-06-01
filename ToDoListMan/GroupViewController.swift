@@ -184,7 +184,7 @@ class GroupViewController: UIViewController {
                 
             })
             self.ref.removeObserver(withHandle: handle)
-            
+            self.names.removeAll()
             self.tableView.reloadData()
         
         })
@@ -259,6 +259,9 @@ extension GroupViewController:UITableViewDelegate{
                                                                                                          "groups" : ["0" : self.names[indexPath.row].id ] as! NSDictionary
                         ])
                 }
+                
+                self.names.removeAll()
+                self.tableView.reloadData()
             })
             
             //그룹 찾아서 멤버에 넣기

@@ -32,6 +32,11 @@
 		A97BB7E61EA6001000B47BF0 /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A97BB7E21EA6001000B47BF0 /* FBSDKCoreKit.framework */; };
 		A97BB7E71EA6001000B47BF0 /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A97BB7E31EA6001000B47BF0 /* FBSDKLoginKit.framework */; };
 		A97BB7E81EA6001000B47BF0 /* FBSDKMessengerShareKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A97BB7E41EA6001000B47BF0 /* FBSDKMessengerShareKit.framework */; };
+		A9B1DF3A1EDF0FA800449163 /* AddPlanViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9B1DF391EDF0FA800449163 /* AddPlanViewController.swift */; };
+		A9B1DF3C1EDF0FD800449163 /* AddThingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9B1DF3B1EDF0FD800449163 /* AddThingViewController.swift */; };
+		A9B1DF3E1EDF102600449163 /* AddFormatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9B1DF3D1EDF102600449163 /* AddFormatViewController.swift */; };
+		A9B1DF421EDFBAEE00449163 /* FormatAddTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9B1DF411EDFBAEE00449163 /* FormatAddTableViewCell.swift */; };
+		A9B1DF451EE03FBA00449163 /* FormatDetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9B1DF441EE03FBA00449163 /* FormatDetailTableViewCell.swift */; };
 		A9D474CD1EDAD49B0082EA94 /* MoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9D474CC1EDAD49B0082EA94 /* MoreViewController.swift */; };
 		A9D474CF1EDAD4A80082EA94 /* MypageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9D474CE1EDAD4A80082EA94 /* MypageViewController.swift */; };
 		A9D474D21EDB14DE0082EA94 /* SetUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9D474D11EDB14DE0082EA94 /* SetUpViewController.swift */; };
@@ -72,6 +77,11 @@
 		A97BB7E21EA6001000B47BF0 /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKCoreKit.framework; path = ../../../Documents/FacebookSDK/FBSDKCoreKit.framework; sourceTree = "<group>"; };
 		A97BB7E31EA6001000B47BF0 /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKLoginKit.framework; path = ../../../Documents/FacebookSDK/FBSDKLoginKit.framework; sourceTree = "<group>"; };
 		A97BB7E41EA6001000B47BF0 /* FBSDKMessengerShareKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKMessengerShareKit.framework; path = ../../../Documents/FacebookSDK/FBSDKMessengerShareKit.framework; sourceTree = "<group>"; };
+		A9B1DF391EDF0FA800449163 /* AddPlanViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddPlanViewController.swift; sourceTree = "<group>"; };
+		A9B1DF3B1EDF0FD800449163 /* AddThingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddThingViewController.swift; sourceTree = "<group>"; };
+		A9B1DF3D1EDF102600449163 /* AddFormatViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddFormatViewController.swift; sourceTree = "<group>"; };
+		A9B1DF411EDFBAEE00449163 /* FormatAddTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FormatAddTableViewCell.swift; sourceTree = "<group>"; };
+		A9B1DF441EE03FBA00449163 /* FormatDetailTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FormatDetailTableViewCell.swift; sourceTree = "<group>"; };
 		A9D474CC1EDAD49B0082EA94 /* MoreViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoreViewController.swift; sourceTree = "<group>"; };
 		A9D474CE1EDAD4A80082EA94 /* MypageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MypageViewController.swift; sourceTree = "<group>"; };
 		A9D474D11EDB14DE0082EA94 /* SetUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SetUpViewController.swift; sourceTree = "<group>"; };
@@ -173,6 +183,9 @@
 				A9D474CC1EDAD49B0082EA94 /* MoreViewController.swift */,
 				A9D474CE1EDAD4A80082EA94 /* MypageViewController.swift */,
 				A9D474D11EDB14DE0082EA94 /* SetUpViewController.swift */,
+				A9B1DF391EDF0FA800449163 /* AddPlanViewController.swift */,
+				A9B1DF3B1EDF0FD800449163 /* AddThingViewController.swift */,
+				A9B1DF3D1EDF102600449163 /* AddFormatViewController.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -185,6 +198,8 @@
 				A95D1A891EB04B8500DA38B1 /* PlanTableFormatViewCell.swift */,
 				A9330B5F1EAFCB800072E326 /* GroupTableViewCell.swift */,
 				A9346ECB1ECEFE0000490592 /* FormatTableViewCell.swift */,
+				A9B1DF411EDFBAEE00449163 /* FormatAddTableViewCell.swift */,
+				A9B1DF441EE03FBA00449163 /* FormatDetailTableViewCell.swift */,
 			);
 			name = Cell;
 			sourceTree = "<group>";
@@ -331,18 +346,23 @@
 				A95D1A8A1EB04B8500DA38B1 /* PlanTableFormatViewCell.swift in Sources */,
 				A9346EC81ECE75C900490592 /* format.swift in Sources */,
 				A9DCA5BA1EB70047007DB81C /* work.swift in Sources */,
+				A9B1DF421EDFBAEE00449163 /* FormatAddTableViewCell.swift in Sources */,
 				A9330B5C1EAFC8010072E326 /* GroupViewController.swift in Sources */,
 				A9DCA5B61EB6DC69007DB81C /* group.swift in Sources */,
+				A9B1DF3C1EDF0FD800449163 /* AddThingViewController.swift in Sources */,
 				A93638771EB1A9C20008A713 /* FormatAddViewController.swift in Sources */,
 				A9DCA5B81EB7003A007DB81C /* user.swift in Sources */,
 				A93638791EB1A9EA0008A713 /* FormatDetailViewController.swift in Sources */,
 				A95D1A8E1EB0B8F100DA38B1 /* WorkDetailViewController.swift in Sources */,
 				A936387B1EB1B00D0008A713 /* PlanTableAddViewCell.swift in Sources */,
+				A9B1DF3E1EDF102600449163 /* AddFormatViewController.swift in Sources */,
 				A9330B621EAFD8020072E326 /* WorkTableViewCell.swift in Sources */,
 				A93638751EB1A9960008A713 /* FormatViewController.swift in Sources */,
 				A9330B5E1EAFC8270072E326 /* PlanViewController.swift in Sources */,
 				A95D1A8C1EB09E9F00DA38B1 /* TimePickerViewController.swift in Sources */,
 				A9424F1D1EAF600A007722A9 /* MainViewController.swift in Sources */,
+				A9B1DF3A1EDF0FA800449163 /* AddPlanViewController.swift in Sources */,
+				A9B1DF451EE03FBA00449163 /* FormatDetailTableViewCell.swift in Sources */,
 				A9346ECC1ECEFE0000490592 /* FormatTableViewCell.swift in Sources */,
 				A9330B601EAFCB800072E326 /* GroupTableViewCell.swift in Sources */,
 				A908E9D01E9DF8230059FA10 /* ViewController.swift in Sources */,

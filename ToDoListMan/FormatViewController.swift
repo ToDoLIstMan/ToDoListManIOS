@@ -15,6 +15,7 @@ class FormatViewController: UIViewController {
     @IBOutlet weak var btnAddFormat: UIBarButtonItem!
     var ref: FIRDatabaseReference!
     var count = 0
+    var curFormatName = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,7 +25,7 @@ class FormatViewController: UIViewController {
         // Do any additional setup after loading the view.
         
         self.ref = FIRDatabase.database().reference()
-        
+        names.removeAll()
         self.ref.child("format").child((FIRAuth.auth()?.currentUser?.uid)!).observe(FIRDataEventType.value, with: { (snapshot) -> Void in
             self.count = 0
             for itemSnapshot in snapshot.children {
@@ -39,12 +40,20 @@ class FormatViewController: UIViewController {
 
     }
 
+    @IBAction func btnAddClicked(_ sender: Any) {
+         self.performSegue(withIdentifier: "segAdd", sender: self)
+    }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     
     }
-    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "segDetail" {
+            let sendtimer=segue.destination as! FormatDetailViewController
+            sendtimer.curFormatName = self.curFormatName
+        }
+    }
 
     /*
     // MARK: - Navigation
@@ -76,6 +85,9 @@ extension FormatViewController:UITableViewDataSource{
 extension FormatViewController:UITableViewDelegate{
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         //CODE TO BE RUN ON CELL TOUCH
+        self.curFormatName = self.names[indexPath.row]
+        self.performSegue(withIdentifier: "segDetail", sender: self)
+        
     }
     
 }

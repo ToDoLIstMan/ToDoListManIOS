@@ -26,6 +26,4 @@ class format{
         self.startTime = startTime
         self.endTime = endTime
     }
-    
-    
 }
