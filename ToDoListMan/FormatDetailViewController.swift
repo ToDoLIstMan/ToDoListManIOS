@@ -67,7 +67,7 @@ class FormatDetailViewController: UIViewController {
             let cell = self.tableView.dequeueReusableCell(withIdentifier: "FormatDetailTableViewCell", for: indexPath) as! FormatDetailTableViewCell
             print("this is ",self.plans.count,"  ",self.plans[indexPath.row].planName as! String)
             
-            cell.txtPlanTitle.text = self.plans[indexPath.row].planName
+            cell.txtPlanName.text = self.plans[indexPath.row].planName
             cell.txtDetail.text = self.plans[indexPath.row].detail
             cell.txtTime.text = self.plans[indexPath.row].startTime
             print("this is", self.plans[indexPath.row].startTime)
