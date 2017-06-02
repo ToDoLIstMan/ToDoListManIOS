@@ -35,7 +35,6 @@ class FormatViewController: UIViewController {
                 
                 self.tableView.insertRows(at: [IndexPath(row: self.names.count-1,section: 0)], with: UITableViewRowAnimation.automatic)
             }
-            
         })
 
     }

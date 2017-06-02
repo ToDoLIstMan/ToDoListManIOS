@@ -7,12 +7,13 @@
 //
 
 import UIKit
+import Firebase
 
 class GroupPickerViewController: UIViewController,UIPickerViewDelegate {
 
     @IBOutlet weak var groupPicker: UIPickerView!
-    var myGroup : [String] = ["h1","h2","h3"]
-    var myGroupId : [Int] = [1,2,3]
+    var myGroup : [String] = []
+    var myGroupId : [Int] = []
     var pickGroup = ""
     var pickGrpId :Int = -1
     
@@ -20,6 +21,16 @@ class GroupPickerViewController: UIViewController,UIPickerViewDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        
+        var database = FIRDatabase.database()
+        var ref = database.reference()
+        ref.child("user").child((FIRAuth.auth()?.currentUser?.uid)!).observe(FIRDataEventType.value, with: { (dataSnapShot) in
+            let a = dataSnapShot.value as! NSDictionary
+            
+            self.myGroup = (a["groupName"] as! Array!)
+            self.myGroupId = a["groups"] as! Array!
+        })
+        
     }
 
     override func didReceiveMemoryWarning() {

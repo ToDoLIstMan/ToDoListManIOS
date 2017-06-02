@@ -10,10 +10,14 @@ import UIKit
 
 class CurDatePickViewController: UIViewController {
 
+    @IBOutlet weak var datePicker: UIDatePicker!
+    var date = ""
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -31,6 +35,16 @@ class CurDatePickViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
+    @IBAction func btnAccClicked(_ sender: Any) {
+        
+        datePicker.datePickerMode = UIDatePickerMode.date
+        var dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd"
+        var selectedDate = dateFormatter.string(from: datePicker.date)
+        self.date = selectedDate
+        print(selectedDate)
+
+    }
 
     @IBAction func btnCancelClicked(_ sender: Any) {
         

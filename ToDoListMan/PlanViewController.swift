@@ -16,6 +16,11 @@ class PlanViewController: UIViewController {
     var aa = ["그룹선택 ","포맷선택","당번선택", "날짜선택"]
     var aaa :[String] = []
     
+    var chooseName :[String] = []
+    var chooseUid : [String] = []
+    var curGroup = ""
+    var curGroupId = -1
+    
     @IBOutlet weak var txtFormat: UILabel!
     @IBOutlet weak var txtGroup: UILabel!
     @IBOutlet weak var txtPeople: UILabel!
@@ -58,6 +63,15 @@ class PlanViewController: UIViewController {
         
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "segThing" {
+            let send = segue.destination as! AddThingViewController
+            send.curGroup = self.curGroup
+            send.curGrpId = self.curGroupId
+           
+        }
+    }
+    
     /*
     // MARK: - Navigation
 
@@ -86,18 +100,28 @@ class PlanViewController: UIViewController {
     
     @IBAction func unwindToCurFormatAdd(segue:UIStoryboardSegue) {
         if let sourceViewController = segue.source as? CurFormatPickViewController {
+            print(sourceViewController.pickFormat)
+            self.txtFormat.text = sourceViewController.pickFormat
         }
     }
     @IBAction func unwindToCurGroupAdd(segue:UIStoryboardSegue) {
         if let sourceViewController = segue.source as? CurGroupPickViewController {
+            self.curGroupId = sourceViewController.pickGrpId
+            self.curGroup = sourceViewController.pickGroup
+            self.txtGroup.text = sourceViewController.pickGroup
         }
     }
     @IBAction func unwindToCurDateAdd(segue:UIStoryboardSegue) {
         if let sourceViewController = segue.source as? CurDatePickViewController {
+            txtDate.text = sourceViewController.date
         }
     }
     @IBAction func unwindToCurThingAdd(segue:UIStoryboardSegue) {
         if let sourceViewController = segue.source as? AddThingViewController {
+            
+            txtPeople.text = String(sourceViewController.chooseName.joined())
+            self.chooseName = sourceViewController.chooseName
+            self.chooseUid = sourceViewController.chooseUid
         }
     }
     @IBAction func unwindToWorkAdd(segue:UIStoryboardSegue) {
