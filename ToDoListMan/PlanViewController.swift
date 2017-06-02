@@ -14,12 +14,16 @@ class PlanViewController: UIViewController {
     
     var sections = ["일 추가"]
     var aa = ["그룹선택 ","포맷선택","당번선택", "날짜선택"]
-    var aaa :[String] = []
+    var aaa :[work] = []
     
     var chooseName :[String] = []
     var chooseUid : [String] = []
     var curGroup = ""
     var curGroupId = -1
+    
+    var todayTitle = "", todayDetail = "", todayStartTime = "", todayEndTime = ""
+    var todayChooseName : [String] = []
+    var todayChooseUid : [String] = []
     
     @IBOutlet weak var txtFormat: UILabel!
     @IBOutlet weak var txtGroup: UILabel!
@@ -69,6 +73,11 @@ class PlanViewController: UIViewController {
             send.curGroup = self.curGroup
             send.curGrpId = self.curGroupId
            
+        }  else if segue.identifier == "segWork" {
+            let send = segue.destination as! AddPlanViewController
+            send.curGroup = self.curGroup
+            send.curGrpId = self.curGroupId
+            
         }
     }
     
@@ -84,13 +93,27 @@ class PlanViewController: UIViewController {
     
     @IBAction func unwindToWorkAdded(segue:UIStoryboardSegue) {
         if let sourceViewController = segue.source as? AddPlanViewController {
+            self.todayTitle = sourceViewController.txtTitle
+            self.todayDetail = sourceViewController.txtdetail
+            self.todayStartTime = sourceViewController.txtStarTime
+            self.todayEndTime = sourceViewController.txtEndTime
+            
+            aaa.append(work(id: aaa.count ,title:  self.todayTitle,detail:  self.todayDetail ,startTime:  self.todayStartTime,endTime:  self.todayEndTime, name:  ["adsf"] ,uId:  ["adsf"] ,isDone:  [false]))
+            self.tableView.insertRows(at: [IndexPath(row: self.aaa.count-1, section: 0)], with: .automatic)
+            print("hdaf",sourceViewController.editTitle.text!)
+            self.tableView.reloadData()
         }
     }
 
 
     @IBAction func sendClicked(_ sender: Any) {
         
-        
+        aaa.removeAll()
+        self.tableView.reloadData()
+        self.txtFormat.text = ""
+        self.txtGroup.text = ""
+        self.txtPeople.text = ""
+        self.txtDate.text = ""
     }
     
     @IBAction func btnWorkAddClicked(_ sender: Any) {
@@ -124,10 +147,7 @@ class PlanViewController: UIViewController {
             self.chooseUid = sourceViewController.chooseUid
         }
     }
-    @IBAction func unwindToWorkAdd(segue:UIStoryboardSegue) {
-        if let sourceViewController = segue.source as? AddPlanViewController {
-        }
-    }
+  
 }
 
 extension PlanViewController:UITableViewDataSource{
@@ -135,10 +155,10 @@ extension PlanViewController:UITableViewDataSource{
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
+    
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-            return self.sections[section]
+        return self.sections[section]
     }
-   
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return aaa.count
@@ -148,7 +168,7 @@ extension PlanViewController:UITableViewDataSource{
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "PlanTableAddViewCell", for: indexPath) as! PlanTableAddViewCell
             
-            cell.txtTest.text = aaa[indexPath.row]
+            cell.txtTest.text = aaa[indexPath.row].title
             return cell
     }
     

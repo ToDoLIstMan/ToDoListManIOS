@@ -42,6 +42,7 @@
 		A9B1DF4C1EE05B3000449163 /* CurDatePickViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9B1DF4B1EE05B3000449163 /* CurDatePickViewController.swift */; };
 		A9B1DF4E1EE1294B00449163 /* AddMemberTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9B1DF4D1EE1294B00449163 /* AddMemberTableViewCell.swift */; };
 		A9B1DF501EE140B400449163 /* userChoose.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9B1DF4F1EE140B400449163 /* userChoose.swift */; };
+		A9B1DF521EE1703000449163 /* AddCurMemberTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9B1DF511EE1703000449163 /* AddCurMemberTableViewCell.swift */; };
 		A9D474CD1EDAD49B0082EA94 /* MoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9D474CC1EDAD49B0082EA94 /* MoreViewController.swift */; };
 		A9D474CF1EDAD4A80082EA94 /* MypageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9D474CE1EDAD4A80082EA94 /* MypageViewController.swift */; };
 		A9D474D21EDB14DE0082EA94 /* SetUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9D474D11EDB14DE0082EA94 /* SetUpViewController.swift */; };
@@ -92,6 +93,7 @@
 		A9B1DF4B1EE05B3000449163 /* CurDatePickViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CurDatePickViewController.swift; sourceTree = "<group>"; };
 		A9B1DF4D1EE1294B00449163 /* AddMemberTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddMemberTableViewCell.swift; sourceTree = "<group>"; };
 		A9B1DF4F1EE140B400449163 /* userChoose.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = userChoose.swift; sourceTree = "<group>"; };
+		A9B1DF511EE1703000449163 /* AddCurMemberTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddCurMemberTableViewCell.swift; sourceTree = "<group>"; };
 		A9D474CC1EDAD49B0082EA94 /* MoreViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoreViewController.swift; sourceTree = "<group>"; };
 		A9D474CE1EDAD4A80082EA94 /* MypageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MypageViewController.swift; sourceTree = "<group>"; };
 		A9D474D11EDB14DE0082EA94 /* SetUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SetUpViewController.swift; sourceTree = "<group>"; };
@@ -214,6 +216,7 @@
 				A9B1DF411EDFBAEE00449163 /* FormatAddTableViewCell.swift */,
 				A9B1DF441EE03FBA00449163 /* FormatDetailTableViewCell.swift */,
 				A9B1DF4D1EE1294B00449163 /* AddMemberTableViewCell.swift */,
+				A9B1DF511EE1703000449163 /* AddCurMemberTableViewCell.swift */,
 			);
 			name = Cell;
 			sourceTree = "<group>";
@@ -384,6 +387,7 @@
 				A9330B601EAFCB800072E326 /* GroupTableViewCell.swift in Sources */,
 				A908E9D01E9DF8230059FA10 /* ViewController.swift in Sources */,
 				A9B1DF471EE05ADA00449163 /* CurGroupPickViewController.swift in Sources */,
+				A9B1DF521EE1703000449163 /* AddCurMemberTableViewCell.swift in Sources */,
 				A9B1DF4E1EE1294B00449163 /* AddMemberTableViewCell.swift in Sources */,
 				A9D474D21EDB14DE0082EA94 /* SetUpViewController.swift in Sources */,
 				A9B1DF4C1EE05B3000449163 /* CurDatePickViewController.swift in Sources */,
