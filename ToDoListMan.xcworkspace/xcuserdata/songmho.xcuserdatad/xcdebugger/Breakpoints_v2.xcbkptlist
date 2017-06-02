@@ -212,22 +212,6 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "ToDoListMan/PlanViewController.swift"
-            timestampString = "518093313.169861"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "163"
-            endingLineNumber = "163"
-            landmarkName = "numberOfSections(in:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
             filePath = "ToDoListMan/user.swift"
             timestampString = "516910587.623548"
             startingColumnNumber = "9223372036854775807"
@@ -469,7 +453,7 @@
                   moduleName = "ToDoListMan"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/songmho/Projects/IOS/ToDoListManIOS/ToDoListMan/user.swift"
-                  timestampString = "518028654.117682"
+                  timestampString = "518113265.262486"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "15"
@@ -484,7 +468,7 @@
                   moduleName = "ToDoListMan"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/songmho/Projects/IOS/ToDoListManIOS/ToDoListMan/user.swift"
-                  timestampString = "518028654.122093"
+                  timestampString = "518113265.266604"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "0"
@@ -677,7 +661,7 @@
                   moduleName = "ToDoListMan"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/songmho/Projects/IOS/ToDoListManIOS/ToDoListMan/FormatDetailViewController.swift"
-                  timestampString = "518028654.20168"
+                  timestampString = "518113265.290133"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "29"
@@ -692,7 +676,7 @@
                   moduleName = "ToDoListMan"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/songmho/Projects/IOS/ToDoListManIOS/ToDoListMan/FormatDetailViewController.swift"
-                  timestampString = "518028654.206051"
+                  timestampString = "518113265.29379"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "30"
@@ -700,22 +684,6 @@
                   offsetFromSymbolStart = "26">
                </Location>
             </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "ToDoListMan/PlanViewController.swift"
-            timestampString = "518092728.289004"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "90"
-            endingLineNumber = "90"
-            landmarkName = "PlanViewController"
-            landmarkType = "3">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy

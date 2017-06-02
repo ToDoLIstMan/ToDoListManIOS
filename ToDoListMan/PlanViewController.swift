@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Firebase
 
 class PlanViewController: UIViewController {
 
@@ -18,8 +19,11 @@ class PlanViewController: UIViewController {
     
     var chooseName :[String] = []
     var chooseUid : [String] = []
+    var chooseBool : [Bool] = []
     var curGroup = ""
     var curGroupId = -1
+    var curFormat = ""
+    var curDate = ""
     
     var todayTitle = "", todayDetail = "", todayStartTime = "", todayEndTime = ""
     var todayChooseName : [String] = []
@@ -104,22 +108,105 @@ class PlanViewController: UIViewController {
                 arrFalse.append(false)
             }
             
-            aaa.append(work(id: aaa.count ,title:  self.todayTitle,detail:  self.todayDetail ,startTime:  self.todayStartTime,endTime:  self.todayEndTime, name:  sourceViewController.chooseName ,uId:  chooseUid ,isDone:  arrFalse))
+            self.aaa.append(work(id: aaa.count ,title:  self.todayTitle,detail:  self.todayDetail ,startTime:  self.todayStartTime,endTime:  self.todayEndTime, name:  sourceViewController.chooseName ,uId:  chooseUid ,isDone:  arrFalse))
             self.tableView.insertRows(at: [IndexPath(row: self.aaa.count-1, section: 0)], with: .automatic)
             print("hdaf",sourceViewController.editTitle.text!)
             self.tableView.reloadData()
+            print("ㅁㅁㅁㅁㅁ",self.aaa.count)
         }
     }
 
 
     @IBAction func sendClicked(_ sender: Any) {
+        //전송
+        var index = 0
+        print("asdfadsf",self.aaa.count)
+       var dump: [work] = []
+        let database = FIRDatabase.database()
+        let ref = database.reference()
+        ref.child("format").child((FIRAuth.auth()?.currentUser?.uid)!).child(curFormat).observe(FIRDataEventType.childAdded, with: { (dataSnapShot) in
+            //format에서 데이터 가져와서 찾기.
+            if dataSnapShot.exists() {      //있을 때
+                    var data = dataSnapShot.value as! NSDictionary
+                    
+                    ref.child("work").child(String(self.curGroupId)).child(self.curDate).child(String(index)).setValue(
+                        ["title": data["planName"] as! String,
+                         "detail": data["detail"] as! String,
+                         "id": index,
+                         "startTime": data["startTime"] as! String,
+                         "endTime": data["endTime"] as! String,
+                         "uId":  self.chooseUid,
+                         "name":  self.chooseName,
+                         "isDone": self.chooseBool
+                        ]
+                    )
+            index += 1
+            }
+            else {      //포맷이 없을 때
+
+                print ("aaa's size is", self.aaa.count)
+                
+                for i in 0...self.aaa.count-1 {
+                    ref.child("work").child(String(self.curGroupId)).child(self.curDate).child(String(i)).setValue(
+                        ["title": self.aaa[i].title,
+                         "detail": self.aaa[i].detail,
+                         "id": i,
+                         "startTime": self.aaa[i].startTime,
+                         "endTime": self.aaa[i].endTime,
+                         "uId": self.aaa[i].uId,
+                         "name": self.aaa[i].name,
+                         "isDone": self.aaa[i].isDone
+                        ])
+                    
+                }
+            }
+            
+            //dump.append(contentsOf: self.aaa)
+          //  self.aaa.insert(contentsOf: dump, at: 0)
+          //  print ("aaa's size is", dump.count)
+          /*
+            */
+        })
         
+        var ddd : [work] = []
+        ddd.insert(contentsOf: aaa, at: 0)
+        
+        var handle : UInt = 0
+        var ref1 = ref.child("work").child(String(self.curGroupId)).child(self.curDate)
+        handle = ref1.observe(FIRDataEventType.value, with: { (dataSnapShot) in
+            
+            
+            ref1.removeObserver(withHandle: handle)
+            
+            print("hi",dataSnapShot.childrenCount,"   ",ddd.count )
+            var maxI = ddd.count - 1
+            for i in 0...maxI {
+                var ind = i + Int(dataSnapShot.childrenCount)
+                ref.child("work").child(String(self.curGroupId)).child(self.curDate).child(String(ind)).setValue(
+                    ["title": ddd[i].title,
+                     "detail": ddd[i].detail,
+                     "id": ind,
+                     "startTime": ddd[i].startTime,
+                     "endTime": ddd[i].endTime,
+                     "uId": ddd[i].uId,
+                     "name": ddd[i].name,
+                     "isDone": ddd[i].isDone
+                    ]
+                )
+                
+            }
+ 
+        })
+        
+        // 기록 지우기
         aaa.removeAll()
         self.tableView.reloadData()
         self.txtFormat.text = ""
         self.txtGroup.text = ""
         self.txtPeople.text = ""
         self.txtDate.text = ""
+ 
+
     }
     
     @IBAction func btnWorkAddClicked(_ sender: Any) {
@@ -131,6 +218,7 @@ class PlanViewController: UIViewController {
         if let sourceViewController = segue.source as? CurFormatPickViewController {
             print(sourceViewController.pickFormat)
             self.txtFormat.text = sourceViewController.pickFormat
+            self.curFormat = sourceViewController.pickFormat
         }
     }
     @IBAction func unwindToCurGroupAdd(segue:UIStoryboardSegue) {
@@ -143,14 +231,20 @@ class PlanViewController: UIViewController {
     @IBAction func unwindToCurDateAdd(segue:UIStoryboardSegue) {
         if let sourceViewController = segue.source as? CurDatePickViewController {
             txtDate.text = sourceViewController.date
+            self.curDate = sourceViewController.date
         }
     }
     @IBAction func unwindToCurThingAdd(segue:UIStoryboardSegue) {
         if let sourceViewController = segue.source as? AddThingViewController {
             
             txtPeople.text = String(sourceViewController.chooseName.joined(separator: ", "))
+            chooseBool = []
             self.chooseName = sourceViewController.chooseName
             self.chooseUid = sourceViewController.chooseUid
+            
+            for i in 0...self.chooseName.count-1 {
+                self.chooseBool.append(false)
+            }
         }
     }
   
