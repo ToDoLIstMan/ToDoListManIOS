@@ -119,7 +119,7 @@ class PlanViewController: UIViewController {
     @IBAction func unwindToCurThingAdd(segue:UIStoryboardSegue) {
         if let sourceViewController = segue.source as? AddThingViewController {
             
-            txtPeople.text = String(sourceViewController.chooseName.joined())
+            txtPeople.text = String(sourceViewController.chooseName.joined(separator: ", "))
             self.chooseName = sourceViewController.chooseName
             self.chooseUid = sourceViewController.chooseUid
         }
