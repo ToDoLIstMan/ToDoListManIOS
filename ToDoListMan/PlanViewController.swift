@@ -98,7 +98,13 @@ class PlanViewController: UIViewController {
             self.todayStartTime = sourceViewController.txtStarTime
             self.todayEndTime = sourceViewController.txtEndTime
             
-            aaa.append(work(id: aaa.count ,title:  self.todayTitle,detail:  self.todayDetail ,startTime:  self.todayStartTime,endTime:  self.todayEndTime, name:  ["adsf"] ,uId:  ["adsf"] ,isDone:  [false]))
+            var arrFalse : [Bool] = []
+            
+            for i in 0...(sourceViewController.chooseName.count-1) {
+                arrFalse.append(false)
+            }
+            
+            aaa.append(work(id: aaa.count ,title:  self.todayTitle,detail:  self.todayDetail ,startTime:  self.todayStartTime,endTime:  self.todayEndTime, name:  sourceViewController.chooseName ,uId:  chooseUid ,isDone:  arrFalse))
             self.tableView.insertRows(at: [IndexPath(row: self.aaa.count-1, section: 0)], with: .automatic)
             print("hdaf",sourceViewController.editTitle.text!)
             self.tableView.reloadData()
