@@ -437,7 +437,7 @@
                   moduleName = "ToDoListMan"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/songmho/Projects/IOS/ToDoListManIOS/ToDoListMan/user.swift"
-                  timestampString = "518179129.952252"
+                  timestampString = "518191759.883614"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "15"
@@ -452,7 +452,7 @@
                   moduleName = "ToDoListMan"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/songmho/Projects/IOS/ToDoListManIOS/ToDoListMan/user.swift"
-                  timestampString = "518179129.955611"
+                  timestampString = "518191759.889055"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "0"
@@ -645,7 +645,7 @@
                   moduleName = "ToDoListMan"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/songmho/Projects/IOS/ToDoListManIOS/ToDoListMan/FormatDetailViewController.swift"
-                  timestampString = "518179129.979841"
+                  timestampString = "518191759.927146"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "29"
@@ -660,7 +660,7 @@
                   moduleName = "ToDoListMan"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/songmho/Projects/IOS/ToDoListManIOS/ToDoListMan/FormatDetailViewController.swift"
-                  timestampString = "518179129.983694"
+                  timestampString = "518191759.932489"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "30"
@@ -732,38 +732,6 @@
             endingLineNumber = "283"
             landmarkName = "tableView(_:cellForRowAt:)"
             landmarkType = "7">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "ToDoListMan.MainViewController.(tableView (__ObjC.UITableView, cellForRowAt : Foundation.IndexPath) -&gt; __ObjC.UITableViewCell).(closure #1)"
-                  moduleName = "ToDoListMan"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/songmho/Projects/IOS/ToDoListManIOS/MainViewController.swift"
-                  timestampString = "518179129.916182"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "285"
-                  endingLineNumber = "285"
-                  offsetFromSymbolStart = "30">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "ToDoListMan.MainViewController.(tableView (__ObjC.UITableView, cellForRowAt : Foundation.IndexPath) -&gt; __ObjC.UITableViewCell).(closure #1)"
-                  moduleName = "ToDoListMan"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/songmho/Projects/IOS/ToDoListManIOS/MainViewController.swift"
-                  timestampString = "518179129.920716"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "285"
-                  endingLineNumber = "285"
-                  offsetFromSymbolStart = "4180">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy

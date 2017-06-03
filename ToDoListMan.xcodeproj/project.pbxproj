@@ -14,6 +14,7 @@
 		A908E9D81E9DF8230059FA10 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A908E9D61E9DF8230059FA10 /* LaunchScreen.storyboard */; };
 		A912EFC01EE2BE4000651291 /* enabled_checked_ios_512.png in Resources */ = {isa = PBXBuildFile; fileRef = A912EFBE1EE2BE4000651291 /* enabled_checked_ios_512.png */; };
 		A912EFC11EE2BE4000651291 /* enabled_unchecked_ios_512.png in Resources */ = {isa = PBXBuildFile; fileRef = A912EFBF1EE2BE4000651291 /* enabled_unchecked_ios_512.png */; };
+		A912EFC31EE2F2BE00651291 /* PostponeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A912EFC21EE2F2BE00651291 /* PostponeViewController.swift */; };
 		A9330B5C1EAFC8010072E326 /* GroupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9330B5B1EAFC8010072E326 /* GroupViewController.swift */; };
 		A9330B5E1EAFC8270072E326 /* PlanViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9330B5D1EAFC8270072E326 /* PlanViewController.swift */; };
 		A9330B601EAFCB800072E326 /* GroupTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9330B5F1EAFCB800072E326 /* GroupTableViewCell.swift */; };
@@ -65,6 +66,7 @@
 		A908E9D91E9DF8230059FA10 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A912EFBE1EE2BE4000651291 /* enabled_checked_ios_512.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = enabled_checked_ios_512.png; sourceTree = "<group>"; };
 		A912EFBF1EE2BE4000651291 /* enabled_unchecked_ios_512.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = enabled_unchecked_ios_512.png; sourceTree = "<group>"; };
+		A912EFC21EE2F2BE00651291 /* PostponeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostponeViewController.swift; sourceTree = "<group>"; };
 		A9330B5B1EAFC8010072E326 /* GroupViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GroupViewController.swift; sourceTree = "<group>"; };
 		A9330B5D1EAFC8270072E326 /* PlanViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlanViewController.swift; sourceTree = "<group>"; };
 		A9330B5F1EAFCB800072E326 /* GroupTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GroupTableViewCell.swift; sourceTree = "<group>"; };
@@ -209,6 +211,7 @@
 				A9B1DF461EE05ADA00449163 /* CurGroupPickViewController.swift */,
 				A9B1DF491EE05B1700449163 /* CurFormatPickViewController.swift */,
 				A9B1DF4B1EE05B3000449163 /* CurDatePickViewController.swift */,
+				A912EFC21EE2F2BE00651291 /* PostponeViewController.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -375,6 +378,7 @@
 				A9B1DF421EDFBAEE00449163 /* FormatAddTableViewCell.swift in Sources */,
 				A9330B5C1EAFC8010072E326 /* GroupViewController.swift in Sources */,
 				A9DCA5B61EB6DC69007DB81C /* group.swift in Sources */,
+				A912EFC31EE2F2BE00651291 /* PostponeViewController.swift in Sources */,
 				A9B1DF3C1EDF0FD800449163 /* AddThingViewController.swift in Sources */,
 				A93638771EB1A9C20008A713 /* FormatAddViewController.swift in Sources */,
 				A9DCA5B81EB7003A007DB81C /* user.swift in Sources */,

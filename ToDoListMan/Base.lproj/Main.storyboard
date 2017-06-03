@@ -270,11 +270,67 @@
                         <outlet property="txtPeople" destination="WSu-IS-b4a" id="6xh-xZ-t8u"/>
                         <outlet property="txtTime" destination="PpO-xP-r7t" id="IgU-14-IYM"/>
                         <outlet property="txtTitle" destination="cA7-JX-Eth" id="rva-Dq-fah"/>
+                        <segue destination="r7G-NN-iXk" kind="presentation" identifier="segPostpone" id="3dN-8p-H2h"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="772-gg-hKz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3293.5999999999999" y="-404.34782608695656"/>
+        </scene>
+        <!--PostponeViewController-->
+        <scene sceneID="UvH-Cd-NUY">
+            <objects>
+                <viewController title="PostponeViewController" modalTransitionStyle="crossDissolve" modalPresentationStyle="overCurrentContext" id="r7G-NN-iXk" customClass="PostponeViewController" customModule="ToDoListMan" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="NXB-iH-Ybu"/>
+                        <viewControllerLayoutGuide type="bottom" id="J8R-FP-C3I"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Ayl-2w-Pyv">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="jTn-Ap-T2H">
+                                <rect key="frame" x="16" y="147" width="343" height="395"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <datePicker contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="o19-PP-AFX">
+                                        <rect key="frame" x="0.0" y="69" width="343" height="216"/>
+                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                        <date key="date" timeIntervalSinceReferenceDate="518189526.41352201">
+                                            <!--2017-06-03 13:32:06 +0000-->
+                                        </date>
+                                    </datePicker>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZlK-Jb-y7f">
+                                        <rect key="frame" x="293" y="346" width="39" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" title="미루기"/>
+                                        <connections>
+                                            <action selector="btnAccClicked:" destination="r7G-NN-iXk" eventType="touchUpInside" id="qGf-cA-3VH"/>
+                                            <segue destination="rKE-ey-rOW" kind="unwind" unwindAction="unwindToPostponeWithSegue:" id="uUd-Jz-T1C"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UbN-mx-pk0">
+                                        <rect key="frame" x="236" y="346" width="30" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" title="취소"/>
+                                        <connections>
+                                            <action selector="btnCancelClicked:" destination="r7G-NN-iXk" eventType="touchUpInside" id="gsE-qX-zQx"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.40000000000000002" colorSpace="custom" customColorSpace="sRGB"/>
+                    </view>
+                    <connections>
+                        <outlet property="datePicker" destination="o19-PP-AFX" id="aaE-Cg-Az5"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="yYv-J2-zvB" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="rKE-ey-rOW" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="4032.8000000000002" y="-403.44827586206901"/>
         </scene>
         <!--Group Picker View Controller-->
         <scene sceneID="Ka6-jN-Lf2">

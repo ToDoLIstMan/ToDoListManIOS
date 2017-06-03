@@ -24,6 +24,7 @@ class WorkDetailViewController: UIViewController {
     var curGroupUid : Int = -1
     var curDate : String = ""
     
+    var postponeDate : String = ""
     override func viewWillAppear(_ animated: Bool) {
         if master != (FIRAuth.auth()?.currentUser?.uid)! {
             btnPostpone.isHidden = true
@@ -61,6 +62,54 @@ class WorkDetailViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    @IBAction func unwindToPostpone(segue:UIStoryboardSegue) {
+        if let sourceViewController = segue.source as? PostponeViewController {
+            self.postponeDate = sourceViewController.date
+            
+            let database = FIRDatabase.database()
+            let ref = database.reference().child("work").child(String(curGroupUid)).child(self.postponeDate)
+            ref.observeSingleEvent(of: .value, with: { (dataSnapShot) in
+                if dataSnapShot.exists() {
+                    ref.child(String(dataSnapShot.childrenCount)).setValue(["title": self.w.title,
+                                                                            "detail": self.w.detail,
+                                                                            "id": Int(dataSnapShot.childrenCount),
+                                                                            "startTime": self.w.startTime,
+                                                                            "endTime": self.w.endTime,
+                                                                            "uId": self.w.uId,
+                                                                            "name": self.w.name,
+                                                                            "isDone": self.w.isDone
+                        ])
+                    
+                } else {
+                    ref.child("0").setValue(["title": self.w.title,
+                                             "detail": self.w.detail,
+                                             "id": 0,
+                                             "startTime": self.w.startTime,
+                                             "endTime": self.w.endTime,
+                                             "uId": self.w.uId,
+                                             "name": self.w.name,
+                                             "isDone": self.w.isDone
+                        ])
+                    
+                }
+                let alertController = UIAlertController(title: "알림", message: "일정이 미뤄졌습니다.", preferredStyle: .alert)
+                
+                
+                let saveAction = UIAlertAction(title: "확인", style: .default, handler: {
+                    alert -> Void in
+                    
+                    
+                    
+                    self.dismiss(animated: true, completion: nil)
+                })
+                
+                alertController.addAction(saveAction)
+                
+                self.present(alertController, animated: true, completion: nil)
+            })
+        }
+    }
+
     @IBAction func btnFinishclicked(_ sender: Any) {
         let database = FIRDatabase.database()
         let ref = database.reference().child("work").child(String(curGroupUid)).child(self.curDate)
@@ -81,6 +130,7 @@ class WorkDetailViewController: UIViewController {
 
     @IBAction func btnPostponeClicked(_ sender: Any) {
         
+        self.performSegue(withIdentifier: "segPostpone", sender: self)
     }
     /*
     // MARK: - Navigation
