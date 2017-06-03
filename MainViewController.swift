@@ -46,9 +46,6 @@ class MainViewController: UIViewController {
         super.viewDidLoad()
         
         
-        print("hi!",self.titles1.count)
-        print(FIRAuth.auth()?.currentUser?.uid)
-        
         self.curUserUid = (FIRAuth.auth()?.currentUser?.uid)!
         
         listView.dataSource = self
@@ -175,8 +172,6 @@ class MainViewController: UIViewController {
     
     
     func loadData(index : Int, curGroup : Int){
-        
-        print(titles1.count)
         self.ref = FIRDatabase.database().reference()
         self.ref.child("work").child(String(curGroup)).child(date).observe(.value, with: { (snapShot) in
             
@@ -189,11 +184,12 @@ class MainViewController: UIViewController {
                     self.oldSeg = index
                     let a = (itemSnapshot as! FIRDataSnapshot).value as! NSDictionary
                     var isdone = a["isDone"] as! [Bool]
+                    print("가져오는 것 ", isdone.description)
                     
                     //int id, String title, String detail, String startTime, String endTime,List<String> name,List<String> uId,List<Boolean> isDone
                     let item = work(id: a["id"] as! Int,  title: a["title"] as! String, detail: a["detail"] as! String,
                                     startTime: a["startTime"] as! String, endTime: a["endTime"] as! String,
-                                    name: a["name"] as! [String], uId: a["uId"] as! [String], isDone: isdone )
+                                    name: a["name"] as! [String], uId: a["uId"] as! [String], isDone: a["isDone"] as! [Bool] )
                     if index == 0 {
                         self.titles1.append(item)
                         self.listView.insertRows(at: [IndexPath(row: self.titles1.count-1,section: 0)], with: UITableViewRowAnimation.automatic)
@@ -292,7 +288,6 @@ extension MainViewController:UITableViewDataSource{
                     cell.btnDone.setImage(UIImage(named:"unchecked")?.withRenderingMode(.alwaysOriginal), for: .normal)
                     print("일안했음")
                     cell.isDone = false
-                    self.titles1[indexPath.row].isDone[i] = true
                     print(String(self.titles1[indexPath.row].isDone[i]))
                 }
             }
@@ -300,9 +295,7 @@ extension MainViewController:UITableViewDataSource{
 
         cell.tapAction = { [weak self] (cell1) in
             let curGrpStr = self?.curGroup.description
-            print(curGrpStr)
             var grpNon = curGrpStr!
-            print(grpNon)
            let database = FIRDatabase.database()
             let ref = database.reference().child("work").child(grpNon).child((self?.date.description)!)
             
@@ -333,9 +326,8 @@ extension MainViewController:UITableViewDataSource{
 extension MainViewController:UITableViewDelegate{
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         //CODE TO BE RUN ON CELL TOUCH
-        print("HI!",titles1[indexPath.row].title)
-        curWork = work(id: titles1[indexPath.row].id,  title: titles1[indexPath.row].title, detail: titles1[indexPath.row].detail, startTime:titles1[indexPath.row].startTime, endTime:titles1[indexPath.row].endTime,
-                      name: titles1[indexPath.row].name, uId: titles1[indexPath.row].uId, isDone: titles1[indexPath.row].isDone )
+        print("HI!",titles1[indexPath.row].title,"  ",titles1[indexPath.row].isDone.description)
+        curWork = work(id: titles1[indexPath.row].id,  title: titles1[indexPath.row].title, detail: titles1[indexPath.row].detail, startTime:titles1[indexPath.row].startTime, endTime:titles1[indexPath.row].endTime, name: titles1[indexPath.row].name, uId: titles1[indexPath.row].uId, isDone: titles1[indexPath.row].isDone )
         
         
        

@@ -31,8 +31,16 @@ class WorkDetailViewController: UIViewController {
         for i in 0...w.uId.count-1 {
             if w.uId[i] == (FIRAuth.auth()?.currentUser?.uid)!{
                 self.myNum = i
+            print(String(w.isDone[myNum]))
+                if w.isDone[myNum] {       //했을 때
+                    btnFinish.setTitle("취소", for: .normal)
+                    
+                }
+                break
             }
         }
+        
+        
     }
     
     override func viewDidLoad() {
@@ -44,6 +52,8 @@ class WorkDetailViewController: UIViewController {
         self.txtTime.text = w.startTime
         self.txtPeople.text = String(describing: w.name)
         self.txtDetail.text = w.detail
+        
+     
     }
 
     override func didReceiveMemoryWarning() {
