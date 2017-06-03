@@ -14,6 +14,10 @@ class WorkTableViewCell: UITableViewCell {
     @IBOutlet weak var txtTime: UILabel!
     @IBOutlet weak var txtPeople: UILabel!
     @IBOutlet weak var btnDone: UIButton!
+    var isDone : Bool!
+    
+    var tapAction: ((UITableViewCell) -> Void)?
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -25,4 +29,7 @@ class WorkTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
 
+    @IBAction func btnCheckClicked(_ sender: Any) {
+        tapAction?(self)
+    }
 }

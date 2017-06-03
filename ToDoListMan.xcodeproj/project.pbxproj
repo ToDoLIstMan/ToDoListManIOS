@@ -12,6 +12,8 @@
 		A908E9D31E9DF8230059FA10 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A908E9D11E9DF8230059FA10 /* Main.storyboard */; };
 		A908E9D51E9DF8230059FA10 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A908E9D41E9DF8230059FA10 /* Assets.xcassets */; };
 		A908E9D81E9DF8230059FA10 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A908E9D61E9DF8230059FA10 /* LaunchScreen.storyboard */; };
+		A912EFC01EE2BE4000651291 /* enabled_checked_ios_512.png in Resources */ = {isa = PBXBuildFile; fileRef = A912EFBE1EE2BE4000651291 /* enabled_checked_ios_512.png */; };
+		A912EFC11EE2BE4000651291 /* enabled_unchecked_ios_512.png in Resources */ = {isa = PBXBuildFile; fileRef = A912EFBF1EE2BE4000651291 /* enabled_unchecked_ios_512.png */; };
 		A9330B5C1EAFC8010072E326 /* GroupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9330B5B1EAFC8010072E326 /* GroupViewController.swift */; };
 		A9330B5E1EAFC8270072E326 /* PlanViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9330B5D1EAFC8270072E326 /* PlanViewController.swift */; };
 		A9330B601EAFCB800072E326 /* GroupTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9330B5F1EAFCB800072E326 /* GroupTableViewCell.swift */; };
@@ -46,8 +48,6 @@
 		A9D474CD1EDAD49B0082EA94 /* MoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9D474CC1EDAD49B0082EA94 /* MoreViewController.swift */; };
 		A9D474CF1EDAD4A80082EA94 /* MypageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9D474CE1EDAD4A80082EA94 /* MypageViewController.swift */; };
 		A9D474D21EDB14DE0082EA94 /* SetUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9D474D11EDB14DE0082EA94 /* SetUpViewController.swift */; };
-		A9D474D51EDC036F0082EA94 /* enabled_checked_ios_512.png in Resources */ = {isa = PBXBuildFile; fileRef = A9D474D31EDC036F0082EA94 /* enabled_checked_ios_512.png */; };
-		A9D474D61EDC036F0082EA94 /* enabled_unchecked_ios_512.png in Resources */ = {isa = PBXBuildFile; fileRef = A9D474D41EDC036F0082EA94 /* enabled_unchecked_ios_512.png */; };
 		A9DCA5B61EB6DC69007DB81C /* group.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9DCA5B51EB6DC69007DB81C /* group.swift */; };
 		A9DCA5B81EB7003A007DB81C /* user.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9DCA5B71EB7003A007DB81C /* user.swift */; };
 		A9DCA5BA1EB70047007DB81C /* work.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9DCA5B91EB70047007DB81C /* work.swift */; };
@@ -63,6 +63,8 @@
 		A908E9D41E9DF8230059FA10 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A908E9D71E9DF8230059FA10 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A908E9D91E9DF8230059FA10 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A912EFBE1EE2BE4000651291 /* enabled_checked_ios_512.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = enabled_checked_ios_512.png; sourceTree = "<group>"; };
+		A912EFBF1EE2BE4000651291 /* enabled_unchecked_ios_512.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = enabled_unchecked_ios_512.png; sourceTree = "<group>"; };
 		A9330B5B1EAFC8010072E326 /* GroupViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GroupViewController.swift; sourceTree = "<group>"; };
 		A9330B5D1EAFC8270072E326 /* PlanViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlanViewController.swift; sourceTree = "<group>"; };
 		A9330B5F1EAFCB800072E326 /* GroupTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GroupTableViewCell.swift; sourceTree = "<group>"; };
@@ -97,8 +99,6 @@
 		A9D474CC1EDAD49B0082EA94 /* MoreViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoreViewController.swift; sourceTree = "<group>"; };
 		A9D474CE1EDAD4A80082EA94 /* MypageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MypageViewController.swift; sourceTree = "<group>"; };
 		A9D474D11EDB14DE0082EA94 /* SetUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SetUpViewController.swift; sourceTree = "<group>"; };
-		A9D474D31EDC036F0082EA94 /* enabled_checked_ios_512.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = enabled_checked_ios_512.png; path = Assets.xcassets/enabled_checked_ios_512.png; sourceTree = "<group>"; };
-		A9D474D41EDC036F0082EA94 /* enabled_unchecked_ios_512.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = enabled_unchecked_ios_512.png; path = Assets.xcassets/enabled_unchecked_ios_512.png; sourceTree = "<group>"; };
 		A9DCA5B51EB6DC69007DB81C /* group.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = group.swift; sourceTree = "<group>"; };
 		A9DCA5B71EB7003A007DB81C /* user.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = user.swift; sourceTree = "<group>"; };
 		A9DCA5B91EB70047007DB81C /* work.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = work.swift; sourceTree = "<group>"; };
@@ -164,6 +164,7 @@
 		A908E9CC1E9DF8230059FA10 /* ToDoListMan */ = {
 			isa = PBXGroup;
 			children = (
+				A912EFBD1EE2BDF100651291 /* Image */,
 				A9346EC91ECEB96300490592 /* GoogleService-Info.plist */,
 				A9346EC51ECE743D00490592 /* Cell */,
 				A9346EC41ECE741600490592 /* Controller */,
@@ -171,12 +172,19 @@
 				A908E9CD1E9DF8230059FA10 /* AppDelegate.swift */,
 				A908E9D11E9DF8230059FA10 /* Main.storyboard */,
 				A908E9D41E9DF8230059FA10 /* Assets.xcassets */,
-				A9D474D31EDC036F0082EA94 /* enabled_checked_ios_512.png */,
-				A9D474D41EDC036F0082EA94 /* enabled_unchecked_ios_512.png */,
 				A908E9D61E9DF8230059FA10 /* LaunchScreen.storyboard */,
 				A908E9D91E9DF8230059FA10 /* Info.plist */,
 			);
 			path = ToDoListMan;
+			sourceTree = "<group>";
+		};
+		A912EFBD1EE2BDF100651291 /* Image */ = {
+			isa = PBXGroup;
+			children = (
+				A912EFBE1EE2BE4000651291 /* enabled_checked_ios_512.png */,
+				A912EFBF1EE2BE4000651291 /* enabled_unchecked_ios_512.png */,
+			);
+			name = Image;
 			sourceTree = "<group>";
 		};
 		A9346EC41ECE741600490592 /* Controller */ = {
@@ -295,12 +303,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A9D474D51EDC036F0082EA94 /* enabled_checked_ios_512.png in Resources */,
+				A912EFC01EE2BE4000651291 /* enabled_checked_ios_512.png in Resources */,
 				A908E9D81E9DF8230059FA10 /* LaunchScreen.storyboard in Resources */,
 				A9346ECA1ECEB96300490592 /* GoogleService-Info.plist in Resources */,
 				A908E9D51E9DF8230059FA10 /* Assets.xcassets in Resources */,
+				A912EFC11EE2BE4000651291 /* enabled_unchecked_ios_512.png in Resources */,
 				A908E9D31E9DF8230059FA10 /* Main.storyboard in Resources */,
-				A9D474D61EDC036F0082EA94 /* enabled_unchecked_ios_512.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

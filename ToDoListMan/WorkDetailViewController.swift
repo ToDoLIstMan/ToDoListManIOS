@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Firebase
 
 class WorkDetailViewController: UIViewController {
 
@@ -17,9 +18,23 @@ class WorkDetailViewController: UIViewController {
     @IBOutlet weak var btnFinish: UIButton!
     @IBOutlet weak var btnPostpone: UIButton!
     
-    
     var w : work!
     var master : String = ""
+    var myNum : Int = -1
+    var curGroupUid : Int = -1
+    var curDate : String = ""
+    
+    override func viewWillAppear(_ animated: Bool) {
+        if master != (FIRAuth.auth()?.currentUser?.uid)! {
+            btnPostpone.isHidden = true
+        }
+        for i in 0...w.uId.count-1 {
+            if w.uId[i] == (FIRAuth.auth()?.currentUser?.uid)!{
+                self.myNum = i
+            }
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -37,9 +52,26 @@ class WorkDetailViewController: UIViewController {
     }
     
     @IBAction func btnFinishclicked(_ sender: Any) {
+        let database = FIRDatabase.database()
+        let ref = database.reference().child("work").child(String(curGroupUid)).child(self.curDate)
+        if !w.isDone[myNum] {       //안했을 때 -> 했을 때
+            btnFinish.setTitle("취소", for: .normal)
+            w.isDone[myNum] = true
+            
+        } else {        //했을 때 -> 안했을 때
+            btnFinish.setTitle("완료", for: .normal)
+            w.isDone[myNum] = false
+        
+        }
+        
+        ref.child(String(w.id)).updateChildValues(["isDone" : self.w.isDone])
+        
+        
     }
 
-    @IBOutlet weak var btnPostponeClicked: UIButton!
+    @IBAction func btnPostponeClicked(_ sender: Any) {
+        
+    }
     /*
     // MARK: - Navigation
 

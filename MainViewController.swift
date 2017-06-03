@@ -33,17 +33,20 @@ class MainViewController: UIViewController {
     
     var gName : [String] = []
     var gUid : [Int] = []
+    let database = FIRDatabase.database()
     
+    var Myposition : Int = -1
     
     //String name, String rank, List<Integer> groups, List<String> groupName, List<Integer> masterGroups, List<String> masterGroupName
     
 
+   
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         
-        print("hi!",self.date)
+        print("hi!",self.titles1.count)
         print(FIRAuth.auth()?.currentUser?.uid)
         
         self.curUserUid = (FIRAuth.auth()?.currentUser?.uid)!
@@ -145,8 +148,8 @@ class MainViewController: UIViewController {
                     self.gName = a["groupName"] as! [String]
                     self.gUid = a["groups"] as! [Int]
                     self.curGroup = self.gUid[0]
-                    let database = FIRDatabase.database()
-                    let ref = database.reference().child("group").child(String(self.gUid[0])).observe(FIRDataEventType.value, with: { (dataSnapShot) in
+                    
+                    self.ref.child("group").child(String(self.gUid[0])).observe(FIRDataEventType.value, with: { (dataSnapShot) in
                         var d = dataSnapShot.value as! NSDictionary
                         self.master = d["masterUid"] as! String
                         
@@ -154,8 +157,17 @@ class MainViewController: UIViewController {
                     })
                 } else {
                     
+                    let alertController = UIAlertController(title: "경고", message: "그룹을 추가하세요.", preferredStyle: .alert)
                     
                     
+                    let saveAction = UIAlertAction(title: "확인", style: .default, handler: {
+                        (action : UIAlertAction!) -> Void in
+                        
+                    })
+
+                    alertController.addAction(saveAction)
+                    
+                    self.present(alertController, animated: true, completion: nil)
                 }
             }
         })
@@ -164,10 +176,11 @@ class MainViewController: UIViewController {
     
     func loadData(index : Int, curGroup : Int){
         
-        self.titles1.removeAll()
         print(titles1.count)
         self.ref = FIRDatabase.database().reference()
         self.ref.child("work").child(String(curGroup)).child(date).observe(.value, with: { (snapShot) in
+            
+            self.titles1.removeAll()
             if snapShot.exists() {
                 var i = 0
                 self.listView.reloadData()
@@ -178,7 +191,7 @@ class MainViewController: UIViewController {
                     var isdone = a["isDone"] as! [Bool]
                     
                     //int id, String title, String detail, String startTime, String endTime,List<String> name,List<String> uId,List<Boolean> isDone
-                    let item = work(id: self.curGroup as! Int,  title: a["title"] as! String, detail: a["detail"] as! String,
+                    let item = work(id: a["id"] as! Int,  title: a["title"] as! String, detail: a["detail"] as! String,
                                     startTime: a["startTime"] as! String, endTime: a["endTime"] as! String,
                                     name: a["name"] as! [String], uId: a["uId"] as! [String], isDone: isdone )
                     if index == 0 {
@@ -230,6 +243,9 @@ class MainViewController: UIViewController {
             sendtimer.w = work(id: curWork.id,  title: curWork.title, detail: curWork.detail, startTime : curWork.startTime,
                                endTime : curWork.endTime, name: curWork.name, uId: curWork.uId, isDone: curWork.isDone )
             sendtimer.master = self.master
+            sendtimer.curGroupUid = self.curGroup
+            sendtimer.curDate = self.date
+            ref.removeAllObservers()
         } else if segue.identifier == "segList" {
             let sendtimer=segue.destination as! GroupPickerViewController
        //     sendtimer.myGroup =["dd","dd"]
@@ -256,28 +272,59 @@ extension MainViewController:UITableViewDataSource{
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell { // 첫 번째 인자로 등록한 identifier, cell은 as 키워드로 앞서 만든 custom cell class화 해준다.
+        var isDone : Bool = false
         let cell = listView.dequeueReusableCell(withIdentifier: "WorkTableViewCell", for: indexPath) as! WorkTableViewCell
-        switch segmentedControl.selectedSegmentIndex {
-        case 0:
-            cell.txtTitle.text = titles1[indexPath.row].title
-            cell.txtTime.text = titles1[indexPath.row].startTime+" ~ "+titles1[indexPath.row].endTime
-            cell.txtPeople.text = titles1[indexPath.row].name.joined(separator: " ")
-      //      cell.btnDone.text = titles1[indexPath.row].
-          
-        case 1:
-            cell.txtTitle.text = titles1[indexPath.row].title
-            cell.txtTime.text = titles1[indexPath.row].startTime+" ~ "+titles1[indexPath.row].endTime
-            cell.txtPeople.text = titles1[indexPath.row].name.joined(separator: " ")
-            //      cell.btnDone.text = titles1[indexPath.row].
-            
-        case 2:
-            cell.txtTitle.text = titles1[indexPath.row].title
-            cell.txtTime.text = titles1[indexPath.row].startTime+" ~ "+titles1[indexPath.row].endTime
-            cell.txtPeople.text = titles1[indexPath.row].name.joined(separator: " ")
+        var myNum = -1
+        cell.btnDone.setImage(UIImage(named:"unchecked")?.withRenderingMode(.alwaysOriginal), for: .normal)
+        cell.txtTitle.text = titles1[indexPath.row].title
+        cell.txtTime.text = titles1[indexPath.row].startTime+" ~ "+titles1[indexPath.row].endTime
+        cell.txtPeople.text = titles1[indexPath.row].name.joined(separator: " ")
         //      cell.btnDone.text = titles1[indexPath.row].
-        default:
-            break
+        
+        for i in 0...((self.titles1[indexPath.row].uId.count)-1) {
+            if self.titles1[indexPath.row].uId[i] == FIRAuth.auth()?.currentUser?.uid {
+                myNum = i
+                if self.titles1[indexPath.row].isDone[i] {
+                    cell.btnDone.setImage(UIImage(named:"checked")?.withRenderingMode(.alwaysOriginal), for: .normal)
+                    print("일했음")
+                    cell.isDone = true
+                } else {
+                    cell.btnDone.setImage(UIImage(named:"unchecked")?.withRenderingMode(.alwaysOriginal), for: .normal)
+                    print("일안했음")
+                    cell.isDone = false
+                    self.titles1[indexPath.row].isDone[i] = true
+                    print(String(self.titles1[indexPath.row].isDone[i]))
+                }
+            }
         }
+
+        cell.tapAction = { [weak self] (cell1) in
+            let curGrpStr = self?.curGroup.description
+            print(curGrpStr)
+            var grpNon = curGrpStr!
+            print(grpNon)
+           let database = FIRDatabase.database()
+            let ref = database.reference().child("work").child(grpNon).child((self?.date.description)!)
+            
+            if cell.isDone {
+                cell.btnDone.setImage(UIImage(named:"unchecked")?.withRenderingMode(.alwaysOriginal), for: .normal)
+                 self?.titles1[indexPath.row].isDone[myNum] = false
+                cell.isDone = false
+                
+            } else {
+                cell.btnDone.setImage(UIImage(named:"checked")?.withRenderingMode(.alwaysOriginal), for: .normal)
+                
+                self?.titles1[indexPath.row].isDone[myNum] = true
+                cell.isDone = true
+            }
+            let idStr = self?.titles1[indexPath.row].id.description
+            let idNon = idStr!
+            ref.child(idNon).updateChildValues(["isDone" : self?.titles1[indexPath.row].isDone])
+
+        }
+
+        
+        
         return cell
     }
     
@@ -291,6 +338,8 @@ extension MainViewController:UITableViewDelegate{
                       name: titles1[indexPath.row].name, uId: titles1[indexPath.row].uId, isDone: titles1[indexPath.row].isDone )
         
         
+       
+     
         self.performSegue(withIdentifier: "segDetail", sender: self)
         
         
