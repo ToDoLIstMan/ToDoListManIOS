@@ -18,8 +18,8 @@ class MainViewController: UIViewController {
     var ref: FIRDatabaseReference!
     var works :[work] = []
     var myGroups : [Int] = []
-    var curGroup = 0
-    var date = "2017-05-20"
+    var curGroup = 5
+    var date = "2017-06-03"
     var curUserUid = ""
     var oldSeg = 0
     
@@ -116,13 +116,13 @@ class MainViewController: UIViewController {
     @IBAction func segmentedChanged(_ sender: Any) {
         switch segmentedControl.selectedSegmentIndex {
         case 0:
-            self.listView.reloadData()
+            loadData(index: 0)
             break
         case 1:
-            self.listView.reloadData()
+            loadData(index: 1)
             break
         case 2:
-            self.listView.reloadData()
+            loadData(index: 2)
             break
         default:
             return
@@ -147,20 +147,9 @@ class MainViewController: UIViewController {
     
     
     func loadData(index : Int){
-        switch self.oldSeg {
-        case 0:
-            self.titles1.removeAll()
-            break;
-        case 1:
-            self.titles2.removeAll()
-            break;
-        case 2:
-            self.titles3.removeAll()
-            break;
-        default:
-            break;
-        }
-
+        
+        self.titles1.removeAll()
+        print(titles1.count)
         self.ref = FIRDatabase.database().reference()
         self.ref.child("work").child(String(curGroup)).child(date).observe(.value, with: { (snapShot) in
             if snapShot.exists() {
@@ -176,33 +165,37 @@ class MainViewController: UIViewController {
                     let item = work(id: self.curGroup as! Int,  title: a["title"] as! String, detail: a["detail"] as! String,
                                     startTime: a["startTime"] as! String, endTime: a["endTime"] as! String,
                                     name: a["name"] as! [String], uId: a["uId"] as! [String], isDone: isdone )
-                    
-                    self.titles1.append(item)
-                    i = 0
-                    for uid in (a["uId"] as! [String]) {
-                        if uid == self.curUserUid {
-                            if isdone[i] {
-                                self.titles2.append(item)
-                            } else {
-                                self.titles3.append(item)
-                            }
-                        }
-                        
-                        i += 1
+                    if index == 0 {
+                        self.titles1.append(item)
+                        self.listView.insertRows(at: [IndexPath(row: self.titles1.count-1,section: 0)], with: UITableViewRowAnimation.automatic)
                     }
                     
-                    switch index {
-                    case 0:
-                        self.listView.insertRows(at: [IndexPath(row: self.titles1.count-1,section: 0)], with: UITableViewRowAnimation.automatic)
-                        break;
-                    case 1:
-                        self.listView.insertRows(at: [IndexPath(row: self.titles2.count-1,section: 0)], with: UITableViewRowAnimation.automatic)
-                        break;
-                    case 2:
-                        self.listView.insertRows(at: [IndexPath(row: self.titles3.count-1,section: 0)], with: UITableViewRowAnimation.automatic)
-                        break;
-                    default:
-                        break;
+                    else if index == 1 {
+                        i = 0
+                        for uid in (a["uId"] as! [String]) {
+                            if uid == self.curUserUid {
+                                if isdone[i] {
+                                    self.titles1.append(item)
+                                    self.listView.insertRows(at: [IndexPath(row: self.titles1.count-1,section: 0)], with: UITableViewRowAnimation.automatic)
+                                }
+                            }
+                            
+                            i += 1
+                        }
+                    }
+                    
+                    else if index == 2 {
+                        i = 0
+                        for uid in (a["uId"] as! [String]) {
+                            if uid == self.curUserUid {
+                                if !isdone[i] {
+                                    self.titles1.append(item)
+                                    self.listView.insertRows(at: [IndexPath(row: self.titles1.count-1,section: 0)], with: UITableViewRowAnimation.automatic)
+                                }
+                            }
+                            
+                            i += 1
+                        }
                     }
                     
                 }
@@ -234,9 +227,9 @@ extension MainViewController:UITableViewDataSource{
         case 0:
             return titles1.count
         case 1:
-            return titles2.count
+            return titles1.count
         case 2:
-            return titles3.count
+            return titles1.count
         default:
             return 0
         }
@@ -253,16 +246,16 @@ extension MainViewController:UITableViewDataSource{
       //      cell.btnDone.text = titles1[indexPath.row].
           
         case 1:
-            cell.txtTitle.text = titles2[indexPath.row].title
-            cell.txtTime.text = titles2[indexPath.row].startTime+" ~ "+titles2[indexPath.row].endTime
-            cell.txtPeople.text = titles2[indexPath.row].name.joined(separator: " ")
-            //      cell.btnDone.text = titles2[indexPath.row].
+            cell.txtTitle.text = titles1[indexPath.row].title
+            cell.txtTime.text = titles1[indexPath.row].startTime+" ~ "+titles1[indexPath.row].endTime
+            cell.txtPeople.text = titles1[indexPath.row].name.joined(separator: " ")
+            //      cell.btnDone.text = titles1[indexPath.row].
             
         case 2:
-            cell.txtTitle.text = titles3[indexPath.row].title
-            cell.txtTime.text = titles3[indexPath.row].startTime+" ~ "+titles3[indexPath.row].endTime
-            cell.txtPeople.text = titles3[indexPath.row].name.joined(separator: " ")
-        //      cell.btnDone.text = titles3[indexPath.row].
+            cell.txtTitle.text = titles1[indexPath.row].title
+            cell.txtTime.text = titles1[indexPath.row].startTime+" ~ "+titles1[indexPath.row].endTime
+            cell.txtPeople.text = titles1[indexPath.row].name.joined(separator: " ")
+        //      cell.btnDone.text = titles1[indexPath.row].
         default:
             break
         }
