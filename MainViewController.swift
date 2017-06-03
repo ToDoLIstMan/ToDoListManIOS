@@ -25,6 +25,8 @@ class MainViewController: UIViewController {
     
     var curWork : work!
     
+    var master : String = ""
+    
     var titles1 : [work] = []
     var titles2 : [work] = []
     var titles3 : [work] = []
@@ -49,8 +51,6 @@ class MainViewController: UIViewController {
         listView.dataSource = self
         listView.delegate = self
         
-        
-        loadData(index: segmentedControl.selectedSegmentIndex)
         
         getMygroup()
         // Do any additional setup after loading the view.
@@ -82,6 +82,9 @@ class MainViewController: UIViewController {
     @IBAction func unwindToVC1(segue:UIStoryboardSegue) {
         if let sourceViewController = segue.source as? TimePickerViewController {
             self.date = sourceViewController.date
+            
+            loadData(index: segmentedControl.selectedSegmentIndex, curGroup: self.curGroup)
+            
         }
     }
 
@@ -89,6 +92,9 @@ class MainViewController: UIViewController {
         
         if let sourceViewController = segue.source as? GroupPickerViewController {
             self.curGroup = sourceViewController.pickGrpId
+            
+            
+            loadData(index: segmentedControl.selectedSegmentIndex, curGroup:  self.curGroup)
         }
     }
     
@@ -116,13 +122,13 @@ class MainViewController: UIViewController {
     @IBAction func segmentedChanged(_ sender: Any) {
         switch segmentedControl.selectedSegmentIndex {
         case 0:
-            loadData(index: 0)
+            loadData(index: 0,curGroup: self.curGroup)
             break
         case 1:
-            loadData(index: 1)
+            loadData(index: 1,curGroup:  self.curGroup)
             break
         case 2:
-            loadData(index: 2)
+            loadData(index: 2,curGroup:  self.curGroup)
             break
         default:
             return
@@ -138,7 +144,17 @@ class MainViewController: UIViewController {
                 if a["groupName"] != nil {
                     self.gName = a["groupName"] as! [String]
                     self.gUid = a["groups"] as! [Int]
+                    self.curGroup = self.gUid[0]
+                    let database = FIRDatabase.database()
+                    let ref = database.reference().child("group").child(String(self.gUid[0])).observe(FIRDataEventType.value, with: { (dataSnapShot) in
+                        var d = dataSnapShot.value as! NSDictionary
+                        self.master = d["masterUid"] as! String
+                        
+                        self.loadData(index: self.segmentedControl.selectedSegmentIndex, curGroup: self.gUid[0])
+                    })
                 } else {
+                    
+                    
                     
                 }
             }
@@ -146,7 +162,7 @@ class MainViewController: UIViewController {
     }
     
     
-    func loadData(index : Int){
+    func loadData(index : Int, curGroup : Int){
         
         self.titles1.removeAll()
         print(titles1.count)
@@ -200,6 +216,8 @@ class MainViewController: UIViewController {
                     
                 }
             }else {
+                
+                self.listView.reloadData()
                 print("없없")
             }
         })
@@ -211,6 +229,7 @@ class MainViewController: UIViewController {
             let sendtimer=segue.destination as! WorkDetailViewController
             sendtimer.w = work(id: curWork.id,  title: curWork.title, detail: curWork.detail, startTime : curWork.startTime,
                                endTime : curWork.endTime, name: curWork.name, uId: curWork.uId, isDone: curWork.isDone )
+            sendtimer.master = self.master
         } else if segue.identifier == "segList" {
             let sendtimer=segue.destination as! GroupPickerViewController
        //     sendtimer.myGroup =["dd","dd"]

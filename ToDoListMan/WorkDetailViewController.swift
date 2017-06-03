@@ -19,7 +19,7 @@ class WorkDetailViewController: UIViewController {
     
     
     var w : work!
-    
+    var master : String = ""
     override func viewDidLoad() {
         super.viewDidLoad()
 
