@@ -8,6 +8,7 @@
 
 import UIKit
 import Firebase
+import UserNotifications
 
 class MainViewController: UIViewController {
    
@@ -19,7 +20,7 @@ class MainViewController: UIViewController {
     var works :[work] = []
     var myGroups : [Int] = []
     var curGroup = 5
-    var date = "2017-06-03"
+    var date = ""
     var curUserUid = ""
     var oldSeg = 0
     
@@ -38,14 +39,11 @@ class MainViewController: UIViewController {
     var Myposition : Int = -1
     
     //String name, String rank, List<Integer> groups, List<String> groupName, List<Integer> masterGroups, List<String> masterGroupName
-    
 
-   
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        
+                
         self.curUserUid = (FIRAuth.auth()?.currentUser?.uid)!
         
         listView.dataSource = self
@@ -135,11 +133,42 @@ class MainViewController: UIViewController {
         }
     }
     
+    func makeNoti(){
+        
+        let content = UNMutableNotificationContent()
+        content.title = "일정이 추가되었습니다."
+        content.subtitle = "test"
+        content.body = "추가된 일정을 확인하세요."
+        content.badge = 1
+        
+        
+        let gregorian = Calendar(identifier: .gregorian)
+        let now = Date()
+        var components = gregorian.dateComponents([.year, .month, .day, .hour, .minute, .second], from: now)
+        
+        // Change the time to 9:30:00 in your locale
+        if components.hour! > 22 {
+            components.day = components.day! + 1
+        }
+        components.hour = 22
+        components.minute = 00
+        components.second = 0
+        
+        let date = gregorian.date(from: components)!
+        
+        let triggerDate = Calendar.current.dateComponents([.year,.month,.day,.hour,.minute,.second,], from: date)
+        let trigger = UNCalendarNotificationTrigger(dateMatching: triggerDate, repeats: true)
+        let request = UNNotificationRequest(identifier: "timerDone",content: content,trigger: trigger)
+        UNUserNotificationCenter.current().add(request, withCompletionHandler: nil)
+    }
+    
+    
     func getMygroup(){
         self.ref = FIRDatabase.database().reference()
         self.ref.child("user").child(self.curUserUid).observe(.value, with: { (snapShot) in
            // 그룹 없는거 체크해야 함.
             if snapShot.hasChildren() {
+                self.makeNoti()
                 let a = snapShot.value as! NSDictionary
                 if a["groupName"] != nil {
                     self.gName = a["groupName"] as! [String]
@@ -150,6 +179,10 @@ class MainViewController: UIViewController {
                         var d = dataSnapShot.value as! NSDictionary
                         self.master = d["masterUid"] as! String
                         
+                        let curDate = Date()
+                        let formatter = DateFormatter()
+                        formatter.dateFormat = "yyyy-MM-dd"
+                        self.date = formatter.string(from: curDate)
                         self.loadData(index: self.segmentedControl.selectedSegmentIndex, curGroup: self.gUid[0])
                     })
                 } else {
@@ -173,7 +206,7 @@ class MainViewController: UIViewController {
     
     func loadData(index : Int, curGroup : Int){
         self.ref = FIRDatabase.database().reference()
-        self.ref.child("work").child(String(curGroup)).child(date).observe(.value, with: { (snapShot) in
+        self.ref.child("work").child(String(curGroup)).child(self.date).observe(.value, with: { (snapShot) in
             
             self.titles1.removeAll()
             if snapShot.exists() {
@@ -184,7 +217,6 @@ class MainViewController: UIViewController {
                     self.oldSeg = index
                     let a = (itemSnapshot as! FIRDataSnapshot).value as! NSDictionary
                     var isdone = a["isDone"] as! [Bool]
-                    print("가져오는 것 ", isdone.description)
                     
                     //int id, String title, String detail, String startTime, String endTime,List<String> name,List<String> uId,List<Boolean> isDone
                     let item = work(id: a["id"] as! Int,  title: a["title"] as! String, detail: a["detail"] as! String,
@@ -227,7 +259,6 @@ class MainViewController: UIViewController {
             }else {
                 
                 self.listView.reloadData()
-                print("없없")
             }
         })
         
@@ -282,13 +313,10 @@ extension MainViewController:UITableViewDataSource{
                 myNum = i
                 if self.titles1[indexPath.row].isDone[i] {
                     cell.btnDone.setImage(UIImage(named:"checked")?.withRenderingMode(.alwaysOriginal), for: .normal)
-                    print("일했음")
                     cell.isDone = true
                 } else {
                     cell.btnDone.setImage(UIImage(named:"unchecked")?.withRenderingMode(.alwaysOriginal), for: .normal)
-                    print("일안했음")
                     cell.isDone = false
-                    print(String(self.titles1[indexPath.row].isDone[i]))
                 }
             }
         }
@@ -326,7 +354,6 @@ extension MainViewController:UITableViewDataSource{
 extension MainViewController:UITableViewDelegate{
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         //CODE TO BE RUN ON CELL TOUCH
-        print("HI!",titles1[indexPath.row].title,"  ",titles1[indexPath.row].isDone.description)
         curWork = work(id: titles1[indexPath.row].id,  title: titles1[indexPath.row].title, detail: titles1[indexPath.row].detail, startTime:titles1[indexPath.row].startTime, endTime:titles1[indexPath.row].endTime, name: titles1[indexPath.row].name, uId: titles1[indexPath.row].uId, isDone: titles1[indexPath.row].isDone )
         
         

@@ -11,6 +11,7 @@ import FacebookLogin
 import FacebookCore
 import FBSDKLoginKit
 import Firebase
+import UserNotifications
 
 class ViewController: UIViewController {
     
@@ -18,6 +19,11 @@ class ViewController: UIViewController {
     @IBOutlet weak var btnFBLogin: UIButton!
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        //퍼미션 부여
+        UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .sound, .badge]) { (didAllow, error) in
+        }
+        
         // Do any additional setup after loading the view, typically from a nib.
 
         /*
