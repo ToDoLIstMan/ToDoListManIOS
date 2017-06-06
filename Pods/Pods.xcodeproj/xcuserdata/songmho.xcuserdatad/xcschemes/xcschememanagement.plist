@@ -4,6 +4,11 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
+		<key>Alamofire.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Bolts.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -62,6 +67,11 @@
 			<key>primary</key>
 			<true/>
 		</dict>
+		<key>1866AE03785F48A4E3A4087784D0E8D4</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>332F91393FB1DE033D370B4CEDDD5FCF</key>
 		<dict>
 			<key>primary</key>
@@ -87,7 +97,7 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>92EEC532B7EDC226CD4167B9F8A4576B</key>
+		<key>88E9EC28B8B46C3631E6B242B50F4442</key>
 		<dict>
 			<key>primary</key>
 			<true/>

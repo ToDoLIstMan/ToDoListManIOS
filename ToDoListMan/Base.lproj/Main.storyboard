@@ -22,11 +22,19 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zVR-1j-ilG">
-                                <rect key="frame" x="150" y="174" width="46" height="30"/>
+                                <rect key="frame" x="133" y="397" width="108" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
+                                <state key="normal" title="Facebook Login"/>
                                 <connections>
                                     <action selector="btnFBLoginPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="vxW-cE-nnJ"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hBF-jD-J42">
+                                <rect key="frame" x="145" y="343" width="84" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Kakao Login"/>
+                                <connections>
+                                    <action selector="kakaoLoginClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="0cC-mG-26U"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -45,7 +53,7 @@
         <scene sceneID="vse-JU-PkB">
             <objects>
                 <navigationController wantsFullScreenLayout="YES" automaticallyAdjustsScrollViewInsets="NO" id="RpC-Ly-TN3" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="일목록" image=" " id="mWS-an-i3E"/>
+                    <tabBarItem key="tabBarItem" title="일목록" image="list" id="mWS-an-i3E"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" barStyle="black" id="DvU-wp-IDy">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
@@ -89,14 +97,14 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1UL-me-fWG">
-                                                    <rect key="frame" x="4" y="0.0" width="293" height="16"/>
+                                                    <rect key="frame" x="4" y="89" width="292" height="16"/>
                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="00:00 ~ 00:00" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UQC-Oj-zWv">
-                                                    <rect key="frame" x="4" y="22" width="112" height="25"/>
+                                                    <rect key="frame" x="4" y="21" width="111" height="25"/>
                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
@@ -110,7 +118,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yI2-oB-LEh">
-                                                    <rect key="frame" x="323" y="37" width="32" height="32"/>
+                                                    <rect key="frame" x="323" y="37" width="31" height="32"/>
                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                                     <state key="normal" title="Button" image="unchecked"/>
                                                     <connections>
@@ -464,7 +472,7 @@
         <scene sceneID="S5p-2Y-TfW">
             <objects>
                 <navigationController id="LjX-2D-pOW" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="전체그룹" id="j80-e8-M9f"/>
+                    <tabBarItem key="tabBarItem" title="전체그룹" image="group" id="j80-e8-M9f"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" barStyle="black" id="KiL-fJ-XcQ">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -506,7 +514,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CS6-XD-Oon">
-                                                    <rect key="frame" x="24" y="6" width="320" height="10"/>
+                                                    <rect key="frame" x="24" y="5" width="319" height="10"/>
                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
@@ -1003,7 +1011,7 @@
         <scene sceneID="TzE-w3-1If">
             <objects>
                 <navigationController id="OP9-tc-w4t" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="일정목록" id="5B0-T8-a5M"/>
+                    <tabBarItem key="tabBarItem" title="일정목록" image="send" id="5B0-T8-a5M"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" barStyle="black" id="npg-ZO-cbS">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -1473,7 +1481,7 @@
         <scene sceneID="5SK-kv-hqL">
             <objects>
                 <navigationController id="4rW-cs-THh" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="더보기" id="S3R-no-Vhq"/>
+                    <tabBarItem key="tabBarItem" title="더보기" image="more" id="S3R-no-Vhq"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" barStyle="black" id="wvt-E3-x7x">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -1690,7 +1698,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="F3I-8z-Ave">
-                                                    <rect key="frame" x="285" y="8" width="30" height="30"/>
+                                                    <rect key="frame" x="284" y="8" width="30" height="30"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMinX="YES"/>
                                                 </imageView>
                                             </subviews>
@@ -1737,7 +1745,7 @@
         <scene sceneID="5YM-Cy-bXv">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="qDz-GB-qwf" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="포맷관리" id="KcH-Sz-L4Z"/>
+                    <tabBarItem key="tabBarItem" title="포맷관리" image="format" id="KcH-Sz-L4Z"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" barStyle="black" id="bxX-Fz-nbm">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
@@ -1755,7 +1763,11 @@
         </scene>
     </scenes>
     <resources>
-        <image name=" " width="16" height="16"/>
+        <image name="format" width="25" height="25"/>
+        <image name="group" width="25" height="25"/>
+        <image name="list" width="25" height="25"/>
+        <image name="more" width="25" height="25"/>
+        <image name="send" width="25" height="25"/>
         <image name="unchecked" width="512" height="512"/>
     </resources>
 </document>

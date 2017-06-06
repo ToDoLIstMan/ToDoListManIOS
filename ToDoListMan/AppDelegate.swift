@@ -20,23 +20,25 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
-        UIApplication.shared.applicationIconBadgeNumber = 0
-        if (UIApplication.shared.scheduledLocalNotifications?.count)! > 0 {
-            print("time122221")
-            
-            let content = UNMutableNotificationContent()
-            content.badge = 0 // your badge count
-            let center = UNUserNotificationCenter.current()
-            center.removeAllDeliveredNotifications() // To remove all delivered notifications
-        }
-        
-
         
         FIRApp.configure()
         return FBSDKApplicationDelegate.sharedInstance().application(application, didFinishLaunchingWithOptions:launchOptions)
     }
     func application(_ application: UIApplication, open url: URL, sourceApplication: String?, annotation: Any) -> Bool {
+        
+        if KOSession.isKakaoAccountLoginCallback(url) {
+            return KOSession.handleOpen(url)
+        }
+        
         return FBSDKApplicationDelegate.sharedInstance().application(application, open: url, sourceApplication: sourceApplication, annotation: annotation)
+    }
+    
+    func application(application: UIApplication, handleOpenURL url: NSURL) -> Bool {
+        //kakao
+        if KOSession.isKakaoAccountLoginCallback(url as URL!) {
+            return KOSession.handleOpen(url as URL!)
+        }
+        return false
     }
 
     func applicationWillResignActive(_ application: UIApplication) {
@@ -71,6 +73,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func applicationDidBecomeActive(_ application: UIApplication) {
         // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
+        KOSession.handleDidBecomeActive()
         FBSDKAppEvents.activateApp()
     }
 

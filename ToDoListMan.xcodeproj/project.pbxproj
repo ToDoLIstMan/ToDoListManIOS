@@ -15,6 +15,18 @@
 		A912EFC01EE2BE4000651291 /* enabled_checked_ios_512.png in Resources */ = {isa = PBXBuildFile; fileRef = A912EFBE1EE2BE4000651291 /* enabled_checked_ios_512.png */; };
 		A912EFC11EE2BE4000651291 /* enabled_unchecked_ios_512.png in Resources */ = {isa = PBXBuildFile; fileRef = A912EFBF1EE2BE4000651291 /* enabled_unchecked_ios_512.png */; };
 		A912EFC31EE2F2BE00651291 /* PostponeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A912EFC21EE2F2BE00651291 /* PostponeViewController.swift */; };
+		A9201E6C1EE4FB30003E1345 /* 더보기 pressed-50.png in Resources */ = {isa = PBXBuildFile; fileRef = A9201E621EE4FB30003E1345 /* 더보기 pressed-50.png */; };
+		A9201E6D1EE4FB30003E1345 /* 더보기 pressed-75.png in Resources */ = {isa = PBXBuildFile; fileRef = A9201E631EE4FB30003E1345 /* 더보기 pressed-75.png */; };
+		A9201E6E1EE4FB30003E1345 /* 일목록 pressed-50.png in Resources */ = {isa = PBXBuildFile; fileRef = A9201E641EE4FB30003E1345 /* 일목록 pressed-50.png */; };
+		A9201E6F1EE4FB30003E1345 /* 일목록 pressed-75.png in Resources */ = {isa = PBXBuildFile; fileRef = A9201E651EE4FB30003E1345 /* 일목록 pressed-75.png */; };
+		A9201E701EE4FB30003E1345 /* 일정전송 pressed-50.png in Resources */ = {isa = PBXBuildFile; fileRef = A9201E661EE4FB30003E1345 /* 일정전송 pressed-50.png */; };
+		A9201E711EE4FB30003E1345 /* 일정전송 pressed-75.png in Resources */ = {isa = PBXBuildFile; fileRef = A9201E671EE4FB30003E1345 /* 일정전송 pressed-75.png */; };
+		A9201E721EE4FB30003E1345 /* 전체그룹 pressed-50.png in Resources */ = {isa = PBXBuildFile; fileRef = A9201E681EE4FB30003E1345 /* 전체그룹 pressed-50.png */; };
+		A9201E731EE4FB30003E1345 /* 전체그룹 pressed-75.png in Resources */ = {isa = PBXBuildFile; fileRef = A9201E691EE4FB30003E1345 /* 전체그룹 pressed-75.png */; };
+		A9201E741EE4FB30003E1345 /* 포멧관리 pressed-50.png in Resources */ = {isa = PBXBuildFile; fileRef = A9201E6A1EE4FB30003E1345 /* 포멧관리 pressed-50.png */; };
+		A9201E751EE4FB30003E1345 /* 포멧관리 pressed-75.png in Resources */ = {isa = PBXBuildFile; fileRef = A9201E6B1EE4FB30003E1345 /* 포멧관리 pressed-75.png */; };
+		A9201E771EE50092003E1345 /* logo_ios_512.png in Resources */ = {isa = PBXBuildFile; fileRef = A9201E761EE50092003E1345 /* logo_ios_512.png */; };
+		A9201E7B1EE50658003E1345 /* KakaoOpenSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A9201E7A1EE50658003E1345 /* KakaoOpenSDK.framework */; };
 		A9330B5C1EAFC8010072E326 /* GroupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9330B5B1EAFC8010072E326 /* GroupViewController.swift */; };
 		A9330B5E1EAFC8270072E326 /* PlanViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9330B5D1EAFC8270072E326 /* PlanViewController.swift */; };
 		A9330B601EAFCB800072E326 /* GroupTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9330B5F1EAFCB800072E326 /* GroupTableViewCell.swift */; };
@@ -67,6 +79,18 @@
 		A912EFBE1EE2BE4000651291 /* enabled_checked_ios_512.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = enabled_checked_ios_512.png; sourceTree = "<group>"; };
 		A912EFBF1EE2BE4000651291 /* enabled_unchecked_ios_512.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = enabled_unchecked_ios_512.png; sourceTree = "<group>"; };
 		A912EFC21EE2F2BE00651291 /* PostponeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostponeViewController.swift; sourceTree = "<group>"; };
+		A9201E621EE4FB30003E1345 /* 더보기 pressed-50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "더보기 pressed-50.png"; path = "Image/더보기 pressed-50.png"; sourceTree = "<group>"; };
+		A9201E631EE4FB30003E1345 /* 더보기 pressed-75.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "더보기 pressed-75.png"; path = "Image/더보기 pressed-75.png"; sourceTree = "<group>"; };
+		A9201E641EE4FB30003E1345 /* 일목록 pressed-50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "일목록 pressed-50.png"; path = "Image/일목록 pressed-50.png"; sourceTree = "<group>"; };
+		A9201E651EE4FB30003E1345 /* 일목록 pressed-75.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "일목록 pressed-75.png"; path = "Image/일목록 pressed-75.png"; sourceTree = "<group>"; };
+		A9201E661EE4FB30003E1345 /* 일정전송 pressed-50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "일정전송 pressed-50.png"; path = "Image/일정전송 pressed-50.png"; sourceTree = "<group>"; };
+		A9201E671EE4FB30003E1345 /* 일정전송 pressed-75.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "일정전송 pressed-75.png"; path = "Image/일정전송 pressed-75.png"; sourceTree = "<group>"; };
+		A9201E681EE4FB30003E1345 /* 전체그룹 pressed-50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "전체그룹 pressed-50.png"; path = "Image/전체그룹 pressed-50.png"; sourceTree = "<group>"; };
+		A9201E691EE4FB30003E1345 /* 전체그룹 pressed-75.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "전체그룹 pressed-75.png"; path = "Image/전체그룹 pressed-75.png"; sourceTree = "<group>"; };
+		A9201E6A1EE4FB30003E1345 /* 포멧관리 pressed-50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "포멧관리 pressed-50.png"; path = "Image/포멧관리 pressed-50.png"; sourceTree = "<group>"; };
+		A9201E6B1EE4FB30003E1345 /* 포멧관리 pressed-75.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "포멧관리 pressed-75.png"; path = "Image/포멧관리 pressed-75.png"; sourceTree = "<group>"; };
+		A9201E761EE50092003E1345 /* logo_ios_512.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = logo_ios_512.png; path = Image/logo_ios_512.png; sourceTree = "<group>"; };
+		A9201E7A1EE50658003E1345 /* KakaoOpenSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = KakaoOpenSDK.framework; sourceTree = "<group>"; };
 		A9330B5B1EAFC8010072E326 /* GroupViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GroupViewController.swift; sourceTree = "<group>"; };
 		A9330B5D1EAFC8270072E326 /* PlanViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlanViewController.swift; sourceTree = "<group>"; };
 		A9330B5F1EAFCB800072E326 /* GroupTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GroupTableViewCell.swift; sourceTree = "<group>"; };
@@ -118,6 +142,7 @@
 				A97BB7E81EA6001000B47BF0 /* FBSDKMessengerShareKit.framework in Frameworks */,
 				A97BB7E71EA6001000B47BF0 /* FBSDKLoginKit.framework in Frameworks */,
 				A97BB7E51EA6001000B47BF0 /* Bolts.framework in Frameworks */,
+				A9201E7B1EE50658003E1345 /* KakaoOpenSDK.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -136,6 +161,7 @@
 		5B2F031902182985A7ED5660 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				A9201E7A1EE50658003E1345 /* KakaoOpenSDK.framework */,
 				A97BB7E11EA6001000B47BF0 /* Bolts.framework */,
 				A97BB7E21EA6001000B47BF0 /* FBSDKCoreKit.framework */,
 				A97BB7E31EA6001000B47BF0 /* FBSDKLoginKit.framework */,
@@ -183,6 +209,17 @@
 		A912EFBD1EE2BDF100651291 /* Image */ = {
 			isa = PBXGroup;
 			children = (
+				A9201E761EE50092003E1345 /* logo_ios_512.png */,
+				A9201E621EE4FB30003E1345 /* 더보기 pressed-50.png */,
+				A9201E631EE4FB30003E1345 /* 더보기 pressed-75.png */,
+				A9201E641EE4FB30003E1345 /* 일목록 pressed-50.png */,
+				A9201E651EE4FB30003E1345 /* 일목록 pressed-75.png */,
+				A9201E661EE4FB30003E1345 /* 일정전송 pressed-50.png */,
+				A9201E671EE4FB30003E1345 /* 일정전송 pressed-75.png */,
+				A9201E681EE4FB30003E1345 /* 전체그룹 pressed-50.png */,
+				A9201E691EE4FB30003E1345 /* 전체그룹 pressed-75.png */,
+				A9201E6A1EE4FB30003E1345 /* 포멧관리 pressed-50.png */,
+				A9201E6B1EE4FB30003E1345 /* 포멧관리 pressed-75.png */,
 				A912EFBE1EE2BE4000651291 /* enabled_checked_ios_512.png */,
 				A912EFBF1EE2BE4000651291 /* enabled_unchecked_ios_512.png */,
 			);
@@ -279,6 +316,7 @@
 				TargetAttributes = {
 					A908E9C91E9DF8230059FA10 = {
 						CreatedOnToolsVersion = 8.3.1;
+						LastSwiftMigration = 0830;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -306,12 +344,23 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A9201E721EE4FB30003E1345 /* 전체그룹 pressed-50.png in Resources */,
+				A9201E701EE4FB30003E1345 /* 일정전송 pressed-50.png in Resources */,
+				A9201E6F1EE4FB30003E1345 /* 일목록 pressed-75.png in Resources */,
 				A912EFC01EE2BE4000651291 /* enabled_checked_ios_512.png in Resources */,
+				A9201E711EE4FB30003E1345 /* 일정전송 pressed-75.png in Resources */,
 				A908E9D81E9DF8230059FA10 /* LaunchScreen.storyboard in Resources */,
+				A9201E741EE4FB30003E1345 /* 포멧관리 pressed-50.png in Resources */,
+				A9201E771EE50092003E1345 /* logo_ios_512.png in Resources */,
 				A9346ECA1ECEB96300490592 /* GoogleService-Info.plist in Resources */,
+				A9201E6C1EE4FB30003E1345 /* 더보기 pressed-50.png in Resources */,
+				A9201E6D1EE4FB30003E1345 /* 더보기 pressed-75.png in Resources */,
+				A9201E751EE4FB30003E1345 /* 포멧관리 pressed-75.png in Resources */,
 				A908E9D51E9DF8230059FA10 /* Assets.xcassets in Resources */,
 				A912EFC11EE2BE4000651291 /* enabled_unchecked_ios_512.png in Resources */,
 				A908E9D31E9DF8230059FA10 /* Main.storyboard in Resources */,
+				A9201E6E1EE4FB30003E1345 /* 일목록 pressed-50.png in Resources */,
+				A9201E731EE4FB30003E1345 /* 전체그룹 pressed-75.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -530,6 +579,7 @@
 			baseConfigurationReference = CA915B75771AD4CC5A093E5A /* Pods-ToDoListMan.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = "";
 				FRAMEWORK_SEARCH_PATHS = (
@@ -540,13 +590,61 @@
 					"\"${PODS_ROOT}/FirebaseDatabase/Frameworks\"",
 					"\"${PODS_ROOT}/FirebaseInstanceID/Frameworks\"",
 					"~/Documents/FacebookSDK",
+					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = ToDoListMan/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-ObjC",
+					"-l\"c++\"",
+					"-l\"icucore\"",
+					"-l\"sqlite3\"",
+					"-l\"z\"",
+					"-framework",
+					"\"Bolts\"",
+					"-framework",
+					"\"CFNetwork\"",
+					"-framework",
+					"\"FBSDKCoreKit\"",
+					"-framework",
+					"\"FBSDKLoginKit\"",
+					"-framework",
+					"\"FBSDKShareKit\"",
+					"-framework",
+					"\"FacebookCore\"",
+					"-framework",
+					"\"FacebookLogin\"",
+					"-framework",
+					"\"FacebookShare\"",
+					"-framework",
+					"\"FirebaseAnalytics\"",
+					"-framework",
+					"\"FirebaseAuth\"",
+					"-framework",
+					"\"FirebaseCore\"",
+					"-framework",
+					"\"FirebaseDatabase\"",
+					"-framework",
+					"\"FirebaseInstanceID\"",
+					"-framework",
+					"\"GTMSessionFetcher\"",
+					"-framework",
+					"\"GoogleToolboxForMac\"",
+					"-framework",
+					"\"Security\"",
+					"-framework",
+					"\"StoreKit\"",
+					"-framework",
+					"\"SystemConfiguration\"",
+					"-all_load",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.tdl.ToDoListMan;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -557,6 +655,7 @@
 			baseConfigurationReference = 267B4BE95AEA9B164D7A891B /* Pods-ToDoListMan.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = "";
 				FRAMEWORK_SEARCH_PATHS = (
@@ -567,13 +666,60 @@
 					"\"${PODS_ROOT}/FirebaseDatabase/Frameworks\"",
 					"\"${PODS_ROOT}/FirebaseInstanceID/Frameworks\"",
 					"~/Documents/FacebookSDK",
+					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = ToDoListMan/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-ObjC",
+					"-l\"c++\"",
+					"-l\"icucore\"",
+					"-l\"sqlite3\"",
+					"-l\"z\"",
+					"-framework",
+					"\"Bolts\"",
+					"-framework",
+					"\"CFNetwork\"",
+					"-framework",
+					"\"FBSDKCoreKit\"",
+					"-framework",
+					"\"FBSDKLoginKit\"",
+					"-framework",
+					"\"FBSDKShareKit\"",
+					"-framework",
+					"\"FacebookCore\"",
+					"-framework",
+					"\"FacebookLogin\"",
+					"-framework",
+					"\"FacebookShare\"",
+					"-framework",
+					"\"FirebaseAnalytics\"",
+					"-framework",
+					"\"FirebaseAuth\"",
+					"-framework",
+					"\"FirebaseCore\"",
+					"-framework",
+					"\"FirebaseDatabase\"",
+					"-framework",
+					"\"FirebaseInstanceID\"",
+					"-framework",
+					"\"GTMSessionFetcher\"",
+					"-framework",
+					"\"GoogleToolboxForMac\"",
+					"-framework",
+					"\"Security\"",
+					"-framework",
+					"\"StoreKit\"",
+					"-framework",
+					"\"SystemConfiguration\"",
+					"-all_load",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.tdl.ToDoListMan;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};

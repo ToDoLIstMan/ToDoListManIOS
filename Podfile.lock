@@ -1,4 +1,5 @@
 PODS:
+  - Alamofire (4.4.0)
   - Bolts (1.8.4):
     - Bolts/AppLinks (= 1.8.4)
     - Bolts/Tasks (= 1.8.4)
@@ -60,6 +61,7 @@ PODS:
   - GTMSessionFetcher/Core (1.1.9)
 
 DEPENDENCIES:
+  - Alamofire (~> 4.4)
   - FacebookCore
   - FacebookLogin
   - FacebookShare
@@ -68,6 +70,7 @@ DEPENDENCIES:
   - Firebase/Database
 
 SPEC CHECKSUMS:
+  Alamofire: dc44b1600b800eb63da6a19039a0083d62a6a62d
   Bolts: 8a7995239dbe724f9cba2248b766d48b7ebdd322
   FacebookCore: 2cb3f0fbff218e9d3119cec84bae983b232412de
   FacebookLogin: c9d606504735780a9e3002465a615512e0a691a5
@@ -84,6 +87,6 @@ SPEC CHECKSUMS:
   GoogleToolboxForMac: 8e329f1b599f2512c6b10676d45736bcc2cbbeb0
   GTMSessionFetcher: 5c046c76a1f859bc9c187e918f18e4fc7bb57b5e
 
-PODFILE CHECKSUM: 0ca5c4650a89a9f43b02ba21f60806aa9b336c15
+PODFILE CHECKSUM: 64ac780c8a111c0126402991f5032700c39fab87
 
 COCOAPODS: 1.2.1
